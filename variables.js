@@ -1,0 +1,55 @@
+// the variables defined as three ways like 
+
+ // 1.var 
+//  2.let 
+//  3.const
+
+//  var a=10;
+//  var b=20;
+//  var c= 30;
+//  var d= 40;
+//  var e = 50;
+//  console.log(a+b);
+
+//   const c = 10;
+//   console.log(a);
+ 
+//   let d= 40;
+//   console.log(d);
+
+//   function add(){
+//      console.log(a+b);
+    
+// }
+//  add();
+
+//  function sub() {
+//      console.log(a-b);
+    
+    
+//  }
+//  sub();
+
+// console.log(a+b+c+d+e);
+
+// { console.log(a);
+//     var a = 30;
+// }
+
+ if( true){
+    
+    
+    let msg ="welcome venkat";
+   
+     console.log( msg);
+ }
+  console.log( msg);
+ 
+
+ 
+ 
+
+
+
+ 
+ 
