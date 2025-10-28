@@ -4,99 +4,120 @@
 //  2.let 
 //  3.const
 
-  var a=10;
-  var b=20;
-  var c= 30;
-  var d= 40;
-  var e = 50;
-  console.log(a+b);
+//   var a=10;
+//   var b=20;
+//   var c= 30;
+//   var d= 40;
+//   var e = 50;
+//   console.log(a+b);
 
-   const c = 10;
-   console.log(a);
+//    const c = 10;
+//    console.log(a);
  
-  let d= 40;
-     console.log(d);
+//   let d= 40;
+//      console.log(d);
 
-   function add(){
-     console.log(a+b);
+//    function add(){
+//      console.log(a+b);
     
- }
- add();
+//  }
+//  add();
 
-  function sub() {
-      console.log(a-b);
-    
-    
-  }
- sub();
-
- console.log(a+b+c+d+e);
-
- { console.log(a);
-     var a = 30;
- }
-
-  if( true){
+//   function sub() {
+//       console.log(a-b);
     
     
-     let msg ="welcome venkat";
+//   }
+//  sub();
+
+//  console.log(a+b+c+d+e);
+
+//  { console.log(a);
+//      var a = 30;
+//  }
+
+//   if( true){
+    
+    
+//      let msg ="welcome venkat";
    
-      console.log( msg);
-  }
-  console.log( msg);
+//       console.log( msg);
+//   }
+//   console.log( msg);
  
 
-//    2.variable redeclare
+// //    2.variable redeclare
 
-   var a =20;
-   console.log(a);
+//    var a =20;
+//    console.log(a);
 
-   var a = 90
-   console.log(a);
+//    var a = 90
+//    console.log(a);
   
  
 
-//  let cannot reclared 
- let a = 25;
- console.log(a);
+// //  let cannot reclared 
+//  let a = 25;
+//  console.log(a);
 
-  let a = 30;
-  console.log(a);
+//   let a = 30;
+//   console.log(a);
 
- const a = 25;
- console.log(a);
+//  const a = 25;
+//  console.log(a);
 
-  a=35;
-  console.log(a);
+//   a=35;
+//   console.log(a);
 
-//   const also cannot redeclare 
+// //   const also cannot redeclare 
 
 
 
-//   3.value assigment 
+// //   3.value assigment 
 
-   var a = 10 ;
-   console.log(a);
+//    var a = 10 ;
+//    console.log(a);
   
-a=100;
-   console.log(a);
-  
-
-
- let a = 10 ;
-   console.log(a);
-  
-   a=100;
-   console.log(a);
-  
-
-const a = 10 ;
-  console.log(a);
-  
-  a=100;
-  console.log(a);
+// a=100;
+//    console.log(a);
   
 
 
+//  let a = 10 ;
+//    console.log(a);
+  
+//    a=100;
+//    console.log(a);
+  
+
+// const a = 10 ;
+//   console.log(a);
+  
+//   a=100;
+//   console.log(a);
+  
+
+
+//  const student ={
+//     name:'venkat',age:'19'
+//  }
+//  console.table(student);
+//  console.log(student.name);
+
+//  student.name='yuva';
+//  console.log(student);
+ 
+
+ const venkat ={ name:'venkat', age:'21'}
+ console.log(venkat);
+
+ console.log( venkat.name);
+
+  venkat.name='vp;'
+ console.log(venkat);
+ 
+ 
+ 
+ 
  
  
