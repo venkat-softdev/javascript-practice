@@ -36,18 +36,59 @@
 //     var a = 30;
 // }
 
- if( true){
+//  if( true){
     
     
-    let msg ="welcome venkat";
+//     let msg ="welcome venkat";
    
-     console.log( msg);
- }
-  console.log( msg);
+//      console.log( msg);
+//  }
+//   console.log( msg);
  
 
+//   2.variable redeclare
+
+//   var a =20;
+//   console.log(a);
+
+//   var a = 90
+//   console.log(a);
+  
  
- 
+
+// let cannot reclared 
+// let a = 25;
+// console.log(a);
+
+//  let a = 30;
+//  console.log(a);
+
+// const a = 25;
+// console.log(a);
+
+//  a=35;
+//  console.log(a);
+
+//  const also cannot redeclare 
+
+
+
+//  3.value assigment 
+
+//   var a = 10 ;
+//   console.log(a);
+  
+//   a=100;
+//   console.log(a);
+  
+
+
+let a = 10 ;
+  console.log(a);
+  
+  a=100;
+  console.log(a);
+  
 
 
 
