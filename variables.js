@@ -108,13 +108,88 @@
 //  console.log(student);
  
 
- const venkat ={ name:'venkat', age:'21'}
- console.log(venkat);
+//  const venkat ={ name:'venkat', age:'21'}
+//  console.log(venkat);
 
- console.log( venkat.name);
+//  console.log( venkat.name);
 
-  venkat.name='vp;'
- console.log(venkat);
+//   venkat.name='vp;'
+//  console.log(venkat);
+
+
+
+//  a=25;
+//  b= 35;
+//  function add() {
+//     console.log(a+b);
+    
+    
+//  }
+//  add();
+
+//  function mul(params) {
+//      console.log(a*b);;
+     
+//  }
+//  mul();
+  
+//   var a= 25;
+//   var b= 340;
+//   console.log(a+b);
+
+// let a=25;
+//   let b=30;
+//  b=20;
+
+//   console.log(a+b);
+
+
+// let a= 50;
+// a=100;
+// console.log(a);
+
+
+//  const a=100;
+ 
+
+
+//   console.log(a);
+
+//   var b= "hi"
+
+//    function name(params) {
+//    console.log(b);
+
+
+
+  
+
+
+   
+    
+    
+//   }
+//   name();
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+
+  
+
+
+
+
+
  
  
  
