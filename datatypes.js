@@ -109,7 +109,37 @@
  //date
  var d=new Date()
  console.log(typeof d);
- console.log(d);
+ console.log(d);      
+
+ //complex data types
+
+ let numbers =[1,2,3,4,5];
+ console.log(numbers,typeof numbers);
+
+ //object data type
+
+ let person={
+    name:"venkat",
+    age:"19"
+
+ }
+ console.log(person.name);
+ console.log(person.age);
+ 
+ //symbol data type
+
+ let id= Symbol("id")
+ console.log(id);
+ 
+ 
+  
+ 
+ 
+ 
+ 
+
+ 
+ 
  
   
  
