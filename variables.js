@@ -214,6 +214,12 @@ if (true) {
   var e=50;
  var f=a+b+c+d+e;
  console.log(f);
+ console.log(f,typeof f);
+
+ var g=new Date();
+ console.log(g);
+ 
+ 
  
   
  
