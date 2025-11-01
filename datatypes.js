@@ -128,10 +128,15 @@
  
  //symbol data type
 
- let id= Symbol("id")
- console.log(id);
+//  let id= Symbol("id")
+//  console.log(id);
  
- 
+let firstname="venkatesa";
+let lastname = "perumal"
+
+let fullname=firstname+lastname;
+console.log(fullname);
+
   
  
  
