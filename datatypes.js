@@ -196,6 +196,17 @@
 
  console.log( typeof isvalue );
  
+ //4.null:
+
+ let value=null;
+ console.log(value,typeof value);
+
+ //5.undefined
+
+ let a;
+ a=10;
+ console.log(a);
+ 
  
 
 
