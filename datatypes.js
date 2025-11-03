@@ -214,7 +214,22 @@
  var students=["venkat","arish","ramu","somu","mamu"];
 
  console.log(students[2], students [4]);
+
+ // object
+
+  const anime={
+   name:"onepiece",
+   name2:"shadow garden"
+    
+  }
  
+ console.log(anime);
+
+
+ function abab(params) {
+    let ab="bbb"
+  }
+ console.log(abab);
  
 
 
