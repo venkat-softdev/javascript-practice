@@ -83,59 +83,109 @@
 
 //number data type
 
- var a= 1000;
- console.log(a,typeof a);
+//  var a= 1000;
+//  console.log(a,typeof a);
 
- //string datatype
+//  //string datatype
 
- let fname="venkat"
- console.log(fname,typeof fname);
+//  let fname="venkat"
+//  console.log(fname,typeof fname);
 
- //boolean data types
+//  //boolean data types
 
- let isstudent = true;
- console.log(isstudent ,typeof isstudent);
+//  let isstudent = true;
+//  console.log(isstudent ,typeof isstudent);
 
- //null data type 
+//  //null data type 
 
- const value =null;
- console.log(value,typeof value);
+//  const value =null;
+//  console.log(value,typeof value);
 
- // undefined datatype
+//  // undefined datatype
 
- let b;
- console.log(b,typeof b);
+//  let b;
+//  console.log(b,typeof b);
 
- //date
- var d=new Date()
- console.log(typeof d);
- console.log(d);      
+//  //date
+//  var d=new Date()
+//  console.log(typeof d);
+//  console.log(d);      
 
- //complex data types
+//  //complex data types
 
- let numbers =[1,2,3,4,5];
- console.log(numbers,typeof numbers);
+//  let numbers =[1,2,3,4,5];
+//  console.log(numbers,typeof numbers);
 
- //object data type
+//  //object data type
 
- let person={
-    name:"venkat",
-    age:"19"
+//  let person={
+//     name:"venkat",
+//     age:"19"
 
- }
- console.log(person.name);
- console.log(person.age);
+//  }
+//  console.log(person.name);
+//  console.log(person.age);
  
- //symbol data type
+//  //symbol data type
 
-//  let id= Symbol("id")
-//  console.log(id);
+// //  let id= Symbol("id")
+// //  console.log(id);
  
-let firstname="venkatesa";
-let lastname = "perumal"
+// let firstname="venkatesa";
+// let lastname = "perumal"
 
-let fullname=firstname+lastname;
-console.log(fullname);
+// let fullname=firstname+lastname;
+// console.log(fullname);
+
+
+// let fname='sandhiya';
+// console.log(fname);
+
+// let value ="null";
+// console.log(  value,typeof value);
+
+
+// Datatypes is  defined the charactersitcs
+
+//datatypes are two  types:
+ //1.primitive
+ //2.non-primitive -type
+
+// 1.primitive datatype(simple data-type)
+
+ //1.Number
+ // 2.string
+ //3.boolean
+ //4.null
+ //5.undefined
+
+ //2.non-primitive data-type
+ //1.array
+ //2.object
+ //3.symbol
+
+ // 1.number datatype
+
+//   let a=5;
+//   let b=25;
+//   let c= 30;
+//   let d=(a+b+c)
+//   console.log(d);
+  
+  //2.string data-type
+
+//   let firstname = "venkatesa"
+//   let lastname ="perumal"
+//    let fullname =firstname + lastname;
+
+//    console.log(fullname);
+   
+
+
+ 
+
+
+
 
   
  
