@@ -181,7 +181,21 @@
 //    console.log(fullname);
    
 
+ let isstudent = {
+      fname :"arish",
+      age:19,
+      city:"vadalur"
 
+
+ }
+
+ console.log(  isstudent.city, typeof isstudent.city);
+
+
+ var isvalue = [true]
+
+ console.log( typeof isvalue );
+ 
  
 
 
