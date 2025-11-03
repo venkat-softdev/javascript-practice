@@ -206,6 +206,14 @@
  let a;
  a=10;
  console.log(a);
+
+ // non-primitive type:
+//1.array
+//2.object
+
+ var students=["venkat","arish","ramu","somu","mamu"];
+
+ console.log(students[2], students [4]);
  
  
 
