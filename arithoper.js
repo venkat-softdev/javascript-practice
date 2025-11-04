@@ -14,6 +14,14 @@
 //  console.log(++b);
 //  console.log(--a);
 //  console.log(--b);
+
+
+let a= 25;
+let b=5;
+let c;
+c=a+b;
+console.log(c);
+
  
  
  
