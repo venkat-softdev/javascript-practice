@@ -230,6 +230,10 @@
     let ab="bbb"
   }
  console.log(abab);
+
+ let s= new Date();
+ console.log(s,typeof s);
+ 
  
 
 
