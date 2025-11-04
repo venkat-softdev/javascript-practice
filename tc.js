@@ -28,6 +28,34 @@ console.log(c,typeof c);
  e=String(e);
  console.log(e,typeof e);
  
+ // type conversion 
+ // string ro number
+
+
+ let f="10";
+ console.log(f, typeof f);
+
+ f=Number(f);
+ console.log(f,typeof f);
+
+
+
+ let one=false;
+ console.log(one ,typeof one);
+
+ one =Number(one);
+ console.log(one,typeof one);
+ 
+ 
+ 
+ let peoples=["venkat","sandy","arish"];
+
+ console.log(peoples,typeof peoples);
+
+ peoples=Number(peoples);
+ console.log(peoples,typeof peoples);
+ 
+ 
  
 
 
