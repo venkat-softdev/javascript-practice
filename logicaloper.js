@@ -26,17 +26,17 @@ console.log(a&&b);
 
  // person has killing or not
 
- let y = "kill";
- let z="not kill";
+//  let y = "kill";
+//  let z="not kill";
 
- if (y&&z) {
-     console.log("both can be arrested");
+//  if (y&&z) {
+//      console.log("both can be arrested");
      
- }
- else{
-    console.log(" release them both");
+//  }
+//  else{
+//     console.log(" release them both");
     
- }
+//  }
  
  
  
