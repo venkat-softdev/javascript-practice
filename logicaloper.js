@@ -20,3 +20,9 @@ console.log(a&&b);
  let e= false;
  let f= false;
  
+ console.log(!a);
+ console.log(!f);
+ 
+ 
+ 
+ 
