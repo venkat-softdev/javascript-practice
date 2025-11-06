@@ -24,18 +24,42 @@
 
 
 
- let a= 25;
- let b= 25;
+//  let a= 25;
+//  let b= 25;
 
+//  console.log(a+b);
+//  console.log(a-b);
+//  console.log(a*b);
+//     console.log(a/b);
+//     console.log(a%b);
+//     console.log(++a);
+//     console.log(--a);
+//     console.log(--b);
+//     console.log(++b);
+
+ let a= 10;
+ let b= 5;
+  
  console.log(a+b);
  console.log(a-b);
  console.log(a*b);
-    console.log(a/b);
-    console.log(a%b);
-    console.log(++a);
-    console.log(--a);
-    console.log(--b);
-    console.log(++b);
+ console.log(a/b);
+ console.log(a%b);
+ console.log(++a);
+ console.log(--a);
+ console.log(--b);
+ console.log(++b);
+ console.log(a**b);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     
     
     
