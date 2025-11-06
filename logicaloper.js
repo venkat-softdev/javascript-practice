@@ -22,7 +22,21 @@ console.log(a&&b);
  
  console.log(!a);
  console.log(!f);
- 
+
+
+ // person has killing or not
+
+ let y = "kill";
+ let z="not kill";
+
+ if (y&&z) {
+     console.log("both can be arrested");
+     
+ }
+ else{
+    console.log(" release them both");
+    
+ }
  
  
  
