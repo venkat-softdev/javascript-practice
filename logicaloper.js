@@ -64,4 +64,11 @@ else{
     
 }
  
+ // conditional and teranary operator 
+
+ const age=40;
+
+ const result=age>=18?"eligibile to vote":"not eligible to vote"
+
+ console.log(result);
  
