@@ -52,4 +52,16 @@ else{
     
 }
  
+
+let value =2;
+
+if (value==5 || value==10) {
+     console.log("value is correct ");
+     
+}
+else{
+    console.log("value is incorrect");
+    
+}
  
+
