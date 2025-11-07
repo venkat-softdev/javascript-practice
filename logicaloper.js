@@ -38,5 +38,18 @@ console.log(a&&b);
     
 //  }
  
+
+//mark in student 
+
+let mark = 25;
+
+if (mark >=35 && mark <=100) {
+     console.log("pass the exam");
+     
+}
+else{
+    console.log("fail the exam");
+    
+}
  
  
