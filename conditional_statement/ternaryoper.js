@@ -1,48 +1,75 @@
 // ternary operator in javascript 
- let a= 10;
- console.log(a);
+//  let a= 10;
+//  console.log(a);
 
 
- const age = 18;
+//  const age = 18;
 
-  const voting=age>=18?"elgible to vote":"not eligible to vote"
+//   const voting=age>=18?"elgible to vote":"not eligible to vote"
  
-  console.log(voting);
+//   console.log(voting);
   
 
-// handling null values 
+// // handling null values 
 
 
-function welcome(name) {
-    console.log("welcome"+ name);
+// function welcome(name) {
+//     console.log("welcome"+ name);
     
-     const result=name? name:"no name";
+//      const result=name? name:"no name";
      
-}
-welcome('venkat');
+// }
+// welcome('venkat');
 
-// object type variables 
+// // object type variables 
 
-let students={
-    student_1:"venkat",
-    student_2:"arish"
-}
-console.log(students,typeof students);
+// let students={
+//     student_1:"venkat",
+//     student_2:"arish"
+// }
+// console.log(students,typeof students);
 
-// array 
+// // array 
 
-let value=[fname="venkat",sname="arish",tname="agi"];
+// let value=[fname="venkat",sname="arish",tname="agi"];
 
-console.log(value);
-
-
+// console.log(value);
 
 
-user={name:'venkat'}
 
 
-const greeting=(user)=>{
-    const name= user.name? user.name:"no name"
- return "hello"+name
-}
-console.log(greeting(user));
+// user={name:'venkat'}
+
+
+// const greeting=(user)=>{
+//     const name= user.name? user.name:"no name"
+//  return "hello"+name
+// }
+// console.log(greeting(user));
+
+// avg >=90 A grade
+// avg >= 80 B grade
+// c garde
+
+
+// let avg = 90;
+
+// if (avg>=90) {
+//     console.log(" garde A");
+    
+    
+// }
+//  else if (avg>=80) {
+//     console.log("grade B");
+    
+//  }
+//  else{
+//     console.log("grade C");
+    
+//  }
+
+
+const avg =100;
+const grade=avg>=90?"A garde":avg>=80?"B grade":"c grade"
+
+console.log("grade:",grade);
