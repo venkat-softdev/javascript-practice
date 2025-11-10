@@ -198,26 +198,46 @@
 //   console.log(f);
   
  
-if (true) {
+// if (true) {
   
-    var name="hey im venkat"
+//     var name="hey im venkat"
 
     
-}
- console.log(name);
+// }
+//  console.log(name);
 
 
- var a=10;
-  var b=20;
-  var c=20;
-  var d=40;
-  var e=50;
- var f=a+b+c+d+e;
- console.log(f);
- console.log(f,typeof f);
+//  var a=10;
+//   var b=20;
+//   var c=20;
+//   var d=40;
+//   var e=50;
+//  var f=a+b+c+d+e;
+//  console.log(f);
+//  console.log(f,typeof f);
 
- var g=new Date();
- console.log(g);
+//  var g=new Date();
+//  console.log(g);
+ 
+ 
+
+
+// write javascript  code using variables 
+
+
+let fname="venkatesa ";
+let lname="perumal";
+let fullname = fname+lname;
+let age = 20;
+let country ="india";
+ let ismarried= false;
+
+ console.log("name:",fullname);
+ console.log("age:",age);
+ console.log("country:",country);
+ console.log("married:",ismarried);
+ 
+ 
  
  
  
