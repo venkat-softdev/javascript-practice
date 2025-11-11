@@ -69,7 +69,19 @@
 //  }
 
 
-const avg =100;
-const grade=avg>=90?"A garde":avg>=80?"B grade":"c grade"
+// const avg =100;
+// const grade=avg>=90?"A garde":avg>=80?"B grade":"c grade"
 
-console.log("grade:",grade);
+// console.log("grade:",grade);
+
+
+// const avg=90;
+// const grade=avg>=90? "A Grade":"c Grade";
+// console.log("grade:",grade);
+
+
+
+let name ="venkat";
+let fullname=name? name:"no any name";
+
+console.log(fullname);
