@@ -85,3 +85,14 @@
 let vote=age>=18?"eligible to vote":"not eligible to vote"
 console.log(vote);
 
+
+let vname="venkat";
+let fname=vname?vname:"no name"
+console.log(fname);
+
+
+let mark =90;
+let avg=mark>60?"good mark ":"improve it boy"
+
+console.log(avg);
+
