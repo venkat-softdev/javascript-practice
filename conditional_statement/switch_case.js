@@ -21,3 +21,5 @@ switch (days) {
     break;
 }
 console.log(days);
+
+
