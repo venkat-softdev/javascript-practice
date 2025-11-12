@@ -80,8 +80,8 @@
 // console.log("grade:",grade);
 
 
+ let age =17;
 
-let name ="venkat";
-let fullname=name? name:"no any name";
+let vote=age>=18?"eligible to vote":"not eligible to vote"
+console.log(vote);
 
-console.log(fullname);
