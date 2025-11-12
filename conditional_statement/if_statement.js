@@ -20,3 +20,15 @@ if (age1>=18 && age1 <=60) {
      console.log("not eligible to vote");
      
 }
+
+// example 3
+
+ const avg = 80;
+ const mark='80';
+ if (mark===avg) {
+    console.log("both are equals");
+    
+ } else {
+    console.log("not equal are both");
+    
+ }
