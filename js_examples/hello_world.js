@@ -13,3 +13,5 @@ console.log('hello venkat !');
 document.writeln("hi venkat whats going on")// inside a html file using script tag
 
 
+
+
