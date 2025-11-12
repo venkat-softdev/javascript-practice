@@ -24,4 +24,24 @@ console.log("the square root of", value2,"is:", endvalue2);
 console.log("the square root of", value3,"is:", endvalue3);
 
 
+
+
+// exapmle 3
+
+let a=9;
+let b= 16;
+ let c= 36;
+
+ let num1=Math.sqrt(a);
+ let num2=Math.sqrt(b);
+ let num3=Math.sqrt(c);
+
+ console.log("the square of ", a,"is", num1);
+ console.log("the square of ", b,"is", num2);
+ 
+ console.log("the square of ", c,"is", num3);
+ 
+ 
+
+
  
