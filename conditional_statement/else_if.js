@@ -31,3 +31,19 @@
     console.log("not eligible to vote");
     
  }
+
+ // example 3 else if in javascript 
+
+ let days= "wednesday";
+ if (days=="sunday"|| days=="saturday") {
+    console.log("weeend");
+    
+ }
+ else if (days=="friday") {
+    console.log("it almost weekend");
+    
+ }
+ else{
+    console.log("weekdays");
+    
+ }
