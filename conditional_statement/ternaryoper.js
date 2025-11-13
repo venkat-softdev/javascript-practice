@@ -98,6 +98,11 @@
 
 
 
+// let day="monday"
+
+// let days=day=="sunday"? "it's weekend":"it's weekday"
+
+// console.log(days);
 let day="monday"
 
 let days=day=="sunday"? "it's weekend":"it's weekday"
