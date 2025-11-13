@@ -23,3 +23,35 @@ switch (days) {
 console.log(days);
 
 
+// let fname="venkat";
+
+// switch (fname) {
+//   case "venkat":
+    
+//     break;
+//     case "yuva":
+//       break;
+
+//       case "arish":
+//       break;
+
+//       case "senba":
+//         break;
+
+//   default:"no anyone here";
+//     break;
+// }
+
+// console.log(fname);
+
+let day="tuesday";
+
+switch (day=="monday") {
+  case "monday":
+    
+    break;
+
+  default:"no one";
+    break;
+}
+console.log(day);
