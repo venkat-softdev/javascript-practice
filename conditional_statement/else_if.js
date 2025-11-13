@@ -2,49 +2,64 @@
 
 // allows multiple conditions in sequence 
 
- let avg = 20;
- if (avg>=90) {
-    console.log("grade A");
+//  let avg = 20;
+//  if (avg>=90) {
+//     console.log("grade A");
     
- }
- else if (avg>=80) {
-    console.log("grade B");
+//  }
+//  else if (avg>=80) {
+//     console.log("grade B");
     
- }
- else{
-    console.log("grade C");
+//  }
+//  else{
+//     console.log("grade C");
     
- }
+//  }
 
- // Example 2 in Javascript 
+//  // Example 2 in Javascript 
 
- let age = 11;
- if (age>=18 & age<=60 ) {
-    console.log("Eligible to vote");
+//  let age = 11;
+//  if (age>=18 & age<=60 ) {
+//     console.log("Eligible to vote");
     
- }
- else if (age>= 60) {
-    console.log("you card are expiried");
+//  }
+//  else if (age>= 60) {
+//     console.log("you card are expiried");
     
- }
- else{
-    console.log("not eligible to vote");
+//  }
+//  else{
+//     console.log("not eligible to vote");
     
- }
+//  }
 
- // example 3 else if in javascript 
+//  // example 3 else if in javascript 
 
- let days= "wednesday";
- if (days=="sunday"|| days=="saturday") {
-    console.log("weeend");
+//  let days= "wednesday";
+//  if (days=="sunday"|| days=="saturday") {
+//     console.log("weeend");
     
- }
- else if (days=="friday") {
-    console.log("it almost weekend");
+//  }
+//  else if (days=="friday") {
+//     console.log("it almost weekend");
     
- }
- else{
-    console.log("weekdays");
+//  }
+//  else{
+//     console.log("weekdays");
     
- }
+//  }
  
+
+
+let name ="yuvaaj"
+if (name=="venkat") {
+ console.log("hi venkat");
+   
+}
+else if (name=="yuvaraj") {
+   console.log("hi yuvaraj");
+   
+}
+else{
+   console.log("no one here");
+   
+}
