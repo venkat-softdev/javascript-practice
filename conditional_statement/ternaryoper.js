@@ -80,19 +80,27 @@
 // console.log("grade:",grade);
 
 
- let age =17;
+//  let age =17;
 
-let vote=age>=18?"eligible to vote":"not eligible to vote"
-console.log(vote);
-
-
-let vname="venkat";
-let fname=vname?vname:"no name"
-console.log(fname);
+// let vote=age>=18?"eligible to vote":"not eligible to vote"
+// console.log(vote);
 
 
-let mark =90;
-let avg=mark>60?"good mark ":"improve it boy"
+// let vname="venkat";
+// let fname=vname?vname:"no name"
+// console.log(fname);
 
-console.log(avg);
+
+// let mark =90;
+// let avg=mark>60?"good mark ":"improve it boy"
+
+// console.log(avg);
+
+
+
+let day="monday"
+
+let days=day=="sunday"? "it's weekend":"it's weekday"
+
+console.log(days);
 
