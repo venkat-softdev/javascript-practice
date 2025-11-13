@@ -34,11 +34,20 @@
 //  }
 
 
-let value =10;
-if (value>=10) {
-    console.log("it's correct ");
+// let value =10;
+// if (value>=10) {
+//     console.log("it's correct ");
+    
+// } else {
+//     console.log("it's wrong ");
+    
+// }
+
+let fname="venka"
+if (fname=="venkat") {
+    console.log(fname);
     
 } else {
-    console.log("it's wrong ");
+    console.log("no name");
     
 }
