@@ -28,3 +28,12 @@ if (name==name2) {
     
  }
  
+
+ let student= 3;
+ if (student==4) {
+    console.log("student are stayed ");
+    
+ } else {
+    console.log("otherwise no stayed anyone");
+    
+ }
