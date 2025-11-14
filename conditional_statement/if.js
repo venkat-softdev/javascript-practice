@@ -143,3 +143,23 @@ else{
     
 }
 
+// example 8 in javascript 
+
+let currentday = 3;
+let currenthour = 12;
+
+if (currentday>=1 && currentday<=5) {
+    if (currenthour>=9 && currenthour <=18) {
+        console.log("the store is currently open");
+        
+    }
+    else{
+        console.log("the store is currently closed");
+        
+    }
+   
+}
+else{
+    console.log("the store is closed becz weekend");
+    
+}
