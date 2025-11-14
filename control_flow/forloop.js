@@ -1,6 +1,16 @@
 // for loop in javascript 
 
-for (let i=15 ; i>=0; i--){
-    console.log(i);
+for (let value = 0; value <=10; value++) {
+ console.log(value);
+ ;
+    
+}
+
+// print reverse order in forloop 
+
+for (let value = 3; value>=1; value--) {
+    console.log(value);
+
+    
     
 }
