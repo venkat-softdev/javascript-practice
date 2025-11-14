@@ -97,3 +97,49 @@ if ((year % 4===0 )||(year % 400 ===0)) {
     console.log(year + "is not leap year");
     
 }
+
+// example 6 in javascript 
+
+let data="number";
+
+if (typeof data == "string") {
+    console.log("the data is string type");
+    
+}
+else if (typeof data == "number") {
+    console.log("the data is number type");
+    
+}
+else if (typeof data =="boolean") {
+    console.log("the data is boolean type");
+    
+}
+else if (typeof data =="undefined") {
+    
+}
+else{
+    console.log("the data is undefined");
+    
+}
+
+// example 7 in javascript 
+
+let correctusername = "venkat";
+let correctpassword = "password123"
+
+let enteredusername = " venkat"
+let enteredpassword = "password123"
+
+if (enteredusername === correctusername && enteredpassword===correctpassword) {
+    console.log("login succesfull welcome " + correctusername);
+    
+}
+else if (correctusername !== enteredusername) {
+    console.log("Error : incorrect username");
+    
+}
+else{
+    console.log("incorrect password");
+    
+}
+
