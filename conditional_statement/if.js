@@ -44,3 +44,56 @@ else{
     console.log("both are equal values");
     
 }
+// example 4 in javascript 
+
+let avg = 90;
+
+if (avg >=90) {
+    console.log( "grade A");
+    
+}
+else if (avg >= 75) {
+    console.log("grade B");
+    
+}
+else if (avg>=60) {
+    console.log("grade C");
+    
+}
+else if (avg >=40) {
+    console.log("grade D");
+    
+}
+else {
+    console.log("grade F");
+    
+}
+
+// Example 4 in javascript 
+
+let age = 20;
+let haslicense= true;
+
+if (age>=18 && haslicense) {
+    console.log("you are eligible to drive ");
+    
+}
+else if (age>=18 && !haslicense) {
+    console.log("you are old enough , but you don't have linciense");
+    
+}
+else{
+    console.log("you are not eligible to drive");
+    
+}
+// example 5 in javascript  
+
+let year =2024;
+
+if ((year % 4===0 )||(year % 400 ===0)) {
+    console.log(year + "is a leap year");
+    
+} else {
+    console.log(year + "is not leap year");
+    
+}
