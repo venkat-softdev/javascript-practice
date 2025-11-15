@@ -87,22 +87,43 @@
 
 
 
+// for (let i =0; i <=5; i++) {
+//     console.log("venkat");
+    
+    
+// }
 
-//( preincrement and post increment ) ++ a , a++
-let x= 10;    // x=10 y=x+1
-let y=x++// x= 10 y=x y=10 x= 10 x++
+// for (let i = 2; i <=20 ; i++) {
+//     console.log(i);
+    
+    
+// }
 
-console.log( "the value of  x:",x , "the value of y:",y);
-
-// preincrement 
-
-let a= 10;// a= 10; 
- // b=10 a =10 
-let b=++a;
-console.log("the value of  a:",a , "the value of b:",b);
-
-
-
+// for (let i = 0; i <= 20; i++) {
+//  if (i%3==0) {
+//     console.log(i);
+    
+//  }
+    
+// }
 
 
+let name = "JavaScript";
 
+for (let i = 5; i < name.length; i++) {
+  console.log(name[i]);
+}
+
+
+
+
+
+let sum =0;
+let n= 100;
+
+for (let i = 1; i <=n; i++) {
+    sum =sum+i;
+    console.log('sum:', sum);
+    
+    
+}
