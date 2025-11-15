@@ -48,3 +48,12 @@ for (let i = 1; i <=n; i++) {
     
     
 }
+// example 5 in javascript 
+
+let fname=['venkat','arish','yuva','sandy'];
+
+for (let i = 3; i < fname.length; i++) {
+    console.log(fname[i]);
+    ;
+    
+}
