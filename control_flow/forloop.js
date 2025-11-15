@@ -58,18 +58,51 @@
     
 // }
 
-for (let i = 10; i >=5; i--) {
-  console.log(i);
+// for (let i = 10; i >=5; i--) {
+//   console.log(i);
   
     
-}
-// example 2 in javascript 
+// }
+// // example 2 in javascript 
 
-for (let i = -10; i <=-1; i++) {
-    console.log(i);
+// for (let i = -10; i <=-1; i++) {
+//     console.log(i);
 
     
     
-}
-// -10  for 
+// }
+// // -10  for 
+
+
+// for (let value = 0; value <=5; value++) {
+//     console.log("heloo venkat");
+    
+    
+// }
+
+
+// let x= 10;
+// x++;// x+1  10 +1
+// console.log("the value of x :", x);
+
+
+
+
+//( preincrement and post increment ) ++ a , a++
+let x= 10;    // x=10 y=x+1
+let y=x++// x= 10 y=x y=10 x= 10 x++
+
+console.log( "the value of  x:",x , "the value of y:",y);
+
+// preincrement 
+
+let a= 10;// a= 10; 
+ // b=10 a =10 
+let b=++a;
+console.log("the value of  a:",a , "the value of b:",b);
+
+
+
+
+
 
