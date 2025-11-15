@@ -43,11 +43,17 @@
     
 // }
 
-let fname="venka"
-if (fname=="venkat") {
-    console.log(fname);
+// let fname="venka"
+// if (fname=="venkat") {
+//     console.log(fname);
     
-} else {
-    console.log("no name");
+// } else {
+//     console.log("no name");
+    
+// }
+
+let age=19;
+if (age>=20) {
+    console.log("eligible to vote");
     
 }
