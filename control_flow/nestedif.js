@@ -72,35 +72,66 @@
 
 // example 3 in nested if 
 
-let correctpin=1234;
-let enterdpin=1234;
-let accountbalance=750;
-let withdrawamount=300;
-let dailylimit = 500;
+// let correctpin=1234;
+// let enterdpin=1234;
+// let accountbalance=750;
+// let withdrawamount=300;
+// let dailylimit = 500;
 
-if (enterdpin===correctpin) {
-    console.log("PIN accepted");
+// if (enterdpin===correctpin) {
+//     console.log("PIN accepted");
     
 
-    if (withdrawamount<accountbalance) {
-        console.log("Balance check passed");
+//     if (withdrawamount<accountbalance) {
+//         console.log("Balance check passed");
         
-        if (withdrawamount<= dailylimit) {
-            console.log("you can withdraw amount");
+//         if (withdrawamount<= dailylimit) {
+//             console.log("you can withdraw amount");
           
             
-        } else {
-            console.log("ERROr : Amount exceeds daily withdraw limit");
+//         } else {
+//             console.log("ERROr : Amount exceeds daily withdraw limit");
             
-        }
-    } else {
-        console.log("ERROr : indufficient Amount");
+//         }
+//     } else {
+//         console.log("ERROr : indufficient Amount");
         
-    }
+//     }
 
-} else {
-    console.log("ERROR : Incorrect PIN");
+// } else {
+//     console.log("ERROR : Incorrect PIN");
     
-}
+// }
 
 // example 3 in nested if in javascript 
+
+let destination= 'USA';
+let weightkg=50;
+let shippingcost;
+
+if (destination==='USA') {
+    if (weightkg<5) {
+        console.log("shipping cost $10");
+        
+    } else {
+        console.log("shipping cost $20");
+        
+    }
+   
+    
+}
+else if (destination==="Canada") {
+    if (weightkg< 2) {
+        console.log("shipping cost is $8");
+        
+    } else {
+        console.log("shipping cost is $15");
+        
+    }
+    
+} 
+
+else {
+    console.log("other countries  shipping cost: $30");
+    
+}
