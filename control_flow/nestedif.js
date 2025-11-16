@@ -87,6 +87,7 @@ if (enterdpin===correctpin) {
         
         if (withdrawamount<= dailylimit) {
             console.log("you can withdraw amount");
+          
             
         } else {
             console.log("ERROr : Amount exceeds daily withdraw limit");
