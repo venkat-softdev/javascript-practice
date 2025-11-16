@@ -103,3 +103,4 @@ if (enterdpin===correctpin) {
     
 }
 
+// example 3 in nested if in javascript 
