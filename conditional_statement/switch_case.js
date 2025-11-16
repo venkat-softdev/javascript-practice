@@ -22,12 +22,11 @@ switch (days) {
 }
 console.log(days);
 
-
 // let fname="venkat";
 
 // switch (fname) {
 //   case "venkat":
-    
+
 //     break;
 //     case "yuva":
 //       break;
@@ -48,7 +47,7 @@ console.log(days);
 
 // switch (day=="monday") {
 //   case "monday":
-    
+
 //     break;
 
 //   default:"no one";
@@ -56,23 +55,43 @@ console.log(days);
 // }
 // console.log(day);
 //********************************************************** */
-  
-let num =4;
+
+let num = 4;
 switch (num) {
   case 1:
     console.log("one");
-    
+
     break;
-    case 2:
-      console.log("two");
-      break;
-      case 3:
-        console.log("three");
-        break;
- default:
-  console.log("any other number here");
-  
+  case 2:
+    console.log("two");
+    break;
+  case 3:
+    console.log("three");
+    break;
+  default:
+    console.log("any other number here");
+
     break;
 }
 
+let letter = "o";
+switch (letter) {
+  case "a":
+  case "e":
+  case "i":
+  case "o":
+  case "u":
+  case "A":
+  case "E":
+  case "I":
+  case "O":
+  case "U":
+    console.log("it is a vowel");
 
+    break;
+
+  default:
+    console.log("it 's not a vowel");
+
+    break;
+}
