@@ -25,3 +25,18 @@ while (numb >=0) {
 }
 console.log('the sum is :', sum);
 
+
+// let value=-1;
+// while (value >=-10) {
+//     console.log(value);
+//     value++
+    
+// }
+
+let v=1;
+do {
+    console.log(v);
+    v++
+    
+} while (v<=5);
+
