@@ -44,14 +44,34 @@ console.log(days);
 
 // console.log(fname);
 
-let day="tuesday";
+// let day="tuesday";
 
-switch (day=="monday") {
-  case "monday":
+// switch (day=="monday") {
+//   case "monday":
+    
+//     break;
+
+//   default:"no one";
+//     break;
+// }
+// console.log(day);
+//********************************************************** */
+  
+let num =4;
+switch (num) {
+  case 1:
+    console.log("one");
     
     break;
-
-  default:"no one";
+    case 2:
+      console.log("two");
+      break;
+      case 3:
+        console.log("three");
+        break;
+ default:
+  console.log("any other number here");
+  
     break;
 }
-console.log(day);
+
