@@ -118,13 +118,34 @@ for (let i = 5; i < name.length; i++) {
 
 
 
-let sum =0;
-let n= 100;
+// let sum =0;
+// let n= 100;
 
-for (let i = 1; i <=n; i++) {
-    sum =sum+i;
-    console.log('sum:', sum);
+// for (let i = 1; i <=n; i++) {
+//     sum =sum+i;
+//     console.log('sum:', sum);
     
     
+// }
+
+
+// for (let i = 1; i <=20; i++) {
+//   console.log(i++);
+  
+  
+// }
+let fname="venkat"
+for (let i = 4; i < fname.length; i++) {
+  console.log(fname[i]);
+  
+  
 }
+
+let value=[]
+for (let i = 0; i <=100; i=i+2) {
+  value.push(i);
+  
+  
+}
+console.log(value);
 
