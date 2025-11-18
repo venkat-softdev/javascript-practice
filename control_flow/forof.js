@@ -15,3 +15,9 @@ for (const  game  of games) {
     console.log("the game name is :", game);
     
 }
+
+const message="hello";
+for (const msg of message) {
+    console.log("the message of letter is :",msg);
+    
+}
