@@ -20,5 +20,15 @@ console.log(details);
 details[1]=23;
 console.log(details[1]);
 
+// example 4 in Array javascript 
+
+let sub=['tamil','english','maths','science','social']
+
+for (let i = 1; i < sub.length; i++) {
+    console.log(sub[i]);
+    
+    
+}
+
 
 
