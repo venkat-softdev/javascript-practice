@@ -47,3 +47,60 @@ for (let i = 0; i <=10; i++) {
    
     
 }
+
+// example 5 in javscript break statement 
+
+for (let i = 0; i < 10; i++) {
+ 
+    if (i==5) {
+        console.log("breaking the loop i:",i);
+        break;
+    }
+    console.log(i);
+    
+    
+}
+
+// example 6 in break statement javascript 
+
+let value=0;
+while (value<10) {
+    if (value==3) {
+        
+        console.log("breaking the loop of value:",value);
+        break;
+        
+    }
+
+   console.log(value);
+   value++
+   
+    
+}
+
+// example 7 in break statement in javascript 
+
+let fruit="mango";
+
+switch (fruit) {
+    case "grape":
+        console.log("mango here");
+        
+        
+        break;
+
+        case "apple":
+            console.log("apple here");
+            break;
+
+            case "orange":
+            console.log("orange here");
+               
+            break;
+            
+
+    default:
+        console.log("you finding fruit not here");
+        
+        break;
+}
