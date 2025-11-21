@@ -20,3 +20,15 @@ for (let i = 0; i <=10; i++) {
     console.log(i);
     
 }
+
+// Example 3 in javasript 
+
+for (let i = 0; i <=20; i++) {
+    
+    if (i==10) {
+        
+        continue;
+    }
+    console.log(i);
+    
+}
