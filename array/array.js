@@ -31,4 +31,13 @@ for (let i = 1; i < sub.length; i++) {
 }
 
 
+// example 5 in array javascript 
+
+const animals=['cat','dog','Bird'];
+console.log(animals);
+
+animals[2]="lion"
+console.table(animals);
+
+
 
