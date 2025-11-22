@@ -74,6 +74,13 @@ console.log(fullword);
 
 // example 9 in string methods in javascript 
 
+const userprofile=['Alex','developer','san franciso','CA','USA'];
+
+let profile=userprofile.join(" |");
+
+console.log(profile);
+
+
 
 
 
