@@ -53,6 +53,48 @@ numbers.num_5=500;
 console.table(numbers);
 
 
+// example 4 in object javascript 
+
+const names={
+    firstname:"venkat",
+    lastname:"developer",
+
+  
+   
+    
+    
+ 
+};
+
+console.log(names);
+
+// example 5 in object javascript 
+
+let car={
+    brand:"toyato",
+    model:"coralla",
+    year:2020,
+    isRunning:false ,
+
+    
+}
+
+console.log(car);
+
+if ( car.isRunning==true) {
+    console.log("buy a car");
+    
+}
+else{
+    console.log("don't buy a car");
+    
+}
+
+
+
+
+
+
 
 
 
