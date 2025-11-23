@@ -48,5 +48,10 @@ console.log(nested);
 console.log(nested[2]);
 console.log(nested,ages[2]);
 
+// example 7 in array javasript 
+
+const numbers=[16,25,36];
+const roots=numbers.map(num=> Math.sqrt(num))
+console.log(roots);
 
 
