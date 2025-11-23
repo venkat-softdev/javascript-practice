@@ -262,3 +262,17 @@ let fname="sandhiya";
 // else {
 //     console.log("wait");
 // }
+
+
+
+let day="sunday";
+
+if (day=="saturaday" && day=="sunday") {
+   console.log(" hey it's weekend");
+    
+  
+}
+else{
+   console.log("hey it's weekday");
+   
+}
