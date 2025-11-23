@@ -32,6 +32,27 @@ person.fname="yuva";
 console.log(person);
 
 
+// example 3 in object javascript
+ 
+let numbers={
+    num_1:50,
+    num_2:40,
+    num_3:30,
+    num_4:20,
+    num_5:10
+}
+
+console.table(numbers);
+
+numbers.num_1=100;
+numbers.num_2=200;
+numbers.num_3=300;
+numbers.num_4=400;
+numbers.num_5=500;
+
+console.table(numbers);
+
+
 
 
 
