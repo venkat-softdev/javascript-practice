@@ -72,5 +72,13 @@ console.log(snacks[snacks.length-3]);
 
 // example 10  array in javascript 
 
+let persons=['venkat','sandy','arish','yuva'];
+
+for (let i= 0; i < persons.length; i++) {
+   console.log(persons[i]);
+   
+    
+}
+
 
 
