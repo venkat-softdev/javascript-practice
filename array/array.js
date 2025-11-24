@@ -79,6 +79,16 @@ for (let i= 0; i < persons.length; i++) {
    
     
 }
+// example 11 in array javascript 
+
+let users=[
+    { name: "venkat",age:19},
+    {name:"yuva",age:15},
+    {name:"arish",age:19}
+];
+
+console.log(users[1]);
+
 
 
 
