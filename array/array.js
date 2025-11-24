@@ -59,4 +59,18 @@ console.log(roots);
 
 let fruit=['apple','orange','Banana','grapes'];
 
-console.log();
+console.log(fruit);
+
+fruit[1]='dragon fruit'
+console.log(fruit);
+
+// example 9 in array javascript 
+let snacks=['Biscuit','choco','Creambiscuit'];
+console.log(snacks[0]);
+console.log(snacks[1]);
+console.log(snacks[snacks.length-3]);
+
+// example 10  array in javascript 
+
+
+
