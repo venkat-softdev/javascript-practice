@@ -55,3 +55,8 @@ const roots=numbers.map(num=> Math.sqrt(num))
 console.log(roots);
 
 
+// example 8 in array 
+
+let fruit=['apple','orange','Banana','grapes'];
+
+console.log();
