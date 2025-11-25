@@ -90,5 +90,9 @@ let users=[
 console.log(users[1]);
 
 
+// example 12 in array javascript 
+
+let a=new Array("venkat",age=9,city="vadalur");
+console.log(a);
 
 
