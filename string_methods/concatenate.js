@@ -80,6 +80,17 @@ let profile=userprofile.join(" |");
 
 console.log(profile);
 
+// example 10 in concatenation in javscript
+
+let firstname="venkatesa";
+let lastname="perumal";
+
+let c=firstname + lastname;
+c=firstname.concat(' ',lastname);
+console.log(c);
+
+
+
 
 
 
