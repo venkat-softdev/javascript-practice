@@ -21,3 +21,23 @@ employe.forEach((value)=>{
 })
 
 // example 3 in for each in array methods
+
+let vegetables=['onion','tomato','potato','cabbage'];
+vegetables.forEach(veges=>{
+    console.log(veges);
+    
+})
+
+// example of using foreach method sum of all elements in array
+
+let numbers=[10,20,30,40,50];
+total=0;
+numbers.forEach(num=>{
+ total=total+num;
+
+
+});
+console.log(total);
+
+
+
