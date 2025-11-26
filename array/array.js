@@ -96,3 +96,5 @@ let a=new Array("venkat",age=9,city="vadalur");
 console.log(a);
 
 
+// example 13 in array  javascript 
+
