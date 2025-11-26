@@ -97,4 +97,6 @@ console.log(a);
 
 
 // example 13 in array  javascript 
-
+ let dress=['shirt','pant','t-shirt','lowyer'];
+ console.log(dress[snacks.length-3]);
+ 
