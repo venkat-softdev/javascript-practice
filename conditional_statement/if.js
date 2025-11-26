@@ -276,3 +276,22 @@ else{
    console.log("hey it's weekday");
    
 }
+
+let name="yuva";
+let books=false;
+
+if (name=="venkat"|| name=="arish" ) {
+   console.log("Yes come in");
+   
+   if (books==true) {
+      console.log("ok good");
+      
+   } else {
+      console.log(" why you not buy a new books");
+      
+   }
+
+} else {
+   console.log("wait a minute");
+   
+}
