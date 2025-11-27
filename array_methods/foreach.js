@@ -57,6 +57,39 @@ students.forEach((members)=>{
    let value=[];
    value.push(name);
    console.log(value);
+
+   // example 5 in foreach 
+
+   let  friends=[];
+   name.forEach(mem=>{
+    friends.push(name)
+    
+   })
+   console.log(friends);
+   // example in for each 
+
+   let num=[1,2,3,4,5];
+
+   let max=num[0];
+   num.forEach(num=>{
+    if (num>max) {
+      max=num
+    }
+   });
+   console.log(max);
+   // example in for each 
+
+   // calculate avg 
+
+   let nums=[10,20,30,40,50];
+   total=0;
+   nums.forEach(nums=>{
+    total=total+nums;
+    
+   })
+   console.log(total/nums.length); 
+   
+   
    
        
 
