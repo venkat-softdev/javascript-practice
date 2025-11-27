@@ -1,95 +1,119 @@
 // for each in array methods in javascript
 
-let persons = ["venkat", "arish", "ram", "sham", "arun", "yuva"];
+// let persons = ["venkat", "arish", "ram", "sham", "arun", "yuva"];
 
-persons.forEach((venkat) => {
-  console.log(venkat);
-});
+// persons.forEach((venkat) => {
+//   console.log(venkat);
+// });
 
-// example 2 in for each in array methods in js
+// // example 2 in for each in array methods in js
 
-let employe = [
-  { name: "venkat", age: 19, city: "vadalur" },
-  { name: "arsih", age: 20, city: "chennai" },
-  { name: "sandy", age: 50, city: "chennai" },
-];
+// let employe = [
+//   { name: "venkat", age: 19, city: "vadalur" },
+//   { name: "arsih", age: 20, city: "chennai" },
+//   { name: "sandy", age: 50, city: "chennai" },
+// ];
 
-employe.forEach((value) => {
-  console.log(value);
-});
+// employe.forEach((value) => {
+//   console.log(value);
+// });
 
-// example 3 in for each in array methods
+// // example 3 in for each in array methods
 
-let vegetables = ["onion", "tomato", "potato", "cabbage"];
-vegetables.forEach((veges) => {
-  console.log(veges);
-});
+// let vegetables = ["onion", "tomato", "potato", "cabbage"];
+// vegetables.forEach((veges) => {
+//   console.log(veges);
+// });
 
-// example of using foreach method sum of all elements in array
+// // example of using foreach method sum of all elements in array
 
-let numbers = [10, 20, 30, 40, 50];
-total = 0;
-numbers.forEach((num) => {
-  total = total + num;
-});
-console.log(total);
+// let numbers = [10, 20, 30, 40, 50];
+// total = 0;
+// numbers.forEach((num) => {
+//   total = total + num;
+// });
+// console.log(total);
 
 
-let students=['venkat','surya','vijay','madhan'];
-students.forEach((members)=>{
-  console.log(members);
+// let students=['venkat','surya','vijay','madhan'];
+// students.forEach((members)=>{
+//   console.log(members);
   
-})
+// })
 
-  // example of using foreach 
+//   // example of using foreach 
  
-   const doublenumbers=[];
-   numbers.forEach(Number=>{
-    doublenumbers.push(Number*2)
-   })
-   console.log(doublenumbers);
+//    const doublenumbers=[];
+//    numbers.forEach(Number=>{
+//     doublenumbers.push(Number*2)
+//    })
+//    console.log(doublenumbers);
 
 
-   // example of for each 
+//    // example of for each 
 
-   let name=["babu","sam",'banu','pothys'];
+//    let name=["babu","sam",'banu','pothys'];
     
-   let value=[];
-   value.push(name);
-   console.log(value);
+//    let value=[];
+//    value.push(name);
+//    console.log(value);
 
-   // example 5 in foreach 
+//    // example 5 in foreach 
 
-   let  friends=[];
-   name.forEach(mem=>{
-    friends.push(name)
+//    let  friends=[];
+//    name.forEach(mem=>{
+//     friends.push(name)
     
-   })
-   console.log(friends);
-   // example in for each 
+//    })
+//    console.log(friends);
+//    // example in for each 
 
-   let num=[1,2,3,4,5];
+//    let num=[1,2,3,4,5];
 
-   let max=num[0];
-   num.forEach(num=>{
-    if (num>max) {
-      max=num
-    }
-   });
-   console.log(max);
-   // example in for each 
+//    let max=num[0];
+//    num.forEach(num=>{
+//     if (num>max) {
+//       max=num
+//     }
+//    });
+//    console.log(max);
+//    // example in for each 
 
-   // calculate avg 
+//    // calculate avg 
 
-   let nums=[10,20,30,40,50];
-   total=0;
-   nums.forEach(nums=>{
-    total=total+nums;
+//    let nums=[10,20,30,40,50];
+//    total=0;
+//    nums.forEach(nums=>{
+//     total=total+nums;
     
-   })
-   console.log(total/nums.length); 
+//    })
+//    console.log(total/nums.length); 
+
+
+// let numbers=[1,2,3,4,5,6,7,8,9,10];
+
+
+// let value=[];
+// numbers.forEach(num=>{
+//   if (num%2===0) {
+//     value.push(num);
+//   }
+// })
+// console.log(value);
+
    
-   
+
+let value=[1,2,3,4,5,6,7,8,9,10];
+
+let number=[];
+
+value.forEach(nums=>{
+  if (nums%3===0) {
+    number.push(nums);
+  }
+})
+console.log(number);
+
    
        
 
@@ -118,9 +142,9 @@ students.forEach((members)=>{
 
 
 
-// let cartoon=['bheem','ben 10','shinchan','doramon'];
+// // let cartoon=['bheem','ben 10','shinchan','doramon'];
 
-// cartoon.forEach((like_that )=>{
-//   console.log(like_that);
+// // cartoon.forEach((like_that )=>{
+// //   console.log(like_that);
   
-// })
+// // })
