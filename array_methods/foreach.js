@@ -53,10 +53,12 @@ students.forEach((members)=>{
    // example of for each 
 
    let name=["babu","sam",'banu','pothys'];
-
+    
+   let value=[];
+   value.push(name);
+   console.log(value);
    
-
-
+       
 
 
 
