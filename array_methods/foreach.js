@@ -33,3 +33,45 @@ numbers.forEach((num) => {
   total = total + num;
 });
 console.log(total);
+
+
+let students=['venkat','surya','vijay','madhan'];
+students.forEach((members)=>{
+  console.log(members);
+  
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let cartoon=['bheem','ben 10','shinchan','doramon'];
+
+cartoon.forEach((like_that )=>{
+  console.log(like_that);
+  
+})
