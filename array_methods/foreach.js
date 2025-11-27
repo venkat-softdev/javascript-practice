@@ -41,6 +41,20 @@ students.forEach((members)=>{
   
 })
 
+  // example of using foreach 
+ 
+   const doublenumbers=[];
+   numbers.forEach(Number=>{
+    doublenumbers.push(Number*2)
+   })
+   console.log(doublenumbers);
+
+
+   // example of for each 
+
+   let name=["babu","sam",'banu','pothys'];
+
+   
 
 
 
@@ -69,9 +83,9 @@ students.forEach((members)=>{
 
 
 
-let cartoon=['bheem','ben 10','shinchan','doramon'];
+// let cartoon=['bheem','ben 10','shinchan','doramon'];
 
-cartoon.forEach((like_that )=>{
-  console.log(like_that);
+// cartoon.forEach((like_that )=>{
+//   console.log(like_that);
   
-})
+// })
