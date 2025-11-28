@@ -52,8 +52,12 @@
     
 // }
 
-let age=19;
-if (age>=20) {
+let age=30;
+
+if (age=>18) {
     console.log("eligible to vote");
+    
+} else {
+    console.log( "not eligible");
     
 }
