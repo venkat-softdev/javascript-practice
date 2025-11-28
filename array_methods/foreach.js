@@ -34,39 +34,37 @@
 // });
 // console.log(total);
 
-
 // let students=['venkat','surya','vijay','madhan'];
 // students.forEach((members)=>{
 //   console.log(members);
-  
+
 // })
 
-//   // example of using foreach 
- 
+//   // example of using foreach
+
 //    const doublenumbers=[];
 //    numbers.forEach(Number=>{
 //     doublenumbers.push(Number*2)
 //    })
 //    console.log(doublenumbers);
 
-
-//    // example of for each 
+//    // example of for each
 
 //    let name=["babu","sam",'banu','pothys'];
-    
+
 //    let value=[];
 //    value.push(name);
 //    console.log(value);
 
-//    // example 5 in foreach 
+//    // example 5 in foreach
 
 //    let  friends=[];
 //    name.forEach(mem=>{
 //     friends.push(name)
-    
+
 //    })
 //    console.log(friends);
-//    // example in for each 
+//    // example in for each
 
 //    let num=[1,2,3,4,5];
 
@@ -77,21 +75,19 @@
 //     }
 //    });
 //    console.log(max);
-//    // example in for each 
+//    // example in for each
 
-//    // calculate avg 
+//    // calculate avg
 
 //    let nums=[10,20,30,40,50];
 //    total=0;
 //    nums.forEach(nums=>{
 //     total=total+nums;
-    
-//    })
-//    console.log(total/nums.length); 
 
+//    })
+//    console.log(total/nums.length);
 
 // let numbers=[1,2,3,4,5,6,7,8,9,10];
-
 
 // let value=[];
 // numbers.forEach(num=>{
@@ -101,50 +97,20 @@
 // })
 // console.log(value);
 
-   
+let value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let value=[1,2,3,4,5,6,7,8,9,10];
+let number = [];
 
-let number=[];
-
-value.forEach(nums=>{
-  if (nums%3===0) {
+value.forEach((nums) => {
+  if (nums % 3 === 0) {
     number.push(nums);
   }
-})
-console.log(number);
-
-   
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
+console.log(numberdddd);
 
 // // let cartoon=['bheem','ben 10','shinchan','doramon'];
 
 // // cartoon.forEach((like_that )=>{
 // //   console.log(like_that);
-  
+
 // // })
