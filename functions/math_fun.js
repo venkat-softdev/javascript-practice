@@ -36,5 +36,23 @@ console.log(f);
 let g=Math.trunc(2.58);
 console.log(g);
 
+// example 8 in math 
+// pow 
+
+let h=Math.pow(3,3);
+console.log(h);
+
+// example 9 in math 
+// min 
+
+let i=Math.min(10,20,30,40,50);
+console.log(i);
+
+// example 10 in math 
+// max 
+
+let j=Math.max(10,20,30,40,50);
+console.log(j);
+
 
 
