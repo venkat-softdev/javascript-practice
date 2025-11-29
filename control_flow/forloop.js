@@ -155,3 +155,8 @@ for (let i = 0; i <value.length; i++) {
   
   
 }
+
+for (let index = 10; index >1; index--) {
+  console.log(index);
+  
+}
