@@ -73,4 +73,10 @@ for (const num of numbers) {
     console.log(num);
     
 }
-// 
+// example 5 in for of loop 
+
+let student=['stud1','stud2','stud3','stud3','stud4'];
+for (const students of student) {
+    console.log("students of :", students);
+    
+}
