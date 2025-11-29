@@ -134,18 +134,24 @@ for (let i = 5; i < name.length; i++) {
   
   
 // }
-let fname="venkat"
-for (let i = 4; i < fname.length; i++) {
-  console.log(fname[i]);
+// let fname="venkat"
+// for (let i = 4; i < fname.length; i++) {
+//   console.log(fname[i]);
+  
+  
+// }
+
+// let value=[]
+// for (let i = 0; i <=100; i=i+2) {
+//   value.push(i);
+  
+  
+// }
+// console.log(value);
+let value=[1,2,3,4,5]
+
+for (let i = 0; i <value.length; i++) {
+  console.log(value[i]*2);
   
   
 }
-
-let value=[]
-for (let i = 0; i <=100; i=i+2) {
-  value.push(i);
-  
-  
-}
-console.log(value);
-
