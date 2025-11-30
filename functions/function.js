@@ -31,4 +31,18 @@ function calculatevalue(num1,num2) {
 }
 console.log(calculatevalue(3,4));
 
+// example 5 in function declarations 
+
+function greetinguser(name,greeting="hello") {
+    
+    return ` ${greetinguser} , ${name} !`;
+}
+console.log(greetinguser("venkat","hi"));
+
+console.log(greetinguser("yuva"));
+
+
+greetinguser()
+
+ // example 6 in function declaration 
  
