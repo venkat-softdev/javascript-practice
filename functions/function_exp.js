@@ -51,10 +51,9 @@ console.log(my_name());
 
 // example 6 in function expression 
 
-let fruits=function () {
-    f=
-    f=fruits
-    return fruits;
+let fruits=function (fruit) {
+  
+    return fruit;
 }
 console.log(fruits('apple','banana'));
 
