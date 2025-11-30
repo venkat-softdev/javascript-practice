@@ -25,4 +25,5 @@ topic4.style.backgroundColor="purple";
 topic4.style.padding="10px";
 topic4.style.borderRadius="20px"
 topic4.style.fontSize="15px"
-topic4.style.fontWeight=700
+topic4.style.fontWeight=700;
+
