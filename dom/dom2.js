@@ -42,4 +42,5 @@ for (let i = 0; i < value.length; i++) {
   value[i].style.fontSize="18px";
   
   
-}
+};
+
