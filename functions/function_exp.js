@@ -40,3 +40,20 @@ const calculator={
 console.log(calculator.add(5,3));
 console.log(calculator.subtract(10,20));
 
+// example 5 in function expresion 
+
+let my_name=function () {
+    my_name="venkat"
+    return my_name;
+}
+
+console.log(my_name());
+
+// example 6 in function expression 
+
+let fruits=function () {
+    f=
+    f=fruits
+    return fruits;
+}
+console.log(fruits('apple','banana'));
