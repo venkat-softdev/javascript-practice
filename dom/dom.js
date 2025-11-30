@@ -16,3 +16,13 @@ topic3.style.fontWeight=700;
 topic3.style.backgroundColor="black"
 topic3.style.padding="15px";
 topic3.style.borderRadius="20px"
+
+const topic4=document.getElementById("js2");
+topic4.innerHTML="In javascript array is a ordered collection of values seprated by commas ";
+topic4.style.marginTop="30px";
+topic4.style.color="#fff";
+topic4.style.backgroundColor="purple";
+topic4.style.padding="10px";
+topic4.style.borderRadius="20px"
+topic4.style.fontSize="15px"
+topic4.style.fontWeight=700
