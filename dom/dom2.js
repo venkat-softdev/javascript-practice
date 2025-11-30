@@ -20,3 +20,16 @@ for (let i = 0; i < introElements.length; i++) {
     introElements[i].style.fontWeight = "bold";
     
 }
+
+
+
+let para=document.getElementsByClassName("venkat");
+
+for (let i = 0; i < para.length; i++) {
+  para[i].textContent="ok venkat now discuss about the topic is DOM ";
+  para[i].style.color="green"
+  para[i].style.fontSize="20px";
+  para[i].style.fontWeight="bold"
+};
+ 
+
