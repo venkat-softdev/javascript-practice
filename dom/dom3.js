@@ -16,3 +16,16 @@
         listitems[4].style.letterSpacing="1px"
     
  }
+
+ let content=document.getElementsByTagName("p")
+ for (let i = 0; i < content.length; i++) {
+   content[i].innerHTML="Yes im here sandy bro"
+   content[0].style.color="blue"
+   content[1].style.color="green"
+   content[2].style.color="teal"
+   content[3].style.color="gold"
+   content[i].style.fontSize="30px";
+   content[i].style.fontWeight=700
+   
+   
+ }
