@@ -81,4 +81,33 @@ greetinguser()
 console.log(member("yuva"));
 
  
+// javascript function arbitary 
 
+function sum() {
+    
+    let total=0;
+    for (let i = 0; i < arguments.length; i++) {
+        total+=arguments[i];
+        
+    }
+    return total;
+
+}
+console.log(sum(10,20));
+
+// javascript function arbitary 
+
+function fruit() {
+    
+ let total=0;
+ for (let i = 0; i < arguments.length; i++) {
+    total=total+arguments[i];
+    
+ }
+ return total;
+ console.log(fruit('apple' +" " +'orange'+ " " +'banana'));
+}
+
+
+
+console.log(fruit());
