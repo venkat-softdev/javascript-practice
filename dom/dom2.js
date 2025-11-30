@@ -33,3 +33,13 @@ for (let i = 0; i < para.length; i++) {
 };
  
 
+
+let value=document.getElementsByClassName("item");
+for (let i = 0; i < value.length; i++) {
+  value [i].textContent="just discuss about the javascript"
+  value[i].style.color="deeppink";
+  value[i].style.fontWeight=600;
+  value[i].style.fontSize="18px";
+  
+  
+}
