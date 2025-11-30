@@ -57,3 +57,17 @@ let fruits=function () {
     return fruits;
 }
 console.log(fruits('apple','banana'));
+
+// example 7 in javascript 
+
+// let students=function (name) {
+//     return  "the students are :"+ name;
+
+// }
+// console.log(students("venkat"));
+// console.log(students("yuvaraj"));
+// console.log(students("aniruth"));
+
+
+
+
