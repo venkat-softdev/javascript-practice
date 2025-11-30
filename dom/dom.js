@@ -27,3 +27,13 @@ topic4.style.borderRadius="20px"
 topic4.style.fontSize="15px"
 topic4.style.fontWeight=700;
 
+
+const topic5=document.getElementById("js3");
+topic5.style.marginTop="20px";
+topic5.style.backgroundColor="deeppink"
+topic5.style.padding="10px";
+topic5.style.borderRadius="10px";
+topic5.style.fontSize="20px";
+topic5.style.fontWeight=600;
+topic5.style.outline="2px";
+topic5.style.border="5px solid black";
