@@ -61,4 +61,24 @@ greetinguser()
  }
  console.log(movie("movie category is:" + "horror"));
  
+ // example 8 in function declarations 
+
+ function member(identity) {
+     
+     if (identity=="venkat") {
+        console.log("i know this man  his name is  :"+ identity);
+        
+     } else {
+        console.log(" i don't know this");
+        
+     }
+     
+     return identity;
+
+     console.log(member("venkat"));
+ }
+
+console.log(member("yuva"));
+
  
+
