@@ -45,4 +45,20 @@ console.log(greetinguser("yuva"));
 greetinguser()
 
  // example 6 in function declaration 
+
+ function students(person) {
+    
+    return person
+ }
+ console.log(students("student 1st is :" + "venkat"));
+
+
+ // example 7 in function in javascript 
+
+ function movie(category) {
+    
+    return category;
+ }
+ console.log(movie("movie category is:" + "horror"));
+ 
  
