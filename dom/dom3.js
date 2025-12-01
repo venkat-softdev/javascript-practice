@@ -29,3 +29,16 @@
    
    
  }
+
+
+ let main=document.getElementsByTagName("h2")
+ for (let i = 0; i < main.length; i++) {
+  main[i].textContent="javascript is a high level interpretd programming language"
+  main[i].style.color="deeppink"
+  main[i].style.fontWeight=500;
+  main[i].style.fontSize="20px";
+  main[2].style.backgroundColor="black";
+  main[2].style.padding="10px";
+  main[2].style.borderRadius="10px"
+  main[2].style.color="#fff"
+ }
