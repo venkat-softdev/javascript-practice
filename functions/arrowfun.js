@@ -35,3 +35,17 @@ let num=[1,2,3,4,5];
 let total=num.reduce((sum,num)=>sum+num,0);
 console.log(total);
 
+
+// example 5 in js 
+
+let createcounter=()=>{
+    count=0;
+    return()=>{
+     count ++
+     return count
+    }
+}
+
+let counter=createcounter();
+console.log(counter());
+console.log(counter());
