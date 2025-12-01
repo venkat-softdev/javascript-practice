@@ -42,3 +42,4 @@
   main[2].style.borderRadius="10px"
   main[2].style.color="#fff"
  }
+ 
