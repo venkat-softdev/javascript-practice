@@ -97,7 +97,11 @@ setTimeout(function () {
 },2000);
 
 
-
+setTimeout(function () {
+    
+    console.log("javascript is a high level interpreted programmin language");
+    
+},5000)
 
 
 
