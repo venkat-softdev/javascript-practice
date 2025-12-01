@@ -89,3 +89,36 @@ setTimeout(function(){
     console.log("this is message after 2 seconds");
     
 },3000);
+
+
+setTimeout(function () {
+    console.log("hi im venkat what's going on");
+    
+},2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setTimeout(function () {
+   
+       console.log("Hi venkat are you there");
+       
+ 
+} 
+,3000)
+
+
