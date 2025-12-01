@@ -8,3 +8,5 @@ value.style.backgroundColor="deeppink";
 value.style.padding="10px";
 value.style.borderRadius="10px"
 value.style.textAlign="center";
+value.style.cursor="pointer"
+value.style.border="4px solid black";
