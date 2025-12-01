@@ -127,15 +127,6 @@ setTimeout(function () {
 
 
 
-function sum(...numbers) {
-    let total=0;
-    for (const number of numbers) {
-        total=total+number;
-    }
-    return total;
-}
-const result=sum(1,2,3,4,5,);
-console.log(result);
 
 
  
