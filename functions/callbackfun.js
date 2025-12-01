@@ -26,3 +26,19 @@ setInterval(() => {
 }, 3000);
 
 // example 5 in javascript 
+ let numbers=[1,2,3,4,5];
+ numbers.forEach(function (number) {
+    console.log(number);
+    
+ });
+
+ // example 6 in settimeout 
+
+ const timeoutid=setTimeout(() => {
+    console.log("this missage will not appear !");
+    
+ }, 8000);
+
+ clearTimeout(timeoutid);
+ console.log("Timeout cancelled");
+ 
