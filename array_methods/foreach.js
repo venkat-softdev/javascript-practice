@@ -97,16 +97,16 @@
 // })
 // console.log(value);
 
-let value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let number = [];
+// let number = [];
 
-value.forEach((nums) => {
-  if (nums % 3 === 0) {
-    number.push(nums);
-  }
-});
-console.log(numberdddd);
+// value.forEach((nums) => {
+//   if (nums % 3 === 0) {
+//     number.push(nums);
+//   }
+// });
+// console.log(numberdddd);
 
 // // let cartoon=['bheem','ben 10','shinchan','doramon'];
 
@@ -114,3 +114,22 @@ console.log(numberdddd);
 // //   console.log(like_that);
 
 // // })
+
+
+
+// for each in array methods 
+
+let members=["venkat","Raju","Ragu",'Kala'];
+
+members.forEach((students,rollno)=>{
+  console.log( "roolno :"+ rollno+ "name:"+students);
+  
+});
+
+
+let fruits=['apple',"orange",'banana','grape','pineapple']
+
+fruits.forEach(fruit =>{
+  console.log(fruit);
+  
+})
