@@ -125,11 +125,29 @@ members.forEach((students,rollno)=>{
   console.log( "roolno :"+ rollno+ "name:"+students);
   
 });
-
+// example 2 in for each
 
 let fruits=['apple',"orange",'banana','grape','pineapple']
 
 fruits.forEach(fruit =>{
   console.log(fruit);
+  
+})
+
+// example 3 in for each
+
+const users=[
+  {fname:"venkat",age:19, city:"vadalur"},
+  {fname:"yuvaraj",age:27, city:"salem"},
+  {fname:"Arun",age:30, city:"chennai"},
+  {fname:"vikram",age:38, city:"villupuram"},
+  {fname:"Arjun",age:23, city:"karur"}
+
+] ;
+
+console.log(users);
+
+users.forEach((members_name)=>{
+  console.log(members_name.fname);
   
 })
