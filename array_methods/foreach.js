@@ -172,4 +172,22 @@ const vegetables=['onion','tomato','garlic','ginger','potato','brinjal'];
 vegetables.forEach((veges)=>{
   console.log(veges);
   
+});
+
+const numbers=[10,20,30,40,50];
+let total=0;
+numbers.forEach((number)=>{
+  total=total+number;
 })
+console.log(total);
+
+// example 5 in array foreach 
+
+let value=[1,2,3,4,5];
+let finalvalue=0;
+
+value.forEach((val)=>{
+  finalvalue+=val*2;
+})
+console.log(finalvalue);
+
