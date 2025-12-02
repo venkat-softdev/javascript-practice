@@ -158,4 +158,9 @@ users.forEach((person_age)=>{
 users.forEach((members_city)=>{
   console.log(members_city.city);
   
-})
+}) 
+
+users.forEach(persons=>{
+  console.log(persons);
+  
+});
