@@ -48,3 +48,16 @@ setInterval(() => {
     console.log("today what");
     
  }, "10000");
+
+ // example 7 in settimeout 
+
+ function mycallback() {
+    console.log("hi im a callback function ");
+    
+ }
+ function caller(mycallback) {
+    mycallback()
+ }
+ caller(mycallback);
+
+ // example 8 in callback function 
