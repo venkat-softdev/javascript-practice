@@ -145,9 +145,17 @@ const users=[
 
 ] ;
 
-console.log(users);
+users.forEach((members)=>{
+  console.log(members.fname);
+  
+})
 
-users.forEach((members_name)=>{
-  console.log(members_name.fname);
+users.forEach((person_age)=>{
+  console.log(person_age.age);
+  
+})
+
+users.forEach((members_city)=>{
+  console.log(members_city.city);
   
 })
