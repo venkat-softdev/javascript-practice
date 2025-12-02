@@ -164,3 +164,12 @@ users.forEach(persons=>{
   console.log(persons);
   
 });
+
+// example 4 in foreach 
+
+const vegetables=['onion','tomato','garlic','ginger','potato','brinjal'];
+
+vegetables.forEach((veges)=>{
+  console.log(veges);
+  
+})
