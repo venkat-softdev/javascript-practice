@@ -61,3 +61,12 @@ setInterval(() => {
  caller(mycallback);
 
  // example 8 in callback function 
+
+ function venkat() {
+    console.log("today whether is nice because it's rainy");
+    
+ }
+ function yuva(venkat) {
+    venkat()
+ }
+ yuva(venkat);
