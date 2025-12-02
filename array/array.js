@@ -90,3 +90,14 @@
 // let dress = ["shirt", "pant", "t-shirt", "lowyer"];
 // console.log(dress[snacks.length - 3]);
 
+
+// example 1 array 
+
+let students=['venkat','sam','ram'];
+console.log(students);
+console.log(students[1]);
+
+// example 2 in array javascript 
+
+let value=[`name: venkat`,`age: 19`,`city:vadalur`]
+console.log(value[0]);
