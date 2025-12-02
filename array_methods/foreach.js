@@ -191,3 +191,29 @@ value.forEach((val)=>{
 })
 console.log(finalvalue);
 
+// example 6 in array for each 
+
+let num=[10,20,30,40,50];
+let doublenum=[];
+
+num.forEach((fnum)=>{
+  console.log(fnum);
+  doublenum.push(fnum*2)
+  
+})
+console.log(doublenum);
+
+// example 7 in array for each 
+
+let peoples=['arish','venkat','yuva','sham','Ram'];
+
+let mem=[];
+
+peoples.forEach((pep)=>{
+  mem.push(pep)
+})
+console.log(mem);
+
+// example 8 in array for each 
+
+
