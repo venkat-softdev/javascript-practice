@@ -252,3 +252,4 @@ oldnum.forEach((lnum)=>{
   }
 })
 console.log(min);
+
