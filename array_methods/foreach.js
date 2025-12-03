@@ -215,10 +215,17 @@ peoples.forEach((pep)=>{
 console.log(mem);
 
 // example 8 in array for each 
-let fnum=[1,2,3,4,5];
+let fnum=[1,2,3,4,5,];
+
 
 fnum.forEach((newval)=>{
   console.log(newval);
+  
+})
+  
+newoutput=[];
+fnum.forEach((newoutput)=>{
+  console.log(newoutput+"venkat");
   
 })
 
