@@ -291,3 +291,21 @@ oldlist.forEach((oddval)=>{
   }
 })
 console.log(newlist);
+
+// example 14 using for each method to update elements 
+// of an array :
+
+let names=['venkat','joes','alice','bob','sham'];
+let nnewname=[]
+
+names.forEach((capname,index)=>{
+
+    names[index]=capname.toUpperCase();
+
+    nnewname.push(capname)
+})
+console.log(names);
+console.log(nnewname);
+
+
+
