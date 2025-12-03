@@ -253,3 +253,15 @@ oldnum.forEach((lnum)=>{
 })
 console.log(min);
 
+// example 11 using the foreach to calculate 
+// the average of an array 
+
+let tnumbers=[10,20,30,40,50];
+total=0
+let newvalue=[];
+tnumbers.forEach((avgvalue)=>{
+  total=total+avgvalue;
+  newvalue.push(avgvalue/tnumbers.length)
+})
+console.log(total/tnumbers.length);
+
