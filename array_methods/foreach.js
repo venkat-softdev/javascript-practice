@@ -265,3 +265,15 @@ tnumbers.forEach((avgvalue)=>{
 })
 console.log(total/tnumbers.length);
 
+// example 12 using for each to list of 
+// num only a even numbers
+
+let list=[1,2,3,4,5,6,7,8,9,10];
+let updatedlist=[];
+
+list.forEach((evenval)=>{
+  evenval % 2==0;
+    updatedlist.push(evenval);
+})
+console.log(updatedlist);
+
