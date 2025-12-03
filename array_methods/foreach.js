@@ -229,3 +229,26 @@ fnum.forEach((newoutput)=>{
   
 })
 
+// example 9 in foreach in array method 
+// find max number of an array;
+
+let newnumber=[100,200,300,400,500];
+let max=newnumber[0];
+newnumber.forEach((number)=>{
+  if (number>max) {
+    max=number;
+  }
+})
+console.log(max);
+
+// example 10 in foreach in array methods
+// find min num of array 
+
+let oldnum=[600,700,80,900,1000]
+let min=oldnum[0];
+oldnum.forEach((lnum)=>{
+  if (lnum<min) {
+    min=lnum;
+  }
+})
+console.log(min);
