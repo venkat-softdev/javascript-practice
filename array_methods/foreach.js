@@ -272,8 +272,22 @@ let list=[1,2,3,4,5,6,7,8,9,10];
 let updatedlist=[];
 
 list.forEach((evenval)=>{
-  evenval % 2==0;
-    updatedlist.push(evenval);
-})
+  
+    if (evenval%2===0) {
+      updatedlist.push(evenval)
+    }
+});
 console.log(updatedlist);
 
+// example 13 using for each
+//  to list of num of find a odd numbers
+
+let oldlist=[1,2,3,4,5,6,7,8,9,10];
+let newlist=[];
+
+oldlist.forEach((oddval)=>{
+  if (oddval%3==0) {
+    newlist.push(oddval)
+  }
+})
+console.log(newlist);
