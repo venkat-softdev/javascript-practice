@@ -1,0 +1,1 @@
+// map method in javascript array methods 
