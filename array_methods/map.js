@@ -8,3 +8,15 @@ sqrt=numbers.map((values)=>{
     sqrt.push(value)
 })
 console.table(sqrt);
+
+// map method example 2 
+
+let num=[10,20,30,40,50];
+console.log(num);
+
+let newnum=[];
+newnum=num.map((nvalue)=>{
+    return nvalue*2
+    newnum.push(nvalue);
+})
+console.log(newnum);
