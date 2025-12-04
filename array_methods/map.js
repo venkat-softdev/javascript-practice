@@ -115,3 +115,16 @@ let numvalues=values.map((newvalue)=>{
     return newvalue %2==0 ? "correct than": "ithu wrong hu";
 })
 console.table(numvalues);
+
+// example 9 in map methods extracting array 
+
+const fmembers=[
+    {name:'venkat',age:19,city:"vadalur"},
+    {name:"yuva",age:15,city:"neyveli"},
+    {name:'sham',age:20,city:"chennai"}
+];
+
+let updatedlist =fmembers.map((username)=>{
+    return  "name is :"+username.name 
+});
+console.table(updatedlist);
