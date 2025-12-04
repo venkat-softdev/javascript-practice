@@ -93,3 +93,16 @@ let fruitcolors=fruits.map((fruit,index)=>{
     return fruit + "-"+ colors[index].toUpperCase();
 })
 console.log(fruitcolors);
+
+// example 7 map methods in 
+// array combining two arrays
+
+let members_name=['venkat','sandy','arish'];
+let members_age=[19,27,19];
+let members_city=['vadalur','panruti','vadalur'];
+
+let allmembers=members_name.map((mname,index)=>{
+
+    return mname +"-"+ "age is :"+ members_age[index] + "-"+ "city is:"+members_city[index]
+});
+console.log(allmembers);
