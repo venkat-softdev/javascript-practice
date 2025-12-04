@@ -106,3 +106,7 @@ let allmembers=members_name.map((mname,index)=>{
     return mname +"-"+ "age is :"+ members_age[index] + "-"+ "city is:"+members_city[index]
 });
 console.log(allmembers);
+
+
+// example 8 in map methods array js
+
