@@ -62,3 +62,23 @@ let updateval=persons.map((users)=>({
     status:users.name.length>5?"eligible":"not eligible"
 }))
 console.table(updateval);
+
+// example 4 in map methods given numbers multiple by 2
+
+let fnum=[1,2,3,4,5];
+let doublenum=fnum.map((val)=>{
+   return val*2
+ 
+ 
+})
+console.log(doublenum);
+
+
+// example 5 in map array methods 
+let letters=['venkat','yuvaraj','joes'];
+capletter=letters.map((letter)=>{
+    
+    return letter.toUpperCase()
+})
+
+console.log(capletter);
