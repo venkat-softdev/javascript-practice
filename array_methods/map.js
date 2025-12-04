@@ -82,3 +82,14 @@ capletter=letters.map((letter)=>{
 })
 
 console.log(capletter);
+
+//example 6 in map function array methods 
+// combining two arrays 
+
+let fruits=['apple','banana','grape'];
+let colors=['red','yellow','purple'];
+
+let fruitcolors=fruits.map((fruit,index)=>{
+    return fruit + "-"+ colors[index].toUpperCase();
+})
+console.log(fruitcolors);
