@@ -110,3 +110,8 @@ console.log(allmembers);
 
 // example 8 in map methods array js
 
+const values=[1,2,3,4,5];
+let numvalues=values.map((newvalue)=>{
+    return newvalue %2==0 ? "correct than": "ithu wrong hu";
+})
+console.table(numvalues);
