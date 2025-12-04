@@ -39,6 +39,26 @@ let eligible_members=members.map((user)=>({
     city:user.city,
     salary:user.salary,
     satutus:user.age>18?"eligible":"not eligible"
+
+    
 }));
 
 console.table(eligible_members);
+
+// example 4 in map method array js
+
+
+
+let persons = [
+  { name: "Vijay", age: 19, city: "vadalur", salary: 10000 },
+  { name: "Kumaran", age: 15, city: "karur", salary: 8000 },
+  { name: "sandy", age: 27, city: "chennai", salary: 30000 },
+  { name: "kamu", age: 32, city: "goa", salary: 23000 },
+  { name: "Raman", age: 30, city: "kerala", salary: 26000 },
+];
+
+let updateval=persons.map((users)=>({
+    ...users,
+    status:users.name.length>5?"eligible":"not eligible"
+}))
+console.table(updateval);
