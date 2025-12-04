@@ -17,3 +17,19 @@ var b=20;
 
 let mul=a*b;
 console.log(mul);
+
+// example 4 in variables 
+
+let firstname="venkatesa";
+let lastname="perumal";
+let fullname=firstname+lastname;
+console.log(fullname);
+
+// example 5 in variables 
+
+var a=10;
+var b=20;
+var sub=a-b;
+console.log(sub);
+
+
