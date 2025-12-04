@@ -25,8 +25,20 @@ console.log(newnum);
 
 let members = [
   { name: "venkat", age: 19, city: "vadalur", salary: 10000 },
-  { name: "venkat", age: 19, city: "vadalur", salary: 10000 },
-  { name: "venkat", age: 19, city: "vadalur", salary: 10000 },
-  { name: "venkat", age: 19, city: "vadalur", salary: 10000 },
-  { name: "venkat", age: 19, city: "vadalur", salary: 10000 },
+  { name: "yuvaraj", age: 15, city: "karur", salary: 8000 },
+  { name: "shan", age: 27, city: "chennai", salary: 30000 },
+  { name: "Ramesh", age: 32, city: "goa", salary: 23000 },
+  { name: "Ram", age: 30, city: "kerala", salary: 26000 },
 ];
+console.log(members);
+
+let eligible_members=members.map((user)=>({
+
+    name:user.name,
+    age:user.age,
+    city:user.city,
+    salary:user.salary,
+    satutus:user.age>18?"eligible":"not eligible"
+}));
+
+console.table(eligible_members);
