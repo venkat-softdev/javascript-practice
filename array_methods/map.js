@@ -128,3 +128,6 @@ let updatedlist =fmembers.map((username)=>{
     return  "name is :"+username.name 
 });
 console.table(updatedlist);
+
+
+// example 10 in map methods in array in js
