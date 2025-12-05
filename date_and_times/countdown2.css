@@ -11,4 +11,39 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    color: #fff;
+    background-image: url('./bg\ image\ 3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.birthday{
+    font-size: 70px;
+    font-family: 'inspiration';
+    margin-top: 30px;
+}
+.box{
+    text-align: center;
+    width: 80px;
+    height: 80px;
+   
+}
+.box h2{
+    font-size: 25px;
+    font-weight: 500;
+}
+.box small{
+    font-size: 13px;
 }
