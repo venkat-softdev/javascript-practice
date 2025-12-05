@@ -15,10 +15,13 @@ body{
     flex-direction: column;
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     color: #fff;
-    background-image: url('./bg\ image.jpg');
+    background-image: url('./bg\ 2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    user-select: none;
+    cursor: pointer;
+    
 }
 
 .counter{
