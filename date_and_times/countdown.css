@@ -52,4 +52,53 @@ p{
 }
 
 
+@media (min-width:576px) {
+    
+    .newyear{
+        font-size: 60px;
+    }
+    
+    p{
+        font-size: 18px;
+    }
+
+    .box h2{
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .box{
+        width: 100px;
+        height: 70px;
+       
+    }
+    .box small{
+        font-size: 15px;
+    }
+}
  
+
+
+
+@media (min-width:768px) {
+    
+    .newyear{
+        font-size: 150px;
+    }
+
+    p{
+        font-size: 25px;
+    }
+    .box h2{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .box {
+        width: 130px;
+        height: 100px;
+       
+    }
+    .box small{
+        font-size: 20px;
+    }
+}
