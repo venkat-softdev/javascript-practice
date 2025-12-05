@@ -8,7 +8,20 @@
 
 // example 1 in dates and time in javascript 
 
-const currentdate=new Date();
+let  currentdate=new Date();
 console.log(currentdate);
 
 // example 2 in date and times in js
+
+currentdate=new Date();
+const year=currentdate.getFullYear();
+const nextyear=currentdate.getFullYear() + 1;
+const month = currentdate.getMonth()+1;
+const day=currentdate.getDate();
+const hours=currentdate.getHours();
+const minutes= currentdate.getMinutes();
+const seconds=currentdate.getSeconds();
+
+console.log("current Date:"+ nextyear +"-" + month + "-" + day);
+console.log("current Time :" + hours +"-" + minutes +"-" +seconds);
+
