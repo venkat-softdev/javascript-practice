@@ -11,7 +11,7 @@ const seconds=document.querySelector("#seconds");
 
     function birthday() {
         const currentyear=new Date().getFullYear();
-    const newyear=new Date(`july 19 ${currentyear + 1} 00:00:00`)
+    const newyear=new Date(`september 3 ${currentyear + 1} 00:00:00`)
     const currentDate=new Date()
     const difference=newyear-currentDate;
     const day=Math.floor(difference/1000/60/60/24);
