@@ -47,3 +47,45 @@ p{
 .box small{
     font-size: 13px;
 }
+
+@media (min-width:576px) {
+    
+    p{
+        font-size: 20px;
+    }
+    .birthday{
+        font-size: 80px;
+    }
+    .box h2{
+        font-size: 25px;
+    }
+    .box small{
+        font-size: 20px;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+    }
+   
+}
+
+@media (min-width:768px) {
+    
+    p{
+        font-size: 30px;
+    }
+
+    .birthday{
+        font-size: 100px;
+    }
+    .box h2{
+        font-size: 30px;
+    }
+    .box small{
+        font-size: 30px;
+    }
+    .box{
+        width: 150px;
+        height: 150px;
+    }
+}
