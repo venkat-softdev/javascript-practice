@@ -21,7 +21,7 @@ const seconds=document.querySelector("#seconds");
    
     days.innerHTML=day<10?"0"+day:day;
     hours.innerHTML=hour<10?"0"+hour:hour;
-    minutes.innerHTML=minute<10?"0"+minute:minute;
+    minutes.innerHTML=minute<10?"0"+minute:minute; 
     seconds.innerHTML=second<10?"0"+second:second;
    
     
