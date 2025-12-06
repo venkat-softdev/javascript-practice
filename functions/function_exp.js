@@ -1,80 +1,80 @@
 // function expression in javascript 
 
-// let add=function(a,b) {
-//     a=10;
-//     b=20;
-//     return a+b;
-// }
+let add=function(a,b) {
+    a=10;
+    b=20;
+    return a+b;
+}
 
-// console.log(add());
+console.log(add());
 
-// // example 2 in function expression 
-
-// const welcome=function (name) {
-    
-//     return "hi hello :"+ name;
-// }
-// console.log(welcome("venkat"));
-
-// // example 3 in function expression 
-
-// const factorial =function calculate(n){
-//     if (n<=1) {
-//         return 1;
-//     }
-//     return n* calculate(n-1);
-// }
-// console.log(factorial(1));
-
-// // example 4 in function expression 
-
-// const calculator={
-//     add :function(a,b){
-//         return a+b;
-//     },
-//     subtract: function (a,b) {
-//         return a-b;
-//     }
-// };
-
-// console.log(calculator.add(5,3));
-// console.log(calculator.subtract(10,20));
-
-// // example 5 in function expresion 
-
-// let my_name=function () {
-//     my_name="venkat"
-//     return my_name;
-// }
-
-// console.log(my_name());
-
-// // example 6 in function expression 
-
-// let fruits=function (fruit) {
-  
-//     return fruit;
-// }
-// console.log(fruits('apple','banana'));
-
-// // example 7 in javascript 
-
-// // let students=function (name) {
-// //     return  "the students are :"+ name;
-
-// // }
-// // console.log(students("venkat"));
-// // console.log(students("yuvaraj"));
-// // console.log(students("aniruth"));
-
-
-
+// example 2 in function expression 
 
 const welcome=function (name) {
-    console.log( "hello"+" "+ name);
     
+    return "hi hello :"+ name;
 }
-welcome("venkat")
+console.log(welcome("venkat"));
+
+// example 3 in function expression 
+
+const factorial =function calculate(n){
+    if (n<=1) {
+        return 1;
+    }
+    return n* calculate(n-1);
+}
+console.log(factorial(1));
+
+// example 4 in function expression 
+
+const calculator={
+    add :function(a,b){
+        return a+b;
+    },
+    subtract: function (a,b) {
+        return a-b;
+    }
+};
+
+console.log(calculator.add(5,3));
+console.log(calculator.subtract(10,20));
+
+// example 5 in function expresion 
+
+let my_name=function () {
+    my_name="venkat"
+    return my_name;
+}
+
+console.log(my_name());
+
+// example 6 in function expression 
+
+let fruits=function (fruit) {
+  
+    return fruit;
+}
+console.log(fruits('apple','banana'));
+
+// example 7 in javascript 
+
+// let students=function (name) {
+//     return  "the students are :"+ name;
+
+// }
+// console.log(students("venkat"));
+// console.log(students("yuvaraj"));
+// console.log(students("aniruth"));
+
+
+
+
+// const welcome=function (name) {
+//     console.log( "hello"+" "+ name);
+    
+// }
+// welcome("venkat")
 
 // example 2 in function expresssion 
 
