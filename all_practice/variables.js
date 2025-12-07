@@ -45,3 +45,9 @@ else{
     console.log("get out the class");
     
 }
+// example 7 in variables 
+
+let value=36;
+  updated_value=Math.sqrt(value);
+  another=Math.floor(updated_value)
+console.log(another);
