@@ -33,3 +33,15 @@ var sub=a-b;
 console.log(sub);
 
 
+// example 6 in variables 
+
+let name="venkat"
+if (name=="venkat"|| name=="yuvaraj") {
+    
+    console.log("come in the class");
+    
+}
+else{
+    console.log("get out the class");
+    
+}
