@@ -80,3 +80,19 @@ console.log(isloggedin);
 
 
 
+// example 10 in variables 
+ 
+const product={
+    name:"Laptop",
+    price:999.99,
+    instock:true,
+    tags:['electronics','computers','sale']
+};
+
+console.log(product);
+
+// example 11 in varibles
+
+ let totalcost=50+25*2;
+ console.log(totalcost);
+ 
