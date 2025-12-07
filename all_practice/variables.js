@@ -51,3 +51,32 @@ let value=36;
   updated_value=Math.sqrt(value);
   another=Math.floor(updated_value)
 console.log(another);
+
+// example 8 in variables 
+
+const user={
+    firstname:"venkat",
+    lastname:"vp",
+    age:20,
+    isverfied:false
+}
+
+console.table(user);
+
+// example 9 in variables 
+
+let userscore=0;
+let username ="guest";
+let isloggedin=false;
+let lastloginDate= new Date();
+
+userscore=100;
+username="Alice";
+isloggedin=true;
+
+console.log(username);
+console.log(userscore);
+console.log(isloggedin);
+
+
+
