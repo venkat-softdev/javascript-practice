@@ -380,4 +380,20 @@ console.log(recentvalue);
     
   })
   console.log(minimum);
+
+  // example 20 in for each method array 
+
+  const defvalue=[100,200,300,400,500,600,700,800,900,1000];
+
+  let maximum=defvalue[0]
+
+  defvalue.forEach((maxi)=>{
+    if (maxi> maximum) {
+      
+      maximum=maxi;
+    }
+  })
+  console.log(maximum);
   
+  
+ 
