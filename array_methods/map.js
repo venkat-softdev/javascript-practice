@@ -150,3 +150,13 @@ newcustomers=customers.map((ff)=>{
 console.table(newcustomers);
 
 
+// example 11 in map methods in arrays methods 
+
+let sumlist=[1,2,3,4,5,6,7,8,9,10];
+
+let newsum=sumlist.map((newmap)=>{
+
+ return newmap%3==0? "mod agum":"mod agathu"
+
+})
+console.table(newsum);
