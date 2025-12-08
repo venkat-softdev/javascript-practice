@@ -348,3 +348,19 @@ new_sentence.push(sent);
 console.log(sentence);
 console.log(new_sentence + " " + "in javascript ");
 
+
+// example 18 in array methods 
+
+let oldvalue=[1,2,3,4,5,6,7,8,9,10];
+
+console.log(oldvalue);
+
+let recentvalue=[];
+
+oldvalue.forEach((upvalue)=>{
+  if (upvalue % 2==0) {
+    
+    recentvalue.push(upvalue)
+  }
+})
+console.log(recentvalue);
