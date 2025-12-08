@@ -131,3 +131,4 @@ console.table(updatedlist);
 
 
 // example 10 in map methods in array in js
+
