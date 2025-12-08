@@ -364,3 +364,20 @@ oldvalue.forEach((upvalue)=>{
   }
 })
 console.log(recentvalue);
+
+
+// example 19 in for each method array 
+
+ const findvalue=[100,200,300,400,500,600,700];
+  let  minimum=findvalue[0];
+
+  
+
+  findvalue.forEach((define)=>{
+    if (define<minimum) {
+      minimum=define;
+    }
+    
+  })
+  console.log(minimum);
+  
