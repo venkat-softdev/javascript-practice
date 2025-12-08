@@ -132,3 +132,21 @@ console.table(updatedlist);
 
 // example 10 in map methods in array in js
 
+let customers=[
+
+  { name:'venkat',age:19,city:'vadalur'},
+  {name:'yuvaraj' ,age :15,city:'chennai'},
+  {name:'arish',age:20,city:'salem'},
+  {name : 'sandy ',age:30,city:'panruti'},
+  {name:'bobby',age:26,city:'karur'}
+]
+
+newcustomers=customers.map((ff)=>{
+
+ 
+  return  " the city is "+ ff.city;
+
+})
+console.table(newcustomers);
+
+
