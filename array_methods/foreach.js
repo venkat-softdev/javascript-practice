@@ -331,3 +331,20 @@ oldveges.forEach((veges)=>{
   newveges.push(veges);
 })
 console.log(newveges + " " + "dragon fruit");
+
+
+// example 17 in for each array methods 
+
+let sentence=[" hi guys now discuss about the topic is array for each methods"];
+
+let new_sentence=[];
+
+sentence.forEach((sent)=>{
+  sentence=sent.toUpperCase();
+
+new_sentence.push(sent);
+})
+
+console.log(sentence);
+console.log(new_sentence + " " + "in javascript ");
+
