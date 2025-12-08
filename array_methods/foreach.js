@@ -396,4 +396,4 @@ console.log(recentvalue);
   console.log(maximum);
   
   
- 
+ // example 21 in for each in array 
