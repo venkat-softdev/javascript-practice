@@ -310,3 +310,13 @@ console.log(nnewname);
 
 
 
+// example 15 in for each  array methods 
+
+let numlist=[10,20,30,40,50];
+console.log(numlist);
+
+numlist.forEach((newlist)=>{
+
+  console.log(newlist +2);
+})
+
