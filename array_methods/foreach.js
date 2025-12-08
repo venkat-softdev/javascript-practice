@@ -320,3 +320,8 @@ numlist.forEach((newlist)=>{
   console.log(newlist +2);
 })
 
+
+// example 16 in for each array methods 
+
+let oldveges=['onion','banana','tomato','orange','brinjal'];
+
