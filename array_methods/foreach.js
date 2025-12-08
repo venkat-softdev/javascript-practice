@@ -325,3 +325,9 @@ numlist.forEach((newlist)=>{
 
 let oldveges=['onion','banana','tomato','orange','brinjal'];
 
+let newveges=[];
+
+oldveges.forEach((veges)=>{
+  newveges.push(veges);
+})
+console.log(newveges + " " + "dragon fruit");
