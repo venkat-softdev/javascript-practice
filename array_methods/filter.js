@@ -65,19 +65,19 @@ let fruits = [
   { name: "Brinjal", category: "vegetables" },
 ];
 
-let list=fruits.filter((item)=>{
-    return item.category=='fruit'
-})
+let list = fruits.filter((item) => {
+  return item.category == "fruit";
+});
 
 console.table(list);
 
-// example 7  filter in array methods 
+// example 7  filter in array methods
 
-let animals=['elephant','tiger','lion','deer','t-rex'];
+let animals = ["elephant", "tiger", "lion", "deer", "t-rex"];
 
-let find=animals.filter((animal)=>{
-    return animal.startsWith('t')
-})
+let find = animals.filter((animal) => {
+  return animal.startsWith("t");
+});
 console.log(find);
 
-// example 8 filter in array methods 
+// example 8 filter in array methods
