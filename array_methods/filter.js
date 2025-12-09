@@ -41,17 +41,26 @@ let avg = [
   { name: "kamal", mark: "56%" },
 ];
 
-let updatevalue=avg.filter((marks)=>{
-    return marks.mark<'80%'
+let updatevalue = avg.filter((marks) => {
+  return marks.mark < "80%";
 });
 console.table(updatevalue);
 
-// example 5 in filter in array methods 
+// example 5 in filter in array methods
 
-let pets=['dogs','cats','rats','squrill','cows'];
+let pets = ["dogs", "cats", "rats", "squrill", "cows"];
 
-let newpets=pets.filter((pet)=>{
-    return pet.length==4
-})
+let newpets = pets.filter((pet) => {
+  return pet.length == 4;
+});
 console.log(newpets);
 
+// example 6 in filter method javascript
+
+let fruits = [
+  { name: "apple", category: "fruit" },
+  { name: "apple", category: "fruit" },
+  { name: "apple", category: "fruit" },
+  { name: "apple", category: "fruit" },
+  { name: "apple", category: "fruit" },
+];
