@@ -70,3 +70,14 @@ let list=fruits.filter((item)=>{
 })
 
 console.table(list);
+
+// example 7  filter in array methods 
+
+let animals=['elephant','tiger','lion','deer','t-rex'];
+
+let find=animals.filter((animal)=>{
+    return animal.startsWith('t')
+})
+console.log(find);
+
+// example 8 filter in array methods 
