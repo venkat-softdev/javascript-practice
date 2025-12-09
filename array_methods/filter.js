@@ -45,3 +45,13 @@ let updatevalue=avg.filter((marks)=>{
     return marks.mark<'80%'
 });
 console.table(updatevalue);
+
+// example 5 in filter in array methods 
+
+let pets=['dogs','cats','rats','squrill','cows'];
+
+let newpets=pets.filter((pet)=>{
+    return pet.length==4
+})
+console.log(newpets);
+
