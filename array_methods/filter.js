@@ -59,8 +59,14 @@ console.log(newpets);
 
 let fruits = [
   { name: "apple", category: "fruit" },
-  { name: "apple", category: "fruit" },
-  { name: "apple", category: "fruit" },
-  { name: "apple", category: "fruit" },
-  { name: "apple", category: "fruit" },
+  { name: "tomato", category: "vegetables" },
+  { name: "orange", category: "fruit" },
+  { name: "grape", category: "fruit" },
+  { name: "Brinjal", category: "vegetables" },
 ];
+
+let list=fruits.filter((item)=>{
+    return item.category=='fruit'
+})
+
+console.table(list);
