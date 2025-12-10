@@ -88,3 +88,14 @@ console.log(product);
 
 let totalcost = 50 + 25 * 2;
 console.log(totalcost);
+
+// example 12 in variable 
+
+let values=[1,2,3,4,5];
+
+let nextvalue=values.forEach((newval)=>{
+
+  
+  return 
+})
+console.log(nextvalue);
