@@ -88,3 +88,5 @@ let newbirds=birds.filter((bird)=>{
   return bird.length>5
 })
 console.table(newbirds);
+
+ 
