@@ -90,3 +90,11 @@ let newbirds=birds.filter((bird)=>{
 console.table(newbirds);
 
  
+// example 9 in filter array methods 
+
+let languages=['Tamil','English','Marathi','Arabi','japanese','chinese'];
+
+let anotherlanguage=languages.filter((language)=>{
+  return language.endsWith('e')
+})
+console.log(anotherlanguage);
