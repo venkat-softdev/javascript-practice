@@ -81,3 +81,10 @@ let find = animals.filter((animal) => {
 console.log(find);
 
 // example 8 filter in array methods
+
+let birds=['peacock','pegion','Dove','eagle','kingfisher'];
+
+let newbirds=birds.filter((bird)=>{
+  return bird.length>5
+})
+console.table(newbirds);
