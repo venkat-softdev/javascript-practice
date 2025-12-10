@@ -16,3 +16,4 @@ let nestedvalue=values.reduce((val,currentvalue)=>{
     return val.concat(currentvalue);
 })
 console.log(nestedvalue);
+
