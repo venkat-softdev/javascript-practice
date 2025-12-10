@@ -19,3 +19,15 @@ console.log(nestedvalue);
 
 
 // example 3 in reduce array methods 
+
+ const products=[
+    {name:'shirt',price:20},
+    {name:'shoes',price:50},
+    {name:'Hat',price:15}
+ ];
+
+ let totalprice=products.reduce((total,product)=>{
+    return total+ product.price
+ },0)
+ console.log(totalprice);
+ 
