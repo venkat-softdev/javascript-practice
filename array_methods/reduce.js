@@ -18,3 +18,4 @@ let nestedvalue=values.reduce((val,currentvalue)=>{
 console.log(nestedvalue);
 
 
+// example 3 in reduce array methods 
