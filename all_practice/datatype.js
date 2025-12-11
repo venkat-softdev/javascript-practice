@@ -37,5 +37,20 @@ console.log(typeof c,c);
  console.log(array);
  console.log(array[0]);
  
+ // object type 
+
+ let person2={
+
+    name:'venkat',
+    age:19,
+    city:'vadalur',
+    isstudent:true
+ }
+ console.log(person2);
+ console.log(person2.name);
+ console.log(person2.age);
+ 
+ 
+ 
  
  
