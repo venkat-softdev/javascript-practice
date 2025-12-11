@@ -48,3 +48,4 @@ let person2 = {
 console.log(person2);
 console.log(person2.name);
 console.log(person2.age);
+
