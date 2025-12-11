@@ -11,3 +11,10 @@ console.log(typeof c,c);
  console.log(typeof name,name);
  
  // Boolean type 
+
+ let person='venkat';
+ let isstudent=true;
+ console.log(typeof person,person);
+ console.log(typeof isstudent,isstudent);
+ 
+ 
