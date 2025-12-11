@@ -24,4 +24,18 @@ console.log(typeof c,c);
  items=null;
  console.log(items);
  
+ // undefined 
+
+ console.log(list);
+
+ var list=['apple','orange','mango'];
+
+ // array 
+
+ let array=['venkat','arish','paratha',22];
+
+ console.log(array);
+ console.log(array[0]);
+ 
+ 
  
