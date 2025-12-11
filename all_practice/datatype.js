@@ -17,4 +17,11 @@ console.log(typeof c,c);
  console.log(typeof person,person);
  console.log(typeof isstudent,isstudent);
  
+ // Null type 
+
+ let items=['venkat',19,'vadalur'];
+
+ items=null;
+ console.log(items);
+ 
  
