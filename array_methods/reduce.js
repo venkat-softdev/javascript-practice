@@ -40,5 +40,17 @@ console.log(nestedvalue);
  console.log(nextvalue);
 
  // example 5 in reduce method 
- 
+
+ let colors=['red','green','yellow','red','blue','green','blue'];
+
+ let colorscount=colors.reduce((accumulator,currentvalue)=>{
+    if (currentvalue in accumulator) {
+        accumulator[currentvalue]++;
+    }
+    else{
+        accumulator[currentvalue]=1
+    }
+    return accumulator
+ },[])
+ console.log(colorscount);
  
