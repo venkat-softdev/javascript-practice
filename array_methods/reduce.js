@@ -31,4 +31,11 @@ console.log(nestedvalue);
  },0)
  console.log(totalprice);
  
+ // example 4 in reduce method 
+
+ let nestedvalues=[[10,20],[30,40],[50,60]];
+ let nextvalue=nestedvalues.reduce((total,tval)=>{
+     return total.concat(tval);
+ })
+ console.log(nextvalue);
  
