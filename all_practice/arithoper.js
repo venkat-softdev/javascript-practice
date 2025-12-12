@@ -26,7 +26,7 @@ console.log(b--);
 let name='venkat';
 let age=19;
 let content=name+age;
-console.log(content);
+console.log(content); 
 
 
 
