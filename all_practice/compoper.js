@@ -17,3 +17,16 @@ if (person_age>18) {
     console.log('not eligible to applly job ');
     
 }
+
+// example 3 in comparison operator 
+
+let person='venkat';
+let personage=16;
+
+if (person=='venkat' && personage>18) {
+    console.log('welcome sir');
+    
+} else {
+    console.log('sorry sir i dont know who you are');
+    
+}
