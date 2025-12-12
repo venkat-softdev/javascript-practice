@@ -64,6 +64,24 @@ console.log(nestedvalue);
 
  console.log(largest);
 
+ // example 7 in reduce method array 
+
+ let peoples=[
+    {name:'venkat',age:19,city:'vadalur'},
+    {name:'nisha',age:28,city:'chennai'},
+    {name:'vasu',age:30,city:'vadalur'}
+ ];
+
+ let groupedbycity=peoples.reduce((total,cvalue)=>{
+    if (cvalue in total) {
+        total[cvalue.city].push(cvalue)
+    }
+    else{
+        total[cvalue.city]=[cvalue]
+    }
+    return total
+ },{})
+ console.log(groupedbycity);
  
  
 
