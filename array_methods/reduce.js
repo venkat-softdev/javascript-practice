@@ -82,6 +82,6 @@ console.log(nestedvalue);
     return total
  },{})
  console.log(groupedbycity);
- 
+  
  
 
