@@ -21,6 +21,12 @@ console.log(b--);
 
 
 
+// example 3 in arithmetic operator 
+
+let name='venkat';
+let age=19;
+let content=name+age;
+console.log(content);
 
 
 
