@@ -13,7 +13,7 @@ let b= 50;
 console.log(a-b);
 console.log(a*b);
 console.log(a/b);
-console.log(a%B);
+console.log(a%b);
 console.log(a++);
 console.log(a--);
 console.log(b++);
