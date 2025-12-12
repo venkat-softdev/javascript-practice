@@ -38,4 +38,7 @@ console.log(nestedvalue);
      return total.concat(tval);
  })
  console.log(nextvalue);
+
+ // example 5 in reduce method 
+ 
  
