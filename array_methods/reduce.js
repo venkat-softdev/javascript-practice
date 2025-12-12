@@ -54,3 +54,14 @@ console.log(nestedvalue);
  },[])
  console.log(colorscount);
  
+ // example 6 in reduce method 
+
+ let num=[55,10,15,20,25];
+
+ let largest=num.reduce((total,numvalue)=>{
+    return Math.max(total,numvalue)
+ },);
+
+ console.log(largest);
+ 
+
