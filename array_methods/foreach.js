@@ -414,4 +414,6 @@ console.log(recentvalue);
  fruitsitems.forEach((fruit)=>{
   console.log(fruit);
   
- })
+ });
+
+ // example 23 in for each in array methods 
