@@ -407,3 +407,11 @@ console.log(recentvalue);
  });
  console.log(next_list);
  
+ // example 22 in for each in array 
+
+ let fruitsitems=['apple','orange','banana','grapes','dragonfruit','etc...'];
+
+ fruitsitems.forEach((fruit)=>{
+  console.log(fruit);
+  
+ })
