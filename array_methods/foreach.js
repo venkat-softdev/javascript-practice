@@ -403,3 +403,14 @@ const studentss = [
 studentss.forEach((student) => {
   console.log(`${student.name} recevied a grade of ${student.grade}`);
 });
+
+// example 24 in for each in array methods 
+
+let numb=[1,2,3,4,5];
+
+numb.forEach((number,index,arr)=>{
+ 
+  arr[index]=numb*10;
+
+});
+console.log(numb);
