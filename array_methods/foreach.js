@@ -404,6 +404,6 @@ console.log(recentvalue);
  venkat_values.forEach((val)=>{
  next_list.push(venkat_values);
 
- })
+ });
  console.log(next_list);
  
