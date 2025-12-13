@@ -417,3 +417,5 @@ console.log(recentvalue);
  });
 
  // example 23 in for each in array methods 
+
+ 
