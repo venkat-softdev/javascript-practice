@@ -424,5 +424,7 @@ console.log(recentvalue);
  ]
 
  studentss.forEach((student)=>{
+
+  console.log(`${student.name} recevied a grade of ${ student.grade}`);
   
- })
+ });
