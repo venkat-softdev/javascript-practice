@@ -397,3 +397,13 @@ console.log(recentvalue);
   
   
  // example 21 in for each in array 
+
+ let venkat_values=['apple','wheat','snakes'];
+ let next_list=[];
+
+ venkat_values.forEach((val)=>{
+ next_list.push(venkat_values);
+
+ })
+ console.log(next_list);
+ 
