@@ -418,4 +418,11 @@ console.log(recentvalue);
 
  // example 23 in for each in array methods 
 
- 
+ const studentss=[
+  {name:'venkat',grade: 'A'},
+  {name:'yuva',grade:'B'}
+ ]
+
+ studentss.forEach((student)=>{
+  
+ })
