@@ -1,7 +1,8 @@
 // DOM manuplation 
 
 const brand=document.getElementById("brand");
-brand.textContent='venkat'
+brand.style.color='#fff';
+brand.style.backgroundColor='deeppink'
+brand.style.padding='10px';
+brand.style.borderRadius='10px'
 
-const head=document.getElementsByTagName("h1");
-head.textContent="venkat"
