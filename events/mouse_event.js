@@ -49,4 +49,18 @@ document.getElementById("btn").onclick = function () {
    btn4.addEventListener("mouseout",function () {
     this.style.backgroundColor="darkgreen";
     
+   });
+
+   // mouse up event 
+
+   btn4.addEventListener("mouseup",function () {
+    this.style.backgroundColor="aquamarine";
+    
+   })
+
+   // mouse over event 
+
+   btn4.addEventListener("mouseover",function () {
+    this.style.backgroundColor="gold"
+    
    })
