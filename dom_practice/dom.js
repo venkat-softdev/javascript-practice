@@ -10,3 +10,7 @@ brand.style.borderRadius='10px'
 let stitle=document.getElementsByClassName("sub-title");
 stitle[0].style.color='purple';
 stitle[1].style.color='red'
+
+let tag=document.getElementsByTagName("p");
+tag[0].style.color='red';
+tag[1].style.color='purple';
