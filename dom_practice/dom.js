@@ -14,3 +14,6 @@ stitle[1].style.color='red'
 let tag=document.getElementsByTagName("p");
 tag[0].style.color='red';
 tag[1].style.color='purple';
+
+let heading=document.querySelector('h1');
+heading.style.color='deeppink'; 
