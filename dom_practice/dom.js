@@ -1,6 +1,5 @@
 // DOM manuplation 
 
-let brand = document.getElementById('brand');
-console.log(brand.nodeType);
-console.log(brand.nodeName);
+const brand=document.getElementById("brand");
+brand.textContent='venkat'
 
