@@ -27,3 +27,19 @@ document.getElementById("btn").onclick = function () {
    })
 
    // mouse down event 
+
+   let btn4=document.querySelector(".btn4");
+   btn4.style.backgroundColor="rebeccapurple"
+   btn4.style.color="#fff"
+
+   btn4.addEventListener("mousedown",function () {
+      
+    this.style.backgroundColor="lightgreen"
+   
+
+   })
+
+   btn4.addEventListener("dblclick",function () {
+    
+    alert( " this is a Mouse down  event ")
+   })
