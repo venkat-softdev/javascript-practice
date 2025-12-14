@@ -16,7 +16,7 @@ let nextnumber = newnumber.filter((value) => {
 });
 console.log(nextnumber);
 
-// example 3 in filter array methods
+// example 3 in filter array methods 
 
 let users = [
   { name: "venkat", age: 20, city: "vadalur" },
