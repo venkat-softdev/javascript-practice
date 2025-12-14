@@ -41,7 +41,7 @@ document.getElementById("btn").onclick = function () {
 
    btn4.addEventListener("dblclick",function () {
     
-    alert( " this is a Mouse down  event ")
+    alert( " this is a Mouse down , Mouse over ,Mouse Up and Mouse out event Buttons  ")
    });
 
    // mouse out event 
