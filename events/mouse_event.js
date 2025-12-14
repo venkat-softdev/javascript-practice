@@ -17,3 +17,11 @@ document.getElementById("btn").onclick = function () {
     alert("Welcome to javscript events")
     
    })
+ 
+   // double click button 
+   let btn3=document.querySelector(".btn3");
+   btn3.style.backgroundColor="teal";
+   btn3.style.color='#fff';
+   btn3.addEventListener('dblclick', function () {
+     alert(`It's a Double click Button`)
+   })
