@@ -42,4 +42,11 @@ document.getElementById("btn").onclick = function () {
    btn4.addEventListener("dblclick",function () {
     
     alert( " this is a Mouse down  event ")
+   });
+
+   // mouse out event 
+
+   btn4.addEventListener("mouseout",function () {
+    this.style.backgroundColor="darkgreen";
+    
    })
