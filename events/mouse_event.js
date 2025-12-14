@@ -25,3 +25,5 @@ document.getElementById("btn").onclick = function () {
    btn3.addEventListener('dblclick', function () {
      alert(`It's a Double click Button`)
    })
+
+   // mouse down event 
