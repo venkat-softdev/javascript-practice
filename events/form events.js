@@ -24,10 +24,30 @@ form.addEventListener("submit",function (event) {
     });
     console.log("gender:" ,selectedgender);
     
+    checkbox.addEventListener("change",function (e) {
+
+        if (e.target.checked) {
+            console.log("condition agree");
+            
+        }
+        else{
+            console.log(" not agree all terms and conditions ");
+            
+        }
+        
+    })
     
-    
+    username.addEventListener("input",function () {
+        console.log("username changed :" , username.value);
+        
+        
+    })
     
 });
+
+
+
+
 
 
 form.addEventListener("reset",function () {
