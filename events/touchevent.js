@@ -20,4 +20,11 @@ touch.addEventListener("touchmove",function (e) {
     
 })
 
-touch.addEventListener()
+touch.addEventListener("touchend",function (e) {
+
+    e.preventDefault();
+    touch.style.backgroundColor="purple";
+    touch.style.color="#ffff";
+    touch.textContent="touch event ended !";
+    
+})
