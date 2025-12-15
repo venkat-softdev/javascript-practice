@@ -66,3 +66,13 @@ document.getElementById("btn").onclick = function () {
    });
 
    
+// mouse  event in js 
+
+   let b5=document.querySelector(".b5");
+
+   b5.addEventListener("dblclick",function() {
+      this.style.backgroundColor="red";
+      this.style.color="#fff"
+    alert("hey what is this ")
+    
+   })
