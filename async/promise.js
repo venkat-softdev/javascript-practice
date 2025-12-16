@@ -83,3 +83,12 @@ newdata()
 
 // example 4 in promise javascript 
 
+let btn=document.querySelector(".btn");
+btn.style.padding="10px"
+btn.style.borderRadius="10px";
+btn.style.border="2px solid #000"
+btn.style.backgroundColor="deeppink";
+btn.style.color="#fff";
+btn.style.width="200px";
+btn.style.height="40px";
+
