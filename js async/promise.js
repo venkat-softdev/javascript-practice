@@ -11,3 +11,13 @@ const promise=new promise((resolve, reject)=>{
         
     }
 })
+
+promise
+.then((msg)=>{
+    console.log(msg);
+    
+})
+.catch((errror)=>{
+    console.log(error);
+    
+})
