@@ -22,4 +22,7 @@ values()
 .catch((error)=>{
     console.error(error);
     
-})
+});
+
+
+// example 2 in javasript promise 
