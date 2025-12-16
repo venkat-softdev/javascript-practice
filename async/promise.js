@@ -31,7 +31,7 @@ function getdata() {
 
     return new Promise((resolve, reject) => {
         
-        let age=18;
+        let age=15;
         if (age>=18) {
             
             resolve("eligble to vote")
