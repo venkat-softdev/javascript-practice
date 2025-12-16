@@ -79,4 +79,7 @@ newdata()
 .catch((name2)=>{
     console.log(name2);
     
-})
+});
+
+// example 4 in promise javascript 
+
