@@ -104,4 +104,11 @@ addEventListener(btn,"click")
     console.log(e);
     
     
+});
+
+
+btn.addEventListener("touchstart",function (e) {
+    e.preventDefault()
+    btn.style.backgroundColor="red"
+    btn.textContent="hi why "
 })
