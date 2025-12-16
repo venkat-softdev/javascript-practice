@@ -1,24 +1,25 @@
 // javascript promise event 
 
-const promise=new promise((resolve, reject)=>{
-    const sum = 1+1;
-    if (sum==2) {
-        resolve("Answer is correct");
-        
-    }
-    else{
-        reject("Answer is Error");
-        
-    }
-});
+function values() {
+    return new Promise((resolve, reject) => {
+      
+        const sum=5-1;
+       if (sum>5) {
+            resolve("yes greater than")
+        }
+        else{
+            reject("Error")
+        }
+    })
+}
 
 
-promise
+values()
 .then((msg)=>{
     console.log(msg);
     
 })
 .catch((error)=>{
-    console.log(error);
+    console.error(error);
     
 })
