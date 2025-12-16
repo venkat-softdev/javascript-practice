@@ -92,3 +92,16 @@ btn.style.color="#fff";
 btn.style.width="200px";
 btn.style.height="40px";
 
+function addEventpromise(element,event) {
+    return new Promise((resolve, reject) => {
+        element.addEventListener(event,resolve);
+    });
+}
+
+addEventListener(btn,"click")
+.then((e)=>{
+    console.log("button clicked");
+    console.log(e);
+    
+    
+})
