@@ -52,3 +52,31 @@ getdata()
     console.log(value2);
     
 });
+
+
+// example 3 in javasript promise 
+
+function newdata () {
+    return new Promise((resolve, reject) => {
+        
+    let name="venkat";
+        if (name=="venkat"|| name=="yuvaraj") {
+            
+            resolve("name is matched")
+        } else {
+            reject("name is not matched")
+        }
+
+    })
+    
+};
+
+newdata()
+.then((name1)=>{
+    console.log(name1);
+    
+})
+.catch((name2)=>{
+    console.log(name2);
+    
+})
