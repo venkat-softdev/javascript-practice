@@ -83,32 +83,67 @@ newdata()
 
 // example 4 in promise javascript 
 
-let btn=document.querySelector(".btn");
-btn.style.padding="10px"
-btn.style.borderRadius="10px";
-btn.style.border="2px solid #000"
-btn.style.backgroundColor="deeppink";
-btn.style.color="#fff";
-btn.style.width="200px";
-btn.style.height="40px";
+// let btn=document.querySelector(".btn");
+// btn.style.padding="10px"
+// btn.style.borderRadius="10px";
+// btn.style.border="2px solid #000"
+// btn.style.backgroundColor="deeppink";
+// btn.style.color="#fff";
+// btn.style.width="200px";
+// btn.style.height="40px";
 
-function addEventpromise(element,event) {
-    return new Promise((resolve, reject) => {
-        element.addEventListener(event,resolve);
-    });
+// function addEventpromise(element,event) {
+//     return new Promise((resolve, reject) => {
+//         element.addEventListener(event,resolve);
+//     });
+// }
+
+// addEventListener(btn,"click")
+// .then((e)=>{
+//     console.log("button clicked");
+//     console.log(e);
+    
+    
+// });
+
+
+// btn.addEventListener("touchstart",function (e) {
+//     e.preventDefault()
+//     btn.style.backgroundColor="red"
+//     btn.textContent="hi why "
+// })
+
+
+// example 5 in promise in javascript 
+
+function event(params) {
+     return Promise.all([Promise.resolve("perfect"),Promise.resolve("perfect"),
+        Promise.resolve("perfect")
+     ]);
 }
 
-addEventListener(btn,"click")
-.then((e)=>{
-    console.log("button clicked");
-    console.log(e);
+event()
+.then((msg1)=>{
+    console.log(msg1);
     
+})
+.catch((msg2)=>{
+    console.error(msg2);
     
-});
+})
 
+// example 6 in promise javascript 
 
-btn.addEventListener("touchstart",function (e) {
-    e.preventDefault()
-    btn.style.backgroundColor="red"
-    btn.textContent="hi why "
+function program() {
+    return Promise.all([Promise.resolve("good"),Promise.reject("error")])
+}
+
+program()
+.then((val1)=>{
+    console.log(val1);
+    
+})
+.catch((val2)=>{
+    console.error(val2);
+    
 })
