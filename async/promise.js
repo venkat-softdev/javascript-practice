@@ -115,7 +115,7 @@ newdata()
 
 
 // example 5 in promise in javascript 
-
+// promise 
 function event(params) {
      return Promise.all([Promise.resolve("perfect"),Promise.resolve("perfect"),
         Promise.resolve("perfect")
@@ -133,7 +133,7 @@ event()
 })
 
 // example 6 in promise javascript 
-
+// promise all 
 function program() {
     return Promise.all([Promise.resolve("good"),Promise.reject("error")])
 }
@@ -149,6 +149,7 @@ program()
 })
 
 // example 7 in promise javascript 
+// promise any 
 
 function concept() {
     return Promise.any([Promise.resolve("correct"),Promise.reject("wrong")]);
@@ -166,6 +167,8 @@ concept()
 
 // example 8 in promise javascript 
 
+// promise race
+
 function race() {
     return Promise.race([Promise.reject("good-1"),Promise.resolve("good-2")]);
 
@@ -178,5 +181,40 @@ race()
 })
 .catch((race2)=>{
     console.error(race2);
+    
+})
+
+// example 8 in promise javascript 
+// promise allsetlled 
+
+function set() {
+ return Promise.allSettled([Promise.resolve("correct-1"),Promise.reject("correct-2")]);
+
+}
+
+set()
+.then((crt)=>{
+    console.log(crt);
+    
+})
+
+// example 9 in promise javacript 
+// promise finally 
+
+function final() {
+    return Promise.any([Promise.resolve("ok"),Promise.reject("not ok")]) 
+}
+final()
+
+.then((final1)=>{
+    console.log(final1);
+    
+})
+.catch((final2)=>{
+    console.log(final2);
+    
+})
+.finally(()=>{
+    console.log("Task finished");
     
 })
