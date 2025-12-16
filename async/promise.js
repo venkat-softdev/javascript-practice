@@ -51,4 +51,4 @@ getdata()
 .catch((value2)=>{
     console.log(value2);
     
-})
+});
