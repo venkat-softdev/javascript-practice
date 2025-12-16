@@ -147,3 +147,19 @@ program()
     console.error(val2);
     
 })
+
+// example 7 in promise javascript 
+
+function concept() {
+    return Promise.any([Promise.resolve("correct"),Promise.reject("wrong")]);
+}
+
+concept()
+.then((con1)=>{
+    console.log(con1);
+    
+})
+.catch((con2)=>{
+    console.error(con2);
+    
+})
