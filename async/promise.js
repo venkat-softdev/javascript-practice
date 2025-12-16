@@ -163,3 +163,20 @@ concept()
     console.error(con2);
     
 });
+
+// example 8 in promise javascript 
+
+function race() {
+    return Promise.race([Promise.reject("good-1"),Promise.resolve("good-2")]);
+
+}
+
+race()
+.then((race1)=>{
+    console.log(race1);
+    
+})
+.catch((race2)=>{
+    console.error(race2);
+    
+})
