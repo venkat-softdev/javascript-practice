@@ -101,3 +101,20 @@
 //  asyncCall()
 
 
+// example 5 in async and await javascript 
+ function fun() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(" Hi it's me venkat")
+        }, 10000);
+    });
+ }
+
+ async function call() {
+    console.log("calling the function ");
+    let calling= await fun()
+    console.log(calling);
+    
+ }
+
+ call()
