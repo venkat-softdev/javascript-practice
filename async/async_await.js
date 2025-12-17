@@ -81,21 +81,23 @@
 
  // example 4 in async and await 
 
- function resolveafter2seconds () {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("resolve function")
-        }, 2000);
-    });
- }
+//  function resolveafter2seconds () {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("resolve function")
+//         }, 2000);
+//     });
+//  }
 
- async function asyncCall() {
-    console.log("Calling async function ...");
+//  async function asyncCall() {
+//     console.log("Calling async function ...");
 
-     const result= await resolveafter2seconds();
-    console.log(result);
+//      const result= await resolveafter2seconds();
+//     console.log(result);
     
     
- }
+//  }
 
- asyncCall()
+//  asyncCall()
+
+
