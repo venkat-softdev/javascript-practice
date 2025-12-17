@@ -45,39 +45,57 @@
 
 // example 3 in async and await 
 
-async function getvalue() {
-    let newdate=new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Hi guys im venkat ")
-        }, 3000);
-    });
+// async function getvalue() {
+//     let newdate=new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Hi guys im venkat ")
+//         }, 3000);
+//     });
 
 
-    let after=new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(" Now the discuss about the topic is javascript async and await")
-        }, 6000);
-    });
+//     let after=new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(" Now the discuss about the topic is javascript async and await")
+//         }, 6000);
+//     });
      
-    console.log("welcome");
-    let intro= await newdate;
-    console.log(" the intro :",intro);
+//     console.log("welcome");
+//     let intro= await newdate;
+//     console.log(" the intro :",intro);
 
-    // 
+//     // 
 
-    console.log("discuss");
-    let next= await after;
-    console.log(" discuss the toipc :",next);
+//     console.log("discuss");
+//     let next= await after;
+//     console.log(" discuss the toipc :",next);
     
-    return[intro,next];
+//     return[intro,next];
     
     
 
-}
+// }
 
-console.log(" starting new ");
- getvalue()
+// console.log(" starting new ");
+//  getvalue()
 
 
  // example 4 in async and await 
- 
+
+ function resolveafter2seconds () {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("resolve function")
+        }, 2000);
+    });
+ }
+
+ async function asyncCall() {
+    console.log("Calling async function ...");
+
+     const result= await resolveafter2seconds();
+    console.log(result);
+    
+    
+ }
+
+ asyncCall()
