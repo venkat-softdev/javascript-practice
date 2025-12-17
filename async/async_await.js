@@ -77,3 +77,7 @@ async function getvalue() {
 
 console.log(" starting new ");
  getvalue()
+
+
+ // example 4 in async and await 
+ 
