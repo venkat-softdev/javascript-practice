@@ -1,0 +1,28 @@
+[
+    {
+        "name":"venkat",
+        "age":19,
+        "city":"vadalur"
+        
+    },
+
+    {
+       "name":"Tiya",
+       "age":26,
+       "city":"chennai"
+    },
+
+     {
+       "name":"Ramesh",
+       "age":33,
+       "city":"salem"
+    },
+     {
+       "name":"ramya",
+       "age":29,
+       "city":"karur"
+    }
+
+
+     
+]
