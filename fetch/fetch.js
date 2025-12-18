@@ -31,17 +31,24 @@ let btndiv=document.querySelector(".btndiv")
  }
 
  // btn3 json
- 
- let jbtn=document.querySelector("btn-json");
- let joutput=document.querySelector("json-output");
+  
+ let btnjson=document.querySelector("#btn-json");
+ let jsonoutput=document.querySelector("#json-output");
 
- jbtn.addEventListener("click",jsonbutton);
+ btnjson.addEventListener("click",jsonbtn)
 
- function  jsonbutton() {
-    
+ function jsonbtn() {
     fetch("fetch.json")
-    .then((jdata)=>jdata.json())
+    .then((value)=> value.json())
     .then((users)=>{
-        joutput.innerHTML=users
+      
+        let data="<ul>";
+        users.forEach((user) => {
+            data +=`<li>${user.name}</li>`;
+        });
+
+        data +="</ul>";
+        jsonoutput=innerHTML.data
+
     })
  }
