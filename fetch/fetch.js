@@ -122,11 +122,11 @@ async function finalbtn() {
 
     finaloutput="";
     last.todos.forEach((todo)=>{
-        finaloutput += `<div class="cart">
-       <h4> ${ todo.id}</h4>
-       <p>${todo.todo}</p>
-       <h4>${ todo.completed}</h4>
-        <h4>${todo.userId}</h4>
+        finaloutput += `<div class="todos">
+       <h4> ${ " ID :", todo.id}</h4>
+       <p>${ " Todo :",todo.todo}</p>
+       <h4>${ " Todo completed :", todo.completed}</h4>
+        <h4>${ " user Id :",todo.userId}</h4>
         </div>`
     });
 
