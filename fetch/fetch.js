@@ -106,3 +106,15 @@ async function getbtndata() {
 
      div2.innerHTML=apioutput
 }
+
+
+// btn 6
+
+let btn6=document.querySelector(".app3");
+let final=document.querySelector(".appdiv3");
+
+btn6.addEventListener("click",finalbtn);
+
+async function finalbtn(params) {
+    
+}
