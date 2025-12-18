@@ -47,8 +47,8 @@ let btndiv=document.querySelector(".btndiv")
             data +=`<li>${user.name}</li>`;
         });
 
-        data +="</ul>";
-        jsonoutput=innerHTML.data
+        data += "</ul>";
+        jsonoutput=innerHTML.data;
 
     })
  }
