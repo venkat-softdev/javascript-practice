@@ -56,3 +56,27 @@ async function getapidata() {
 
     apidiv.innerHTML=output;
 }
+
+
+// btn4 
+
+let appbtn=document.querySelector(".app");
+let appout=document.querySelector(".appdiv");
+
+appbtn.addEventListener("click",getapp);
+
+async function getapp() {
+    const getvalue= await fetch("https://dummyjson.com/posts");
+    const convert = await getvalue.json();
+
+
+    let condata="";
+    convert.posts.forEach((con) => {
+        condata += `<div class = " posts" >
+          <h4> ${con.title}</h4>
+          <p> ${ con.body}</p>
+        </div>`;
+    });
+
+    appout.innerHTML=condata;
+}
