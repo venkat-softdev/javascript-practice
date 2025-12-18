@@ -63,7 +63,7 @@ async function getapidata() {
 let appbtn=document.querySelector(".app");
 let appout=document.querySelector(".appdiv");
 
-appbtn.addEventListener("click",getapp);
+appbtn.addEventListener("dblclick",getapp);
 
 async function getapp() {
     const getvalue= await fetch("https://dummyjson.com/posts");
@@ -79,4 +79,30 @@ async function getapp() {
     });
 
     appout.innerHTML=condata;
+}
+
+
+// btn5 
+
+let btn5=document.querySelector(".app2");
+let div2=document.querySelector(".appdiv2");
+
+btn5.addEventListener("click",getbtndata);
+
+async function getbtndata() {
+    const apidata=await fetch("https://dummyjson.com/quotes");
+    const apiconvert=await apidata.json();
+
+
+    let apioutput="";
+     apiconvert.quotes.forEach((api)=>{
+          
+        apioutput += `<div class = "quotes">
+            <h4> ${ api.id}</h4>
+            <p>${ api.quote}</p>
+            <h4>${ api.author}</h4>
+        </div>`
+     });
+
+     div2.innerHTML=apioutput
 }
