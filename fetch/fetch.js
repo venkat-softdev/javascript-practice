@@ -117,18 +117,18 @@ btn6.addEventListener("click",finalbtn);
 
 async function finalbtn() {
     
-    const finalbtn=await fetch("https://dummyjson.com/recipes");
-    let last= await finalbtn.json();
+    const responsebtn = await fetch("https://dummyjson.com/todos");
+    let last= await responsebtn.json();
 
     finaloutput="";
-    last.recipes.forEach((recipe)=>{
-        last += `<div class=recipes>
-          <h4>${ recipe.id}</h4>
-          <p>${recipe.name}</p>
-           <h4>${recipe.ingredients}</h4>
-           <h4>${recipe.instructions}</h4>
+    last.todos.forEach((todo)=>{
+        finaloutput += `<div class="cart">
+       <h4> ${ todo.id}</h4>
+       <p>${todo.todo}</p>
+       <h4>${ todo.completed}</h4>
+        <h4>${todo.userId}</h4>
         </div>`
     });
 
-    final.innerHTML=finaloutput
+    final.innerHTML=finaloutput;
 }
