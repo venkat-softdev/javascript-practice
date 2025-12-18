@@ -26,5 +26,5 @@ let btndiv=document.querySelector(".btndiv")
     .then((output)=>{
         btndiv.textContent=output
         
-    })
+    });
  }
