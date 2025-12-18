@@ -14,6 +14,7 @@ function gettextbtn() {
     
 }
 
+/// btn 2 
 
 let btn2=document.querySelector(".btn2");
 let btndiv=document.querySelector(".btndiv")
@@ -24,7 +25,22 @@ let btndiv=document.querySelector(".btndiv")
     fetch("data.txt")
     .then((value)=>value.text())
     .then((output)=>{
-        btndiv.textContent=output
+        btndiv.innerHTML=output;
         
     });
+ }
+
+ // btn3 json
+  
+ let btnjson=document.querySelector("#btn-json");
+ let jsonoutput=document.querySelector("#json-output");
+
+ btnjson.addEventListener("click",jsonbtn)
+
+ function jsonbtn() {
+    fetch("fetch.json")
+    .then((value)=> value.json())
+    .then((users)=>{
+        jsonoutput.innerHTML=users;
+    })
  }
