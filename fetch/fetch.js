@@ -13,3 +13,18 @@ function gettextbtn() {
     })
     
 }
+
+
+let btn2=document.querySelector(".btn2");
+let btndiv=document.querySelector(".btndiv")
+
+ btn2.addEventListener("click",btn2data);
+
+ function btn2data() {
+    fetch("data.txt")
+    .then((value)=>value.text())
+    .then((output)=>{
+        btndiv.textContent=output
+        
+    })
+ }
