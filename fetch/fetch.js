@@ -30,25 +30,29 @@ let btndiv=document.querySelector(".btndiv")
     });
  }
 
- // btn3 json
-  
-//  let btnjson=document.querySelector("#btn-json");
-//  let jsonoutput=document.querySelector("#json-output");
+ // btn 3
 
-//  btnjson.addEventListener("click",jsonbtn)
+ 
+let btn3=document.querySelector("#btn-api");
+let apidiv=document.querySelector("#api-output");
 
-//  function jsonbtn() {
-//     fetch("users.json")
-//     .then((value)=> value.json())
-//     .then((users)=>{
-      
-//         let data="<ul>";
-//         users.forEach((user) => {
-//             data +=`<li>${user.name}</li>`;
-//         });
+btn3.addEventListener("click",getapidata);
 
-//         data += "</ul>";
-//         jsonoutput=innerHTML.data;
+async function getapidata() {
+    
+    const response = await fetch("https://dummyjson.com/comments");
+    const jsondata = await response.json();
+    
+    
+    let output="";
+    jsondata.comments.forEach((post) => {
+        output += `<div class ='post'> 
+          <h4> ${post.id}</h4>
+          <p> ${post.body}</p>
+        
+        </div>`;
 
-//     })
-//  }
+    });
+
+    apidiv.innerHTML=output;
+}
