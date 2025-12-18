@@ -115,6 +115,20 @@ let final=document.querySelector(".appdiv3");
 
 btn6.addEventListener("click",finalbtn);
 
-async function finalbtn(params) {
+async function finalbtn() {
     
+    const finalbtn=await fetch("https://dummyjson.com/recipes");
+    let last= await finalbtn.json();
+
+    finaloutput="";
+    last.recipes.forEach((recipe)=>{
+        last += `<div class=recipes>
+          <h4>${ recipe.id}</h4>
+          <p>${recipe.name}</p>
+           <h4>${recipe.ingredients}</h4>
+           <h4>${recipe.instructions}</h4>
+        </div>`
+    });
+
+    final.innerHTML=finaloutput
 }
