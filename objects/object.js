@@ -93,6 +93,22 @@ else{
 
 
 
+// example 6 in object 
+
+let $students={
+   
+    name:"venkat",
+    age:19,
+    city:"vadalur",
+    avg:95.6,
+
+   greet:function(){
+    console.log( ` Hi im ${this.name}`);
+    
+   }
+}
+
+
 
 
 
