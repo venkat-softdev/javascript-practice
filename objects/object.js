@@ -108,6 +108,10 @@ let $students={
    }
 }
 
+console.log($students.name);
+console.log($students.age);
+ $students.greet();
+
 
 
 
