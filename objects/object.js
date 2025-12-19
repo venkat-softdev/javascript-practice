@@ -114,6 +114,23 @@ console.log($students.age);
 
 
 
+// example 7 in objects 
+
+const fruit={
+ 
+    name:"Apple",
+    color:"red",
+    weight:150
+};
+
+for (const key in fruit) {
+    
+    
+   console.log(`${key} : ${fruit[key]}`);
+   
+    
+    
+}
 
 
 
