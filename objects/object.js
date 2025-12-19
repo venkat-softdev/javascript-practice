@@ -131,6 +131,13 @@ for (const key in fruit) {
     
     
 }
+console.log(Object.keys(fruit));
+console.log(Object.values(fruit));
+console.log(Object.entries(fruit));
+
+
+
+
 
 
 
