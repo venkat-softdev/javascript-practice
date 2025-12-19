@@ -30,3 +30,12 @@ recipes.forEach((recipe)=>{
 })
 console.log( " the recipe is :",dish);
 
+
+// example 4 in for each array methods 
+
+let oldnumbers=[1,2,3,4,5];
+let doublenumbers=[];
+oldnumbers.forEach((oldnum)=>{
+    doublenumbers.push(oldnum *2);
+})
+console.log( " the double numbers :",doublenumbers);
