@@ -4,7 +4,7 @@ const friuts=["apple","banana","cherry"];
 console.log(friuts);
 
 friuts.forEach((fruit)=>{
-    console.log(fruit);
+    console.log(" fruit  name is  :",fruit);
     
 })
 
