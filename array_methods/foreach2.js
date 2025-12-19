@@ -18,3 +18,15 @@ numbers.forEach((number)=>{
 })
 console.log( " the total is :",total);
 
+
+// example 3  existing array  store the dummy array 
+
+let recipes=["idly","Dosai","idiyappam"," noodles"];
+
+let dish=[];
+
+recipes.forEach((recipe)=>{
+    dish.push(recipe)
+})
+console.log( " the recipe is :",dish);
+
