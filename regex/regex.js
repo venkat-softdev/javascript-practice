@@ -82,9 +82,30 @@ console.log(inputcheck);
 
  // example 10 regexx represent start 
 
- pattern=/^[b-d]{1,}[0-5]/;
+ pattern=/^[a-z]{1,}[0-5]/;
 
- input ='c2';
+ input ='ac5';
  let val=pattern.test(input);
  console.log(val);
+ 
+
+ // example 11 in regex represent in end 
+
+ pattern =/[a-z]{1,}[0-5]$/;
+
+ input = 'ab3';
+
+ let outputvalue=pattern.test(input);
+
+ console.log(outputvalue);
+ 
+
+ // example 12 in regex represent both start and end 
+
+ pattern=/^[a-z]{1,}[0-6]$/;
+
+ input='abc3';
+
+ let regexouput=pattern.test(input);
+ console.log(regexouput);
  
