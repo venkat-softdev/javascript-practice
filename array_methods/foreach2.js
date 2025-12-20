@@ -87,5 +87,16 @@ let avgnum=[10,20,30,40,50];
  console.log(evennum);
  
  
+ // example 9 in for each method 
+
+ let names=['venkat','jane','hoper','yuva'];
+
+ names.forEach((name,index)=>{
+    console.log(name,index);
+    
+    name[index]=name.toUpperCase();
+ })
+ console.log(names);
+ 
 
 
