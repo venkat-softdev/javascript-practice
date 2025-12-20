@@ -51,3 +51,15 @@ maxnum.forEach((num)=>{
 })
 
 console.log(max);
+
+// example 6 in for each 
+
+let minnum=[100,200,300,400,500];
+let min=minnum[0];
+minnum.forEach((num)=>{
+    if (num<min) {
+        min=num;
+    }
+})
+
+console.log(min);
