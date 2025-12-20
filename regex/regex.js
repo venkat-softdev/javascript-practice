@@ -39,3 +39,45 @@ let matchregex = /[a-d] + [0-5]/;
 let input ='ae2'; // not match becz value is a-d but i declared  ae so not match 
 let inputcheck= matchregex.test(input);
 console.log(inputcheck);
+
+
+// example 6 in regex 
+
+ let another = /[a-d]*[0-5]/;
+
+ let num='ac4';
+ let $check=another.test(num);
+ console.log($check);
+ 
+
+ // example 7 in regex 
+
+  let $pattern=/[b-d]?[0-5]/
+
+  let $input='b2';
+
+ let matchvalue=$pattern.test($input);
+ console.log(matchvalue);
+ 
+ // example 8 in regex 
+
+ pattern =/[a-d]{2}[0-6]/;
+
+ input = 'ac5';
+
+ let output = pattern.test(input)
+
+ console.log(output);
+ 
+ // example 9 in regexx 
+
+ pattern=/[a-z]{2,}[0-5]/;
+
+ input='aaaaa3';
+
+ let final=pattern.test(input);
+
+ console.log(final);
+ 
+
+ 
