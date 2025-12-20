@@ -73,6 +73,19 @@ let avgnum=[10,20,30,40,50];
     total += avg;
  })
  console.log(total/avgnum.length);
+
+ // example 8 in for each method 
+
+ const evenumbers=[1,2,3,4,5,6,7,8,9,10];
+ const  evennum=[]
+
+ evenumbers.forEach((num)=>{
+    if (num%2==0) {
+        evennum.push(num);
+    }
+ })
+ console.log(evennum);
+ 
  
 
 
