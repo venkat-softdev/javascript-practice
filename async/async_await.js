@@ -102,21 +102,39 @@
 
 
 // example 5 in async and await javascript 
- function fun() {
-    return new Promise((resolve, reject) => {
+//  ,                             
+  
+
+// example for async and await 
+
+async function getblogpost() {
+    let blogpost=new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(" Hi it's me venkat")
-        }, 10000);
+            resolve(" this is a blogpost");
+            
+        }, 2000);
     });
- }
 
- async function call() {
-    console.log("calling the function ");
-    let calling= await fun()
-    console.log(calling);
-    
- }
+    let blogcomment=new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(" this a blog comments");
+            
+        }, 5000);
+    });
+   
+      console.log("fetching post ....");
+      let post= await blogpost;
+      console.log("post :"+post);
+      console.log("fetching comments");
+      let comments= await blogcomment;
+      console.log("comment:"+comments);
 
- call()
+      return[post,comments];
+      
+        
+}
+let data=getblogpost();
+console.log(data);
 
- 
+
+

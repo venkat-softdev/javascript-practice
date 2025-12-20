@@ -109,3 +109,29 @@ console.log(inputcheck);
  let regexouput=pattern.test(input);
  console.log(regexouput);
  
+ // example 13 in regex or condition 
+
+ pattern =/[a-z]{1,}[0-3]|[0-5]/;
+
+ input='cc2';
+
+ output=pattern.test(input);
+
+ // example 14 in regex in escape sequence 
+
+ pattern=/\$$/;
+
+ input='$';
+ output=pattern.test(input);
+
+ console.log( " this is :",output);
+ 
+ // example 15 in regexx  
+
+ pattern=/\d/;
+
+ input=" Hi im venkat my age is 19";
+
+ output=pattern.test(input);
+ console.log(output);
+ 
