@@ -42,3 +42,12 @@ console.log( " the double numbers :",doublenumbers);
 
 // example 5 in for each array methods 
 
+let maxnum=[10,20,30,40,50];
+let max=maxnum[0];
+maxnum.forEach((num)=>{
+ if (num>max) {
+    max=num;
+ }
+})
+
+console.log(max);
