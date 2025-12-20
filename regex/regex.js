@@ -80,4 +80,11 @@ console.log(inputcheck);
  console.log(final);
  
 
+ // example 10 regexx represent start 
+
+ pattern=/^[b-d]{1,}[0-5]/;
+
+ input ='c2';
+ let val=pattern.test(input);
+ console.log(val);
  
