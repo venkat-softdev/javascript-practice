@@ -91,12 +91,15 @@ let avgnum=[10,20,30,40,50];
 
  let names=['venkat','jane','hoper','yuva'];
 
- names.forEach((name,index)=>{
-    console.log(name,index);
+ names.forEach((value,index)=>{
+    names[index]=value.toUpperCase();
     
-    name[index]=name.toUpperCase();
- })
+ });
+ 
  console.log(names);
+ 
+
+
  
 
 
