@@ -99,7 +99,28 @@ let avgnum=[10,20,30,40,50];
  console.log(names);
  
 
+// example 10  in  for  each 
+ // using for each to check concat array elemnts
 
- 
+ let words=["hello","world"]
+ let concat ="";
+ words.forEach((word)=>{
+    concat += word + " "
+ }) 
+
+console.log(concat.toUpperCase());
 
 
+// example 11 for each 
+// using for each method to check if an element exists in an array 
+
+const $fruits=['apple','banana','orange'];
+
+let exists= false;
+
+$fruits.forEach((fruit)=>{
+    if (fruit=="banana") {
+        exists = true;
+    }
+})
+console.log(exists);
