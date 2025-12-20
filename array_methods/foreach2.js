@@ -124,3 +124,5 @@ $fruits.forEach((fruit)=>{
     }
 })
 console.log(exists);
+
+
