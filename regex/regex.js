@@ -30,3 +30,12 @@ let numvalues='126';
 let matchcheck= matchingnumber.test(numvalues)
 
 console.log(matchcheck);
+
+
+// example 5 in regex 
+
+let matchregex = /[a-d] + [0-5]/;
+
+let input ='ae2'; // not match becz value is a-d but i declared  ae so not match 
+let inputcheck= matchregex.test(input);
+console.log(inputcheck);
