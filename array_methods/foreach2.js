@@ -63,3 +63,16 @@ minnum.forEach((num)=>{
 })
 
 console.log(min);
+
+// using for each  calculate the avg on array 
+
+let avgnum=[10,20,30,40,50];
+ total=0;
+
+ avgnum.forEach((avg)=>{
+    total += avg;
+ })
+ console.log(total/avgnum.length);
+ 
+
+
