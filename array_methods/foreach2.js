@@ -39,3 +39,6 @@ oldnumbers.forEach((oldnum)=>{
     doublenumbers.push(oldnum *2);
 })
 console.log( " the double numbers :",doublenumbers);
+
+// example 5 in for each array methods 
+
