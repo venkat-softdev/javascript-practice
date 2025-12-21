@@ -36,7 +36,7 @@ const user_details={
             profile:{
                 firstname:'venkat',
                 lastname:'vp',
-                // birthdate:'01-05-2006'
+                birthdate:'01-05-2006'
 
             }
         },
@@ -61,8 +61,14 @@ const user_details={
     }
 }
 
-console.log(user_details.account.holder.profile.birthdate);
+
 
 
 
 console.log(user_details.account?.holder.profile?.birthdate?user_details.account.holder.profile.birthdate:undefined);
+
+
+
+console.log(user_details.account.contact.address?.state);
+
+
