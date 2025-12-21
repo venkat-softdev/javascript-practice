@@ -61,3 +61,4 @@ const user_details={
     }
 }
 
+console.log(user_details);
