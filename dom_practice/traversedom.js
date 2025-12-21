@@ -21,4 +21,4 @@ headparent.style.backgroundColor="deeppink"
 headparent.style.padding="10px"
 headparent.style.borderRadius="10px"
 headparent.style.fontFamily="poppins"
-
+headparent.style.textAlign="center"
