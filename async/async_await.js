@@ -107,34 +107,98 @@
 
 // example for async and await 
 
-async function getblogpost() {
-    let blogpost=new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(" this is a blogpost");
+// async function getblogpost() {
+//     let blogpost=new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(" this is a blogpost");
             
-        }, 2000);
-    });
+//         }, 2000);
+//     });
 
-    let blogcomment=new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(" this a blog comments");
+//     let blogcomment=new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(" this a blog comments");
             
-        }, 5000);
-    });
+//         }, 5000);
+//     });
    
-      console.log("fetching post ....");
-      let post= await blogpost;
-      console.log("post :"+post);
-      console.log("fetching comments");
-      let comments= await blogcomment;
-      console.log("comment:"+comments);
+//       console.log("fetching post ....");
+//       let post= await blogpost;
+//       console.log("post :"+post);
+//       console.log("fetching comments");
+//       let comments= await blogcomment;
+//       console.log("comment:"+comments);
 
-      return[post,comments];
+//       return[post,comments];
       
         
-}
-let data=getblogpost();
-console.log(data);
+// }
+// getblogpost()
 
+
+// // example 2 in async and await 
+
+let result =function (marks) {
+    return new Promise((resolve, reject) => {
+        console.log("calculation Result");
+
+        setTimeout(() => {
+            let total=0;
+            let result ="pass";
+            marks.forEach(mark => {
+                total +=mark;
+                if (mark<35) {
+                    result ="fail"
+                }
+            });
+            resolve({total:total, result:result})
+        },2000 ); 
+        
+    });
+}
+
+let grade=function (response) {
+    
+    return  new Promise((resolve, reject) => {
+        if (response.result=="pass") {
+            let avg = response.total /3;
+            let gradeText="Grade D";
+            if (avg >= 90 && avg <= 100) {
+                
+                gradeText ="grade A"
+            }
+            else if (avg >= 80 && avg<=89 ) {
+                   gradeText=" Grade B"
+            }
+            else if (avg >=70 && avg <=79) {
+                gradeText="grade c "
+            }
+        }
+        else{
+            reject("no grade");
+        }
+    });
+
+};
+
+
+
+
+async function getresult() {
+    try {
+        const value=await result([98,99,100])
+          console.log("total :",value.total);
+          console.log("Result :",value.result);
+          const gradeText =await grade(value);
+          console.log(gradeText);
+          
+          
+
+    } catch (err) {
+        
+    }
+}
+
+getresult()
 
 
