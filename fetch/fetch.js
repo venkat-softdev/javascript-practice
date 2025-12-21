@@ -132,3 +132,29 @@ async function finalbtn() {
 
     final.innerHTML=finaloutput;
 }
+
+
+
+// last 
+
+let lastbtn=document.querySelector("#btnlast");
+let lastdiv=document.querySelector("#lastdiv");
+
+lastbtn.addEventListener("click",lastfun);
+
+async function lastfun() {
+    const lastfetch=await fetch("https://dummyjson.com/products")
+    let result=await lastfetch.json();
+
+
+    finalproduct="";
+    result.products.forEach((product)=>{
+        finalproduct +=`<div class=" product">
+         <h4> ${"product-Id : "+ product.id}</h4>
+         <p>${ "product-title : " + product.title}</p>
+         <p>${"product-description : "+ product.description}</p>
+        </div>`
+    });
+
+    lastdiv.innerHTML=finalproduct;
+}
