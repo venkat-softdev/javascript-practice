@@ -5,3 +5,8 @@ function venkat(params) {
     
 }
 venkat()
+console.log(venkat.name);
+console.log(venkat.toString);
+venkat.call();
+
+
