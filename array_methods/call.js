@@ -36,3 +36,10 @@ function total(eng,math) {
 }
 total(25,25);
 total.call(member,25,25)
+
+
+// example 4 
+
+let fun=total.bind(member,85,95);
+console.log(fun);
+fun()
