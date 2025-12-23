@@ -5,6 +5,11 @@ classList.remove();
 classList.toggle();
 getAttribute();
 setAttribute();
+
+
+hasAttribute()
+getAttributeNames()
+removeAttribute()
 */
 
 // const btnAdd=document.querySelector("#btnadd");
