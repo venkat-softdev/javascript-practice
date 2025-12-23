@@ -57,3 +57,9 @@ btnclick.addEventListener("click", function () {
     
 })
 
+console.log(input.hasAttribute("class"));
+let list=input.getAttributeNames()
+console.log(list);
+input.removeAttribute("type");
+list = input.getAttributeNames()
+console.log(list);
