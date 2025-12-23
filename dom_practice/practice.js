@@ -20,6 +20,8 @@ let removebtn=document.querySelectorAll(".btn");
 removebtn.forEach((rbtn)=>{
     rbtn.addEventListener("click",function () {
         const tr=this.parentNode.parentNode;
-        tr.remove()
+       tr.remove()
+       
+       
     })
 })
