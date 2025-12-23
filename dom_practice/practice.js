@@ -16,4 +16,10 @@ body.insertBefore(h1,para);
 h1.style.fontFamily="poppins"
 
 
-
+let removebtn=document.querySelectorAll(".btn");
+removebtn.forEach((rbtn)=>{
+    rbtn.addEventListener("click",function () {
+        const tr=this.parentNode.parentNode;
+        tr.remove()
+    })
+})
