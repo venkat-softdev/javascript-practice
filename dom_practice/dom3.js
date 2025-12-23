@@ -24,3 +24,7 @@ h4.style.fontSize="30px"
 const body=document.querySelector("body")
 let cloneh4=h4.cloneNode(true);
 body.appendChild(cloneh4)
+let clone2=h4.cloneNode(false);
+body.appendChild(clone2)
+clone2.innerHTML=" Hey itz me <i> Venkat</i>"
+clone2.style.color="red";
