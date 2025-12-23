@@ -14,3 +14,6 @@ h1.innerHTML="Now we discuss about the topic is DOM"
 h1.style.color="blue";
 body.insertBefore(h1,para);
 h1.style.fontFamily="poppins"
+
+
+
