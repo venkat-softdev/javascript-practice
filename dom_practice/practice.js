@@ -1,4 +1,10 @@
 // practice in js 
+// create element 
+// append child 
+// insert before 
+// remove child 
+// remove 
+
 
 let para=document.createElement("p");
 para.innerHTML="This is a <i>Venkat</i>";
