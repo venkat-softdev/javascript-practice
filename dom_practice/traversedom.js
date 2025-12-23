@@ -24,3 +24,10 @@ headparent.style.fontFamily="poppins"
 headparent.style.textAlign="center"
 
 
+// example 2 create child in js dom 
+let para=document.getElementsByTagName("p");
+para.innertext="this a sample text";
+para.style.color="red";
+
+const body=document.querySelector("body")
+body.appendChild(para);
