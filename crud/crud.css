@@ -9,7 +9,10 @@
 h3{
     text-align: center;
     margin: 40px 0px;
+    color: tomato;
 }
+
+/*  form stylling start */
 form{
     width: 600px;
 }
@@ -27,9 +30,11 @@ form .form-group{
    background-color: #f1f1f1;
    border-radius: 2px;
    margin: 10px 0px;
+   max-width: 300px;
 }
 .form-group label{
     font-weight: 800;
+  
 }
 
 form .btn{
@@ -39,5 +44,35 @@ form .btn{
     gap: 5px;
     font-size: 16px;
     font-weight: 500;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    background-color: tomato;
+    letter-spacing: 1px;
 
 }
+
+/*  form stylling end */
+
+
+/*  table stylling start  */
+
+table{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin: 30px;
+    
+}
+
+table thead tr{
+    background-color: tomato;
+}
+
+table td,
+table th {
+
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+/*  tavle stylling end  */
