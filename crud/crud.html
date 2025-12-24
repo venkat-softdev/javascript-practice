@@ -1,59 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD in javascript</title>
-    <link rel="stylesheet" href="./crud.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inspiration&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Margarine&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h3> CRUD by javascript </h3>
+    <link rel="stylesheet" href="./crud.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Inspiration&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Margarine&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h3>CRUD by javascript</h3>
 
     <!-- form start -->
     <form action="#" id="form">
+      <input type="hidden" id="id" />
 
-        <input type="hidden" id="id">
-        
-        <!-- name -->
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="full name">
-        </div>
-       
-        <!-- age -->
-         <div class="form-group">
-            <label for="age">Age</label>
-            <input type="text" id="city" placeholder="Age">
-        </div>
+      <!-- name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="full name" />
+      </div>
+
+      <!-- age -->
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" id="city" placeholder="Age" />
+      </div>
 
       <!-- city -->
-       <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" placeholder="city">
-        </div>
-         
-        <!-- btn -->
-         <button type="submit" class="btn">Save</button>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="city" />
+      </div>
 
+      <!-- btn -->
+      <button type="submit" class="btn">
+        <ion-icon name="save-outline"></ion-icon>
+        Save
+    </button>
     </form>
     <!-- form end -->
 
     <!-- table start -->
-     <table>
-        <thead>
-            <th>S.No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </thead>
-     </table>
-       <!-- table end -->
+    <table>
+      <thead>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>venkat</td>
+          <td>19</td>
+          <td>vadalur</td>
+
+          <!-- create btn -->
+          <td>
+            <button>
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </td>
+          <!-- trash btn  -->
+          <td>
+            <button>
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </td>
+        </tr>
+ <!-- //////////////////////////  person 2 name list start -->
+        <tr>
+          <td>2</td>
+          <td>ramesh</td>
+          <td>28</td>
+          <td>Chennai</td>
+
+          <!-- create btn -->
+          <td>
+            <button>
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </td>
+          <!-- trash btn  -->
+          <td>
+            <button>
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </td>
+        </tr>
+<!-- *********************** person 2 name end *************** -->
+
+ <!--  person 3 name start  -->
+        <tr>
+          <td>3</td>
+          <td>Rajesh</td>
+          <td>37</td>
+          <td>Salem</td>
+
+          <!-- create btn -->
+          <td>
+            <button>
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </td>
+          <!-- trash btn  -->
+          <td>
+            <button>
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </td>
+        </tr>
+        <!-- person 3 name end  -->
+      </tbody>
+    </table>
+    <!-- table end -->
 
     <script src="./crud.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
