@@ -14,16 +14,16 @@ body{
     
 }
 .container{
-    max-width: 700px;
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
-    text-align: center;
+  text-align: center;
   
 }
 .cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
 }
 .card{
     border: 2px solid #ddd;
@@ -43,7 +43,7 @@ body{
     font-size: #555;
 }
 .card p{
-    margin: 5px 0px;
+    font-size: 10px;
     color: #555;
 }
 button{
