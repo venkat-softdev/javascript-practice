@@ -11,7 +11,7 @@ taskform.addEventListener("submit",(event)=>{
         email:email,
         phone:phone
     };
-    fetch("https://674dd350635bad45618ce6d0.mockapi.io/crud",{
+    fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
         method:"POST",
         headers:{"content-type": "application/json"},
         body:JSON.stringify(newtask),
