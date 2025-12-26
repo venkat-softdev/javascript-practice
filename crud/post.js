@@ -14,7 +14,7 @@ taskform.addEventListener("submit",(event)=>{
     fetch("https://674dd350635bad45618ce6d0.mockapi.io/crud",{
         method:"POST",
         headers:{"content-type": "application/json"},
-        body:jSON.stringify(newtask),
+        body:JSON.stringify(newtask),
     })
     .then((res)=>{
         if (res.ok) {
@@ -31,6 +31,9 @@ taskform.addEventListener("submit",(event)=>{
         errormessage.style.display="none"
     })
     .catch((error)=>{
-        const errormessage=document.querySelector("#errormessage")
+        const errormessage=document.querySelector("#errormessage");
+        errormessage.style.display="block";
+        errormessage.textContent="error : "+ error.message;
+        document.querySelector("#responsemessage").style.display="none"
     })
 })
