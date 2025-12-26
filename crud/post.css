@@ -16,3 +16,44 @@ form{
     flex-direction: column;
 
 }
+label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+input{
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+button:hover{
+    background-color: #0056b3;
+}
+.response{
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid lightgreen;
+    border-radius: 5px;
+    background-color: palegreen;
+    color: #000;
+}
+.error{
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: orangered;
+    color: #000;
+}
