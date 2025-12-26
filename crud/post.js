@@ -17,6 +17,20 @@ taskform.addEventListener("submit",(event)=>{
         body:jSON.stringify(newtask),
     })
     .then((res)=>{
+        if (res.ok) {
+            return res.json();
+        }
+        throw new Error("failed to create task");
         
+    })
+    .then((data)=>{
+        const responsemessage=document.querySelector("#responsemessage");
+        responsemessage.style.display ="block";
+        responsemessage.textContent="task created successfully"
+        const errormessage=document.querySelector("#errormessage");
+        errormessage.style.display="none"
+    })
+    .catch((error)=>{
+        const errormessage=document.querySelector("#errormessage")
     })
 })
