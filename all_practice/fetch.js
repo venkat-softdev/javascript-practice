@@ -4,15 +4,15 @@ const btn=document.querySelector("#fetchbtn");
 btn.addEventListener("click",funbtn);
 
 function funbtn() {
-    fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/animals")
-    .then((give)=>{
-        return give.json()
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then((result)=>{
+        return result.json()
     })
-    .then((value)=>{
-        document.querySelector("#anyimage").src=value.message
+    .then((data)=>{
+        document.querySelector("#anyimage").src=data.message
     })
     .catch((error)=>{
-        console.error(error);
+        console.log(error);
         
     })
 }

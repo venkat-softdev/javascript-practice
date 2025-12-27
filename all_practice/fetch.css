@@ -32,3 +32,11 @@ button{
 button:hover{
     background-color: #0652DD;
 }
+
+img{
+    max-width: 500px;
+    max-height: 500px;
+   
+    outline: 5px solid deeppink;
+    border-radius: 3px;
+}
