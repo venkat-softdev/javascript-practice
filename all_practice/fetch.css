@@ -36,7 +36,7 @@ button:hover{
 img{
     max-width: 500px;
     max-height: 500px;
-   
+   padding: 10px;
     outline: 5px solid deeppink;
     border-radius: 3px;
 }
