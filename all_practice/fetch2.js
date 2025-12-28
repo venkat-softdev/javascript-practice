@@ -1,7 +1,8 @@
 // javascript starting 
 const btn=document.querySelector("#btn");
-btn.addEventListener("click",getdata);
 const div=document.querySelector(".div")
+btn.addEventListener("click",getdata);
+
 
 async function getdata() {
     
