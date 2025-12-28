@@ -27,3 +27,18 @@ button{
     font-weight: 500;
     border-radius: 3px;
 }
+div{
+    max-width: 700px;
+ text-align: center;
+ 
+ margin-top: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+img{
+    max-width: 300px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 5px;
+}

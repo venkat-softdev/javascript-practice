@@ -11,9 +11,10 @@ async function getdata() {
 
     let outputvalue=""
 
-    convert.user.forEach((item) => {
+    convert.forEach((item) => {
         outputvalue +=`<div class=fetch>
         <h2>${item.id}</h2>
+         <img src="${item.photo}" alt=" image not found"/> 
          <h2>${item.name}</h2>
          <p>${item.phone}</p>
          <p>${item.email}</p>
