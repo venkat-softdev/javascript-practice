@@ -10,6 +10,7 @@ body{
     align-items: center;
     width: 100%;
     height: 100vh;
+    flex-direction: column;
 }
 
 button{
@@ -28,4 +29,8 @@ button{
 h2{
     margin-bottom: 20px;
     font-size: 30px;
+}
+
+#randomimg{
+    margin-top: 10px;
 }
