@@ -1,21 +1,24 @@
 // javascript starting 
 
 const btn=document.querySelector("#btn");
+const div=document.querySelector(".div")
 btn.addEventListener("click",getimage);
 
 async function getimage() {
-    const fetchdata=await fetch("https://dog.ceo/api/breeds/image/random")
-    .then((data)=>{
-        return data.json()
-    })
-    .then((value)=>{
-        document.querySelector("#randomimg").src=value.message
-    })
-    
-    .catch((error)=>{
-        console.log(error);
+    const fetchdata=await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/animal")
+    const finalvalue = await fetchdata.json()
+
+    outputdata=""
+    finalvalue.forEach((item) => {
         
-    })
+        outputdata+=`<div class="images">
+        <h2>${item.id}</h2>
+         <img src="${item.image}"
+        </div>`
+    });
+
+    div.innerHTML=outputdata
+
   
 }
 
