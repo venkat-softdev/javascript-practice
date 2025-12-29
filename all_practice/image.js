@@ -11,8 +11,16 @@ async function getimage() {
     .then((value)=>{
         document.querySelector("#randomimg").src=value.message
     })
+    
     .catch((error)=>{
         console.log(error);
         
     })
+  
 }
+
+
+ 
+
+ 
+ 
