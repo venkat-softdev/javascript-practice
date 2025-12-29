@@ -23,8 +23,9 @@ function getfun() {
             
             const card=`
              <div class="card">
-              <h3>${"Name : " +item.name}</h3>
+              
               <img src="${item.avatar}" alt=" ${item.name}"/>
+              <h3>${"Name : " +item.name}</h3>
               <p>${"Email : " + item.email}</p>
               <p>${"Phone : " + item.phone}</p>
              </div>
