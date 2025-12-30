@@ -64,7 +64,7 @@ async function getdata() {
     const data = await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member");
     const final = await data.json();
 
-    let outputfetch = ""; // ✅ use let
+    let outputfetch = "";
 
     final.forEach((item) => {
         outputfetch += `
@@ -75,7 +75,7 @@ async function getdata() {
         </div>`;
     });
 
-    div.innerHTML = outputfetch; // better than +=
+    div.innerHTML = outputfetch; 
 }
 
 
