@@ -50,31 +50,34 @@
 
 
     <script>
-        const btn=document.querySelector("#button");
-        const div=document.querySelector(".box")
-        btn.addEventListener("click",getimage);
+       const btn = document.querySelector("#button");
+const div = document.querySelector(".box");
 
-      async function getimage() {
-        
-        const fetchdata=await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member");
-        const fetchvalue =await fetchdata.json()
+btn.addEventListener("click", getimage);
 
-      let output=""
-        fetchvalue.forEach((imgvalue) => {
-            
-            output+=
-            
-            `<div class="image">
-                 <h3>${"Name : " +imgvalue.name}</h3>
-                 <img src="${imgvalue.avatar} alt="${imgvalue.name}"/>
-                 <p>${"Email : " + imgvalue.email}</p>
-                 <p>${"Phone : " + imgvalue.phone}</p>
+async function getimage() {
+    const fetchdata = await fetch(
+        "https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member"
+    );
 
-                </div>`;
-        });
+    const fetchvalue = await fetchdata.json();
 
-        box.innerHTML=output
-      }
+    let output = "";
+
+    fetchvalue.forEach((imgvalue) => {
+        output += `
+            <div class="image">
+                <h3>Name : ${imgvalue.name}</h3>
+                <img src="${imgvalue.avatar}" alt="${imgvalue.name}" />
+                <p>Email : ${imgvalue.email}</p>
+                <p>Phone : ${imgvalue.phone}</p>
+            </div>
+        `;
+    });
+
+    div.innerHTML = output;
+}
+
     </script>
 </body>
 </html>
