@@ -44,29 +44,29 @@
    <div class="fetchdiv"></div>
 
     <script>
-     const  btn=document.querySelector("#btn");
-     const div=document.querySelector(".fetchdiv")
+    const btn = document.querySelector("#btn");
+const div = document.querySelector(".fetchdiv");
 
-     btn.addEventListener("click",getdata);
+btn.addEventListener("click", getdata);
 
-     async function getdata(params) {
-        
-        const data = await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member");
+async function getdata() {
+    const data = await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member");
+    const final = await data.json();
 
-        const final = await data.json();
+    let outputfetch = ""; // ✅ use let
 
-        const outputfetch=""
-        final.forEach((item) => {
-            
-            outputfetch +=`<div class ="member">
-                <h2>${item.mame}</h2>
-                <h2>${item.email}</h2>
-                <h2>${item.phone}</h2>
-                </div>`
-        });
+    final.forEach((item) => {
+        outputfetch += `
+        <div class="member">
+            <h2>${item.name}</h2>
+            <h2>${item.email}</h2>
+            <h2>${item.phone}</h2>
+        </div>`;
+    });
 
-        div.innerHTML+=outputfetch;
-     }
+    div.innerHTML = outputfetch; // better than +=
+}
+
 
     </script>
 </body>
