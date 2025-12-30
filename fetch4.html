@@ -36,6 +36,13 @@
         background-color: blue;
         border-radius: 5px;
     }
+    .member{
+        padding: 10px;
+        background-color: palegreen;
+        color: #fff;
+        margin: 10px;
+        border-radius: 5px;
+    }
 </style>
 <body>
     
@@ -58,9 +65,9 @@ async function getdata() {
     final.forEach((item) => {
         outputfetch += `
         <div class="member">
-            <h2>${item.name}</h2>
-            <h2>${item.email}</h2>
-            <h2>${item.phone}</h2>
+            <h2>${"name : " +item.name}</h2>
+            <h2>${"Email : " +item.email}</h2>
+            <h2>${ "Phone : " + item.phone}</h2>
         </div>`;
     });
 
