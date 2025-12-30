@@ -39,9 +39,13 @@
     .member{
         padding: 10px;
         background-color: palegreen;
-        color: #fff;
+        
         margin: 10px;
         border-radius: 5px;
+    }
+    p{
+        font-weight: 500;
+        font-size:20px ;
     }
 </style>
 <body>
@@ -66,8 +70,8 @@ async function getdata() {
         outputfetch += `
         <div class="member">
             <h2>${"name : " +item.name}</h2>
-            <h2>${"Email : " +item.email}</h2>
-            <h2>${ "Phone : " + item.phone}</h2>
+            <p>${"Email : " +item.email}</p>
+            <p>${ "Phone : " + item.phone}</p>
         </div>`;
     });
 
