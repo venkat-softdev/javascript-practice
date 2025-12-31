@@ -45,4 +45,33 @@
     <button id="btn">Fetch Button</button>
     <div class="fetchdiv"></div>
 </body>
+
+
+<script>
+
+const btn=document.querySelector("#btn")
+const div=document.querySelector(".fetchdiv")
+
+btn.addEventListener("click",getfetch);
+
+async function getfetch() {
+    
+    const fetchdata=await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/person");
+    const fetchvalue=await fetchdata.json();
+
+    let fetchoutput=""
+    fetchvalue.forEach((item) => {
+        
+        fetchoutput+=`<div class="user">
+            <h3>${"name : " +item.name}</h3>
+            <p>${"city : " + item.city}</p>
+            <p>${"phone : " + item.phone}</P>
+                <p>${"Email : " + item.email}</p>
+            `
+    });
+
+    div.innerHTML=fetchoutput;
+}
+
+</script>
 </html>
