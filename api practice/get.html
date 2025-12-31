@@ -34,6 +34,22 @@
         font-size: 30px;
         text-transform: capitalize;
     }
+    .getdiv{
+        max-width: 900px;
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .getdiv img{
+        width: 100%;
+        height: 500px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .getdiv p{
+        font-size: 19px;
+        margin-top: 10px;
+    }
 </style>
 <body>
     <div class="box">
@@ -49,7 +65,7 @@
     btn.addEventListener("click",getmethod)
 
     function getmethod() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/person",{
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
             method:"GET",
             headers:{"content-type":"application/json"},
         })
@@ -65,14 +81,14 @@
             const div=document.querySelector(".getdiv")
             data.forEach((value) => {
                 const item=`
-                <div class="getimg"/>
+                <div class="getimg">
                  <img src="${value.avatar}" alt="${value.name}"/>
                  <p>${"email : " + value.email}</p>
                  <p>${"phone : " + value.phone}</p>
 
                 </div>`;
 
-                div.innerHTML=item
+                div.innerHTML+=item
                 
             })
           
