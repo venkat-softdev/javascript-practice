@@ -41,4 +41,23 @@
     <button id="btn">Click Fetch</button>
     <div class="fetchbox"></div>
 </body>
+
+<script>
+    const btn=document.querySelector("#btn")
+    const div=document.querySelector(".fetchbox");
+
+    btn.addEventListener("click",getfetch);
+
+    async function getfetch() {
+        
+        const data=await fetch("https://dummyjson.com/products");
+        const value=await data.json();
+
+        let output="";
+        value.forEach((item) => {
+            
+            output+=`<div class=""`
+        });
+    }
+</script>
 </html>
