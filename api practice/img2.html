@@ -40,4 +40,18 @@
     <button class="button">Click Me</button>
     <div class="imgbox"></div>
 </body>
+
+<script>
+    const button=document.querySelector(".button");
+    const box=document.querySelector(".imgbox");
+
+    button.addEventListener("click",getimg)
+
+    async function getimg() {
+        
+        const data =await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user");
+        
+
+    }
+</script>
 </html>
