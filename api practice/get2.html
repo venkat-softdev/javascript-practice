@@ -64,6 +64,18 @@
             const getbox=document.querySelector(".getbox");
             getbox=""
                 
+            data.forEach((item) => {
+                const img=`
+                <div class="images">
+                    <h2>${"name : " + item.name}</h2>
+                    <img src="${item.avatar}" alt="${item.name}"/>
+                    
+                </div> `
+                getbox.innerHTML+=img;
+            })
+        })
+        .catch((error)=>{
+            console.log(error);
             
         })
     }
