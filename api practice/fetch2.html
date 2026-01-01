@@ -56,8 +56,17 @@
         let output="";
         value.forEach((item) => {
             
-            output+=`<div class=""`
+            output+=`
+            <div class="recipe">
+              <h2>${item.title}</h2>
+              <p>${item.description}</p>
+              <p>${item.category}</p>
+              <h2>${item.price}</h2>  
+            
+           </div>`
         });
+
+        div.innerHTML=output;
     }
 </script>
 </html>
