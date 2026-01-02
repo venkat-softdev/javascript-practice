@@ -38,6 +38,18 @@
         text-transform: capitalize;
 
     }
+    .images{
+        max-width: 800px;
+          text-align: center;
+    }
+    .images img{
+        object-fit: cover;
+        width: 100%;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    }
 </style>
 <body>
     <div class="box">
@@ -70,9 +82,18 @@
             
             data.forEach((value) => {
                 const boximg=`
-                <div class=""
-                `
+                <div class="images">
+                    <img src="${value.avatar}" alt="${value.name}"/>
+                    <h2>${"name : "+value.name}</h2>
+                     <h2>${"phone : " + value.phone}</h2>
+                </div>`
+
+                box.innerHTML+=boximg;
             });
+            
+        })
+        .catch((error)=>{
+            console.log(error);
             
         })
         
