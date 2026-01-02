@@ -45,11 +45,12 @@
     </div>
 </body>
 <script>
-    const btn=document.querySelector("click",getfun)
+    const btn=document.querySelector("#btn")
+    btn.addEventListener("click",getfun)
 
     function getfun() {
         
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member",{
             method:"GET",
             headers:{"content-type":"application/json"}
         })
