@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>post in javascript</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins';
+
+    }
+   
+    .box{
+       
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    form{
+       
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        margin-bottom: 10px;
+        font-weight: 800;
+    }
+    input{
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button{
+        background-color: dodgerblue;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+         font-weight: 600;
+         color: #fff;
+         cursor: pointer;
+         border-radius: 5px;
+    }
+    .response{
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid green;
+        border-radius: 5px;
+        background-color: palegreen;
+        color: #fff;
+    }
+    .error{
+        margin-top: 20px;
+        border-radius: 5px;
+        border: 1px solid orangered;
+        background-color: orange;
+        color: #fff;
+    }
+</style>
 <body>
     <div class="box">
         <h2>post method in javascript</h2>
@@ -20,5 +79,51 @@
         <div id="responsemessage" class="response" style="display: none;"></div>
         <div id="errormessage" class="error" style="display: none;"></div>
     </div>
+<script>
+    const form=document.querySelector(".form")
+    form.addEventListener("submit",(event)=>{
+
+          event.preventDefault();
+        const name=document.querySelector("#name").value;
+        const email=document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        const newtask={
+            name:name,
+            email:email,
+            phone:phone,
+        };
+
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+
+            method:"POST",
+            headers:{"content-type" : "apllication/json"},
+            body:JSON.stringify(newtask),
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("failed to fetch");
+            
+        })
+        .then((data)=>{
+            const responsemessage=document.querySelector("#responsemessage");
+            responsemessage.style.display="block"
+            responsemessage.textContent="task created successfully"
+            const errormessage=document.querySelector("#errormessage")
+            errormessage.style.display="none";
+        })
+        .catch((error)=>{
+            const errormessage=document.querySelector("#errormessage");
+            errormessage.style.display="block";
+            errormessage.textContent="Error : " + error.message;
+            document.querySelector("#responsemessage").style.display="none"
+        })
+    }
+    );
+ 
+      
+</script>
 </body>
 </html>
