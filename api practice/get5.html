@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET in javascript</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family:"poppins";
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        padding: 13px;
+        width: 200px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: dodgerblue;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    h2{
+        margin-bottom: 30px;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+</style>
+<body>
+    <div class="box">
+        <h2>GET in javascript</h2>
+        <button id="btn">Click Me</button>
+        <div class="boximg">
+
+        </div>
+    </div>
+</body>
+<script>
+    const btn=document.querySelector("click",getfun)
+
+    function getfun() {
+        
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            method:"GET",
+            headers:{"content-type":"application/json"}
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("failed to image found");
+            
+        })
+        .then((data)=>{
+            const imgbox=document.querySelector(".boximg")
+            imgbox.innerHTML=""
+            data.forEach((item) => {
+                const image=`
+                <div class="img">
+                <img src="${item.avatar}" alt="${item.name}"/>
+                <h3>${"name : " +item.name}</h3>
+
+                </div>`
+                imgbox.innerHTML+=image;
+            });
+        })
+        .catch((error)=>{
+            console.error(error);
+            
+        })
+    }
+</script>
+</html>
