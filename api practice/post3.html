@@ -10,8 +10,55 @@
         margin: 20px;
         font-family: 'poppins';
     }
+    .box{
+       
+        max-width: 400px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+    #form{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        font-weight: 700;
+        font-size: 17px;
+    }
+    input{
+        
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    button{
+        padding: 13px;
+         border: none;
+         background-color: blue;
+         color: #fff;
+         font-size: 17px;
+         font-weight: 600;
+         border-radius: 5px;
+    }
 </style>
 <body>
-    
+    <div class="box">
+        <form  id="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="resmsg" class="response" style="display: none;"></div>
+        <div id="errormsg" class="error" style="display: none;"></div>
+
+    </div>
 </body>
 </html>
