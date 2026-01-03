@@ -50,6 +50,7 @@
         color: #000;
         font-size: 17px;
         border-radius: 5px;
+        padding: 10px;
     }
     #errormsg{
          border: 2px solid #ccc;
@@ -91,9 +92,9 @@
                 phone:phone,
                 
             };
-            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/person",{
                 method:"POST",
-                headers:{"Content-Type":"apllication/json"},
+                headers:{"Content-Type":"aplication/json"},
                 body:JSON.stringify(newtask),
             })
             .then((res)=>{
