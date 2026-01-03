@@ -74,5 +74,49 @@
         <div id="errormsg" class="error" style="display: none;"></div>
 
     </div>
+    <script>
+        const form=document.querySelector("form")
+        form.addEventListener("submit",(event)=>{
+
+            event.preventDefault();
+
+            const name=document.querySelector("#name").value;
+            const phone=document.querySelector("#phone").value;
+            const email=document.querySelector("#email").value;
+
+            let newtask={
+               
+                name:name,
+                email:email,
+                phone:phone,
+                
+            };
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+                method:"POST",
+                headers:{"Content-Type":"apllication/json"},
+                body:JSON.stringify(newtask),
+            })
+            .then((res)=>{
+                if (res.ok) {
+                    return res.json()
+                }
+                throw new Error("failed to fetch data");
+                
+            })
+            .then((data)=>{
+                const resmsg=document.querySelector("#resmsg");
+                resmsg.style.display="block";
+                resmsg.textContent="Task created successfully"
+                const error=document.querySelector("#errormsg");
+                error.style.display="none"
+            })
+            .catch((error)=>{
+                const errormsg=document.querySelector("#errormsg");
+                errormsg.style.display="block";
+                const res=document.querySelector("#resmsg");
+                res.style.display="none"
+            })
+        })
+    </script>
 </body>
 </html>
