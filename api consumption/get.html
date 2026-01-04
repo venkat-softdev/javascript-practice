@@ -44,6 +44,44 @@
     </div>
 </body>
 <script>
-    
+    const btn=document.querySelector("#btn")
+    btn.addEventListener("click",getfun)
+
+    function getfun() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            method:"GET",
+            headers:{"Content-Type":"application/json"}
+
+
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("Failed to image found");
+            
+        })
+        .then((data)=>{
+            const imgbox=document.querySelector(".image");
+            imgbox.innerHTML+=""
+
+            data.forEach((item) => {
+                
+                const img=`
+                <div class="imgcon">
+                  <img src="${item.avatar}" alt="${"failed to image found"}"/>
+                  <h3>${"Name : " +item.name }</h3>
+                  <h3>${"Email : " + item.email}</h3> 
+                  <h3>${"phone : " + item.phone}</h3> 
+                </div>`
+
+                imgbox.innerHTML+=img
+            });
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
 </script>
 </html>
