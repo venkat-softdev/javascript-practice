@@ -87,102 +87,115 @@
         </div>
     </div>
 </body>
+
 <script>
-    let tasks=[];
-    const cardcontainer=document.querySelector("#cardcontainer");
-    const updatedform=document.querySelector("#updatedform");
-    const form=document.querySelector("#form");
-    const editname=document.querySelector("#editname");
-    const editemail=document.querySelector("#editemail");
-    const editphone=document.querySelector("#editphone");
-    let currenttaskid=null;
+  let tasks = [];
+
+  const cardcontainer = document.querySelector("#cardcontainer");
+  const updatedform = document.querySelector("#updatedform");
+
+  const editname = document.querySelector("#editname");
+  const editemail = document.querySelector("#editemail");
+  const editphone = document.querySelector("#editphone");
+
+  let currenttaskid = null;
+
+  // ---------------- FETCH TASKS ----------------
+  function fetchtask() {
+    fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        tasks = data;
+        rendercard();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  // ---------------- RENDER CARDS ----------------
+  function rendercard() {
+    cardcontainer.innerHTML = tasks
+      .map(function (task) {
+        return `
+          <div class="card">
+            <img src="${task.avatar}" alt="${task.name}" />
+            <h3>${task.name}</h3>
+            <p>Email : ${task.email}</p>
+            <p>Phone : ${task.phone}</p>
+            <button onclick="editTask('${task.id}')">Update</button>
+          </div>
+        `;
+      })
+      .join("");
+  }
+
+  // ---------------- EDIT TASK ----------------
+  function editTask(id) {
+    var task = tasks.find((t)=>{
+         return t.id === id;
+    })
+     
 
 
-    //fetch tasks 
-    function fetchtask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            tasks=data;
-           
-            
-            rendercard();
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+    if (!task) return;
+
+    currenttaskid = id;
+    updatedform.style.display = "block";
+
+    editname.value = task.name;
+    editemail.value = task.email;
+    editphone.value = task.phone;
+  }
+
+  // ---------------- UPDATE TASK ----------------
+  updatedform.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!currenttaskid) {
+      alert("No task selected");
+      return;
     }
-    // render tasks as cards
-       function rendercard() {
-         cardcontainer.innerHTML=tasks
-         .map((task)=>{
-            
-            return `
-            <div class="card">
-              <img src="${task.avatar}" alt="${task.name}"/>
-              <h3>${task.name}</h3>
-              <p>${"Email : " + task.email}</p>
-              <p>${"Phone : " + task.phone}</p>
-              <button onclick="editTask('${task.id}')">Update</button>
-             </div>
-              `
-         })
-         .join("")
-       }
 
-       // handle the update button 
+    var updatedtask = {
+      name: editname.value,
+      email: editemail.value,
+      phone: editphone.value,
+    };
 
-     function editTask(id) {
-        const task=tasks.find((t)=>{
-            return t.id===id
-        })
-        if (!task) return;
-        currenttaskid=id;
-        updatedform.style.display="block";
-        editname.value=task.name;
-        editemail.value=task.email;
-        editphone.value=task.phone;
-            
-        
-     }
+    fetch(
+      `https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currenttaskid}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedtask),
+      }
+    )
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        tasks = tasks.map(function (task) {
+          return task.id === data.id ? data : task;
+        });
 
-     // handle the form submission
-     updatedform.addEventListener("submit",(event)=>{
+        rendercard();
+        updatedform.style.display = "none";
+        currenttaskid = null;
 
-        event.preventDefault();
+        alert("Task updated successfully");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
 
-        if(!currenttaskid)return;
-
-        const updatedtask={
-            name:editname.value,
-            email:editemail.value,
-            phone:editphone.value,
-        };
-
-        fetch(
-            "https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currenttaskid}",{
-            method:"PUT",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(updatedtask),
-
-        })
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            tasks=tasks.map((task)=>(task.id===data.id ? data:task));
-            rendercard()
-            updatedform.style.display="none"
-            alert("task created successfully")
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
-     })
-fetchtask()
+  // ---------------- INITIAL LOAD ----------------
+  fetchtask();
 </script>
+
 </html>
