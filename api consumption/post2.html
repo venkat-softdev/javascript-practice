@@ -47,6 +47,25 @@
     text-align: center;
     text-transform: capitalize;
    }
+   .response{
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 5px;
+
+   }
+   .error{
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: orangered;
+    padding: 10px;
+    border-radius: 5px;
+   }
 </style>
 <body>
     <div class="postbox">
@@ -65,47 +84,43 @@
     </div>
 </body>
 <script>
-    const form=document.querySelector("#form")
-    form.addEventListener("submit",(event)=>{
+    const form = document.querySelector("#form");
 
-        event.preventDefault();
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-        const name=document.querySelector("#name")
-        const email=document.querySelector("email")
-        const phone=document.querySelector("phone")
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const phone = document.querySelector("#phone").value;
 
-        const newtask={
-            name:name,
-            email:email,
-            phone:phone,
-        };
+    const newtask = {
+        name: name,
+        email: email,
+        phone: phone,
+    };
 
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(newtask)
-        })
-        .then((res)=>{
-            if (res.ok) {
-                return res.json()
-            }
-            throw new Error("failed to data found");
-            
-        })
-        .then((data)=>{
-            const resmsg=document.querySelector("#resmsg");
-            resmsg.style.display="block";
-            resmsg.textContent="Task created successfully"
-            const error=document.querySelector("#errormsg")
-            error.style.display="none";
-        })
-        .catch((error)=>{
-            const errormsg=document.querySelector("#errormsg")
-            errormsg.style.display="block";
-            errormsg.textContent="Failed to Create Task"
-            const response=document.querySelector("#resmsg");
-            response.style.display="none"
-        })
+    fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newtask)
     })
+    .then((res) => {
+        if (res.ok) {
+            return res.json();
+        }
+        throw new Error("failed to data found");
+    })
+    .then(() => {
+        document.querySelector("#resmsg").style.display = "block";
+        document.querySelector("#resmsg").textContent = "Task created successfully";
+        document.querySelector("#errormsg").style.display = "none";
+    })
+    .catch(() => {
+        document.querySelector("#errormsg").style.display = "block";
+        document.querySelector("#errormsg").textContent = "Failed to Create Task";
+        document.querySelector("#resmsg").style.display = "none";
+    });
+});
+
 </script>
 </html>
