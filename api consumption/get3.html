@@ -50,7 +50,7 @@
     btn.addEventListener("click",getfun)
 
     function getfun() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/:endpoint",{
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
             method:"GET",
             headers:{"Content-Type":"application/json"}
         })
@@ -63,19 +63,19 @@
         })
         .then((data)=>{
             const box=document.querySelector(".resbox");
-            box.innerHTML+=""
+            box.innerHTML=""
             data.forEach((value) => {
                 const imgbox=`
                 <div class="img">
                   <img src="${value.avatar}" alt="${value.name}"/>
                   <h2>${"Email : " +value.email}</h2>
                   <h3>${"Phone : " + value.phone}</h3>  
-                </div>`
-                box.innerHTML=imgbox;
+                </div>`;
+                box.innerHTML+=imgbox;
             });
 
         })
-        .catch((eror)=>{
+        .catch((error)=>{
             console.log(error);
             
         })
