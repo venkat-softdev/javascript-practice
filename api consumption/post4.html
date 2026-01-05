@@ -53,14 +53,16 @@ h3{
     font-size: 17px;
     border-radius: 3px;
     border: 2px solid #ccc;
+    padding: 10px;
 }
 .error{
       margin-top: 20px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: orangered;
     font-size: 17px;
     border-radius: 3px;
     border: 2px solid #ccc;
+    padding: 10px;
 }
 </style>
 <body>
@@ -81,45 +83,54 @@ h3{
     </div>
 </body>
 <script>
-    const form=document.querySelector("#form");
-    form.addEventListener("submit",(event)=>{
-        event.preventDefault();
+   const form = document.querySelector("#form");
 
-        const name=document.querySelector("#name").value;
-        const email=document.querySelector("#email").value;
-        const phone=document.querySelector("#phone").value;
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-        const newtask={
-            name:name,
-            email:email,
-            phone:phone,
-        }
-       fetch("https://695b9c821d8041d5eeb79497.mockapi.io/user",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify(newtask)
-       })
-        .then((res)=>{
-            if (res.ok) {
-                return res.json()
-            }
-            throw new Error("failed to fetch data");
-            
-        })
-        .then((data)=>{
-            const resmsg=document.querySelector("#resmsg");
-            resmsg.style.display="block";
-            resmsg.textContent="Task created successfully"
-            const error=document.querySelector("#errormsg");
-            error.style.display="none"
-        })
-        .then((error)=>{
-            const errormsg=document.querySelector("#errormsg");
-            errormsg.style.display="block"
-            errormsg.textContent="error.message"
-            const response=document.querySelector("#resmsg")
-            response.style.display="none";
-        })
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const phone = document.querySelector("#phone").value;
+
+    const newtask = {
+        name: name,
+        email: email,
+        phone: phone,
+    };
+
+    fetch("https://695b9c821d8041d5eeb79497.mockapi.io/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newtask)
     })
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("Failed to fetch data");
+        }
+        return res.json();
+    })
+    .then((data) => {
+        const resmsg = document.querySelector("#resmsg");
+        resmsg.style.display = "block";
+        resmsg.textContent = "Task created successfully";
+
+        const errormsg = document.querySelector("#errormsg");
+        errormsg.style.display = "none";
+
+            console.log(data);
+    })
+    .catch((error) => {
+        const errormsg = document.querySelector("#errormsg");
+        errormsg.style.display = "block";
+        errormsg.textContent = error.message;
+
+        const resmsg = document.querySelector("#resmsg");
+        resmsg.style.display = "none";
+
+      
+        
+    });
+});
+
 </script>
 </html>
