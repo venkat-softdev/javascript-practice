@@ -96,7 +96,7 @@ h3{
         }
         fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
             method:"POST",
-            headers:{"Content-Type":"apllication/json"},
+            headers:{"Content-Type":"application/json"},
             body:JSON.stringify(newtask)
         })
         .then((res)=>{
@@ -116,7 +116,7 @@ h3{
         .then((error)=>{
             const errormsg=document.querySelector("#errormsg");
             errormsg.style.display="block"
-            errormsg.textContent="failed to fetch data"
+            errormsg.textContent="error.message"
             const response=document.querySelector("#resmsg")
             response.style.display="none";
         })
