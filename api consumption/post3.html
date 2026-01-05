@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST in javascript</title>
+</head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+    .postbox{
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 10px;
+        border: 2px solid #ccc;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+    #form{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    input{
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 20px;
+    }
+    button{
+        padding: 13px;
+        border-radius: 5px;
+        border: none;
+        background-color: blue;
+        color: #fff;
+        font-weight: 500;
+        font-size: 17px;
+    }
+   h2{
+    text-align: center;
+   }
+   .response{
+    border: 2px solid #ccc ;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+   }
+   .error{
+    border: 2px solid #ccc ;
+    background-color: orangered;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+   }
+</style>
+<body>
+    <div class="postbox">
+        <h2>Form POST in javascript</h2>
+        <form id="form">
+            <label for="name" >Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+
+            <button type="submit">Sumbit</button>
+        </form>
+        <div class="response" id="resmsg" style="display: none;"></div>
+          <div class="error" id="errormsg" style="display: none;"></div>
+    </div>
+</body>
+<script>
+    const form=document.querySelector("#form")
+    form.addEventListener("submit",(event)=>{
+
+        event.preventDefault()
+
+        const name=document.querySelector("#name").value;
+        const email=document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        const newtask={
+            name:name,
+            email:email,
+            phone:phone,
+        }
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(newtask)
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("Failed to fetch data");
+            
+        })
+        .then((data)=>{
+            const resmsg=document.querySelector("#resmsg");
+            resmsg.style.display="block"
+            resmsg.textContent="task created successfully"
+            const errormsg=document.querySelector("#errormsg");
+            errormsg.style.display="none"
+        })
+        .catch((error)=>{
+            let errorvalue=document.querySelector("#errormsg");
+            errorvalue.style.display="block"
+            errorvalue.textContent="Task failed to found"
+            const response=document.querySelector("#resmsg")
+            response.style.display="none"
+        })
+    })
+</script>
+</html>
