@@ -61,6 +61,24 @@
             throw new Error("failed to fetch data");
             
         })
+        .then((data)=>{
+            const box=document.querySelector(".resbox");
+            box.innerHTML+=""
+            data.forEach((value) => {
+                const imgbox=`
+                <div class="img">
+                  <img src="${value.avatar}" alt="${value.name}"/>
+                  <h2>${"Email : " +value.email}</h2>
+                  <h3>${"Phone : " + value.phone}</h3>  
+                </div>`
+                box.innerHTML=imgbox;
+            });
+
+        })
+        .catch((eror)=>{
+            console.log(error);
+            
+        })
     }
 </script>
 </html>
