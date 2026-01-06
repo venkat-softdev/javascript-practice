@@ -36,6 +36,12 @@
         color: #fff;
         font-weight: 500;
     }
+    .value{
+        padding: 20px;
+        margin: 10px;
+        background-color: palegreen;
+        border-radius: 5px;
+    }
 </style>
 <body>
    <h2>Fetch in javascript</h2>
@@ -58,7 +64,7 @@
         
         output+=`
         <div class="value">
-            <h2>${"Body : " +data.body}</h2>
+            <h3>${"Body : " +data.body}</h2>
             <h3>${" PostId : " +data.postId}</h3>
             <h3>${"Likes : " +data.likes}</h3>
             <h3>${"User Id : " +data.user.id}</h3>
