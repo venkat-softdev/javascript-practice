@@ -40,6 +40,16 @@
    <div class="fetchdiv"></div>
 </body>
 <script>
-    
+    const btn=document.querySelector("#btn");
+    const div=document.querySelector(".fetchdiv")
+
+    btn.addEventListener("click",fetchfun)
+
+    async function fetchfun() {
+        const fetchdata=await fetch("https://dummyjson.com/comments");
+        const covertdata=await fetchdata.json();
+
+        let output=""
+    }
 </script>
 </html>
