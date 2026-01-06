@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GET in javascript</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins';
+    }
+</style>
 <body>
     <div class="box">
         <h3>GET in javascript</h3>
@@ -14,4 +21,43 @@
         </div>
     </div>
 </body>
+<script>
+    const btn=document.querySelector("#btn");
+    btn.addEventListener("click",getfun)
+
+    function getfun() {
+        fetch("https://6957a070f7ea690182d292af.mockapi.io/user",{
+            method:"GET",
+            headers:{"Content-Type":"application/json"}
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("failed to fetch");
+            
+        })
+        .then((data)=>{
+            const box=document.querySelector(".imgbox");
+            box.innerHTML+=""
+             
+            data.forEach((item) => {
+                const img=`
+                <div class="image">
+                  <img src="${item.avatar}" alt="${item.name}"/>
+                  <h3>${"Name : " +item.name}</h3>
+                  <h3>${"Phone : " + item.phone}</h3>  
+                </div>`
+
+                box.innerHTML+=img
+            });
+            
+        })
+        .catch((error)=>{
+            console.log(error.message);
+            
+        })
+    }
+    getfun()
+</script>
 </html>
