@@ -50,6 +50,17 @@
         const covertdata=await fetchdata.json();
 
         let output=""
+      convertdata.forEach((data) => {
+        
+        output+=`
+        <div class="value">
+            <h2>${data.body}</h2>
+            <h3>${data.postId}</h3>
+            <h3>${data.likes}</h3>
+            <h3>${data.user}</h3>
+        </div>`
+      });
+      div.innerHTML+=output;
     }
 </script>
 </html>
