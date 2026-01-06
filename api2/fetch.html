@@ -58,10 +58,11 @@
         
         output+=`
         <div class="value">
-            <h2>${data.body}</h2>
-            <h3>${data.postId}</h3>
-            <h3>${data.likes}</h3>
-            <h3>${data.user}</h3>
+            <h2>${"Body : " +data.body}</h2>
+            <h3>${" PostId : " +data.postId}</h3>
+            <h3>${"Likes : " +data.likes}</h3>
+            <h3>${"User Id : " +data.user.id}</h3>
+            <h3><${"User Name : " + data.user.username}/h3>
         </div>`
        });
        div.innerHTML=output;
