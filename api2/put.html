@@ -27,7 +27,7 @@
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
-    
+    display: none;
     
    }
    input{
@@ -75,6 +75,7 @@
     const editname=document.querySelector("#editname");
     const editemail=document.querySelector("#editemail");
     const editphone=document.querySelector("#editphone");
+    let currentTaskid=null;
 
     // fetch and api render
 
@@ -107,9 +108,45 @@
                 <h3>${"Name : " +card.name}</h3>
                 <p>${"Email : " + card.email}</p>
                 <p>${"Phone : " + card.phone}</p>
+                <button onclick="editask('${task.id}')">update</button>
             <div>`;
         })
         cardbox.innerHTML=output;
     }
+
+    // Handle the "Update" button click 
+         
+    function editask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        });
+        if(!task) return;
+        currentTaskid=id;
+        updateform.style.display="block";
+        editname.value=task.name;
+        editemail.value=task.email;
+        editphone.value=task.phone;
+    }
+
+    // Handle the form submisson 
+
+    form.addEventListener("submit",(event)=>{
+
+        event.preventDefault()
+        if(!currentTaskid)return;
+
+        const updatetask={
+            name:editname.value,
+            email:editemail.value,
+            phone:editphone.value,
+        };
+
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskid}`,{
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(updatetask),
+        })
+        
+    })
 </script>
 </html>
