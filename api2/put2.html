@@ -68,6 +68,48 @@
     </div>
 </body>
 <script>
-    
+    let tasks=[];
+    const cardbox=document.querySelector("#cardbox")
+    const updateform=document.querySelector("#updateform");
+    const form=document.querySelector("#form");
+    const editname=document.querySelector("#editname");
+    const editemail=document.querySelector("#editemail");
+    const editphone=document.querySelector("#editphone");
+    let currentTaskid=null
+
+    // fetch task 
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data
+            rendertask()
+        })
+        .catch((error)=>{
+            console.log("Failed to fetch");
+            
+        })
+    }
+
+    // render function 
+
+    function rendertask() {
+        cardbox.innerHTML=""
+
+        output=""
+
+        tasks.forEach((task)=>{
+            const card=`
+            <div class="card">
+            <img src="${task.avatar}" alt="${task.name}"/>
+            <h3>${"Name : " + task.name}</h3>
+            <p>${"Email : " + task.email}</p>
+            <p>${"Phone : " + task.phone}</p>    
+            </div>`
+        })
+        cardbox.innerHTML=output;
+    }
 </script>
 </html>
