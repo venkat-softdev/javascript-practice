@@ -96,7 +96,20 @@
     // render task 
 
     function rendercards() {
+        cardbox.innerHTML="";
+
+        let output="";
         
+        tasks.forEach((task)=>{
+            output+=`
+            <div class="card">
+                <img src="${card.avatar}" alt="${card.name}"/>
+                <h3>${"Name : " +card.name}</h3>
+                <p>${"Email : " + card.email}</p>
+                <p>${"Phone : " + card.phone}</p>
+            <div>`;
+        })
+        cardbox.innerHTML=output;
     }
 </script>
 </html>
