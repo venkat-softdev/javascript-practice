@@ -73,12 +73,16 @@
     color: #555;
    }
    .card button{
-    border: 2px solid #ccc;
+    border: none;
     background-color: blue;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 17px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 10px;
+    width: 150px;
    }
 </style>
 <body>
@@ -126,7 +130,7 @@
     function rendertask() {
         cardbox.innerHTML=""
 
-        output=""
+       let output=""
 
         tasks.forEach((task)=>{
             const card=`
@@ -137,6 +141,7 @@
             <p>${"Phone : " + task.phone}</p> 
             <button onclick="editTask('${task.id}')">Update</button>   
             </div>`
+            output+=card
         })
         cardbox.innerHTML=output;
     }
@@ -177,7 +182,11 @@
         })
         .then((data)=>{
             tasks=tasks.map((task)=>{
-                task.id===data.id?data:task
+             
+             return  task.id===data.id?data:task
+
+               
+                
             })
             rendertask();
             updateform.style.display="none";
