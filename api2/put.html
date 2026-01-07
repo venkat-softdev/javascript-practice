@@ -56,7 +56,7 @@
     <div class="box">
         <h2>PUT in javascript</h2>
         <div id="cardbox" class="cards"></div>
-        <div class="formbox">
+        <div class="formbox" id="updateform">
             <h3>Update Task</h3>
             <form  id="form">
                 <input type="text" id="editname" name="name" placeholder="Name">
@@ -67,4 +67,36 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const cardbox=document.querySelector("#cardbox");
+    const updateform=document.querySelector("#updateform");
+    const form=document.querySelector("#form");
+    const editname=document.querySelector("#editname");
+    const editemail=document.querySelector("#editemail");
+    const editphone=document.querySelector("#editphone");
+
+    // fetch and api render
+
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            rendercards();
+        })
+        .catch((error)=>{
+            console.log("Error : failed to fetch " );
+            
+        });
+    }
+
+    // render task 
+
+    function rendercards() {
+        
+    }
+</script>
 </html>
