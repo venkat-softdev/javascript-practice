@@ -146,7 +146,23 @@
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(updatetask),
         })
-        
-    })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=tasks.map((task)=>{task.id===data.id?data:task});
+            rendercards()
+            updateform.style.display="none"
+            alert("task created successfully")
+        })
+        .catch((erro)=>{
+            console.log(error);
+            
+        });
+    });
+
+    // fetch tasks on page load 
+
+    fetchtask()
 </script>
 </html>
