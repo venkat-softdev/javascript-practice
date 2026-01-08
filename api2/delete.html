@@ -35,5 +35,70 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[]
+    const cardbox=document.querySelector("#cardbox")
 
+
+    // fetch tasks in javascript 
+    function fetchtasks() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            rendertask()
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+    
+    // renderfunction 
+
+    function rendertask() {
+        cardbox.innerHTML=""
+        let output=""
+        tasks.forEach((task)=>{
+            const card=`
+            <div class="card">
+             <img src="${task.avatar}" alt="${task.name}"/>
+             <h2>${"Name : " +task.name}</h2>
+             <p>${"Email : " + task.email}</p>
+             <p>${"Phone : " + task.phone}</p>
+             <button onclick="deletTask('${task.id}')">Delete</button>   
+            </div>`
+            output+=card;
+        })
+        cardbox.innerHTML=output;
+    }
+
+    // delete a task
+    function deletTask() {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
+            method:"DELETE",
+        })
+        .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id !==id
+                })
+                rendertask()
+                alert("Task Deleted successfully")
+            }
+            else{
+                throw new Error("Failed to delete task");
+                
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+// fetch on page reload 
+ fetchtasks()
+</script>
 </html>
