@@ -57,12 +57,25 @@
         <div class="cards" id="cardbox"></div>
         <div class="formbox" id="updateform">
             <form action="" id="form">
-                <input type="text" id="name" name="name" placeholder="Name" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                <input type="text" id="editname" name="name" placeholder="Name" required>
+                <input type="email" id="editemail" name="email" placeholder="Email" required>
+                <input type="tel" id="editphone" name="phone" placeholder="Phone" required>
                 <button type="submit">Update Task</button>
             </form>
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const editname=document.querySelector("#editname");
+    const editemail=document.querySelector("#editemail");
+    const editphone=document.querySelector("#editphone");
+    const cardbox=document.querySelector("#cardbox");
+    const updateform=document.querySelector("#updateform");
+    const form=document.querySelector("#form");
+    let currentTaskid=null;
+
+    
+
+</script>
 </html>
