@@ -56,6 +56,7 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         padding: 20px;
         background-color: #fff;
+        text-align: center;
     }
     .card img{
         width: 100%;
@@ -64,6 +65,10 @@
     }
     .card p{
         font-weight: 600;
+    }
+    .card button{
+      
+        margin: 10px auto;
     }
 </style>
 <body>
@@ -168,7 +173,7 @@
                 return task.id===data.id?data:task
             })
             rendertasks()
-            updateform.style.display="none"
+            updateform.style.display="block"
             alert("Task updated successfully")
         })
         .catch((error)=>{
