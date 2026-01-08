@@ -1,188 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUT in javascript</title>
-</head>
-<style>
-    *{
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      font-family: "poppins";
     }
-    .box{
-        max-width: 900px;
-        margin: 100px auto;
-        padding: 20px;
+    .box {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 20px;
     }
-    .cards{
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap: 20px;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    .formbox{
-        max-width: 600px;
-       box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        padding: 10px;
-        margin: 30px;
-        border-radius: 5px;
-        display: none;
+    .formbox {
+      max-width: 600px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      padding: 10px;
+      margin: 30px;
+      border-radius: 5px;
+      display: none;
     }
-    form{
-        display: flex;
-        flex-direction: column;
-       
+    form {
+      display: flex;
+      flex-direction: column;
     }
-    input{
-        margin: 10px;
-        padding: 10px;
-        border: 2px solid #ccc;
-        border-radius: 3px;
+    input {
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 3px;
     }
-    button{
-        padding: 10px;
-        border: none;
-        background-color: blue;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 500;
-        width: 150px;
-        margin: auto;
-        margin-top: 10px;
-        border-radius: 8px;
+    button {
+      padding: 10px;
+      border: none;
+      background-color: blue;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      width: 150px;
+      margin: auto;
+      margin-top: 10px;
+      border-radius: 8px;
     }
-    .card{
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        padding: 20px;
-        background-color: #fff;
-        text-align: center;
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      padding: 20px;
+      background-color: #fff;
+      text-align: center;
     }
-    .card img{
-        width: 100%;
-        border-radius: 5px;
-        height: auto;
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      height: auto;
     }
-    .card p{
-        font-weight: 600;
+    .card p {
+      font-weight: 600;
     }
-    .card button{
-      
-        margin: 10px auto;
+    .card button {
+      margin: 10px auto;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>PUT in javascript</h2>
+      <h2>PUT in javascript</h2>
 
-        <div class="cards" id="cardbox"></div>
-        <div class="formbox" id="updateform">
-            <form action="" id="form">
-                <input type="text" id="editname" name="name" placeholder="Name" required>
-                <input type="email" id="editemail" name="email" placeholder="Email" required>
-                <input type="tel" id="editphone" name="phone" placeholder="Phone" required>
-                <button type="submit">Update Task</button>
-            </form>
-        </div>
+      <div class="cards" id="cardbox"></div>
+      <div class="formbox" id="updateform">
+        <form action="" id="form">
+          <input
+            type="text"
+            id="editname"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            id="editemail"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="tel"
+            id="editphone"
+            name="phone"
+            placeholder="Phone"
+            required
+          />
+          <button type="submit">Update Task</button>
+        </form>
+      </div>
     </div>
-</body>
-<script>
-    let tasks=[];
-    const editname=document.querySelector("#editname");
-    const editemail=document.querySelector("#editemail");
-    const editphone=document.querySelector("#editphone");
-    const cardbox=document.querySelector("#cardbox");
-    const updateform=document.querySelector("#updateform");
-    const form=document.querySelector("#form");
-    let currentTaskid=null;
+  </body>
+  <script>
+    let tasks = [];
+    const editname = document.querySelector("#editname");
+    const editemail = document.querySelector("#editemail");
+    const editphone = document.querySelector("#editphone");
+    const cardbox = document.querySelector("#cardbox");
+    const updateform = document.querySelector("#updateform");
+    const form = document.querySelector("#form");
+    let currentTaskid = null;
 
-
-    //fetch tasks in function 
+    //fetch tasks in function
 
     function fetchtask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
-        .then((res)=>{
-            return res.json()
+      fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res) => {
+          return res.json();
         })
-        .then((data)=>{
-            tasks=data;
-            rendertasks()
+        .then((data) => {
+          tasks = data;
+          rendertasks();
         })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
-    // rendertask in put javascript 
+    // rendertask in put javascript
 
     function rendertasks() {
-      cardbox.innerHTML=""
-      let output=""
+      cardbox.innerHTML = "";
+      let output = "";
 
-      tasks.forEach((task)=>{
-        const card=`
+      tasks.forEach((task) => {
+        const card = `
         <div class="card">
          <img src="${task.avatar}" alt="${task.name}"/>
-         <h3>${"Name : " +task.name}</h3>
+         <h3>${"Name : " + task.name}</h3>
          <p>${"Email : " + task.email}</p>
          <p>${"Phone : " + task.phone}</p>
          <button onclick="editTask('${task.id}')">Update</button>   
-        </div>`
+        </div>`;
 
-        output+=card;
-      })
-      cardbox.innerHTML=output;
+        output += card;
+      });
+      cardbox.innerHTML = output;
     }
 
-    // upadate button in put javascript 
+    // upadate button in put javascript
 
     function editTask(id) {
-      const task=tasks.find((t)=>{
-            return t.id===id
-           if(!task)return
-           currentTaskid=id;
-           updateform.style.display="block"
-           editname.value=task.name;
-           editemail.value=task.email;
-           editphone.value=task.phone 
+      const task = tasks.find((t) => {
+        return t.id === id;
         })
+        if (!task) return;
+        currentTaskid = id;
+        updateform.style.display = "block";
+        editname.value = task.name;
+        editemail.value = task.email;
+        editphone.value = task.phone;
     }
-    
-    // handle form submission 
-  
-    form.addEventListener("submit",(event)=>{
-        event.preventDefault()
 
-        let updatetask={
-            name:editname,
-            email:editemail,
-            phone:editphone,
+    // handle form submission
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let updatetask = {
+        name: editname.value,
+        email: editemail.value,
+        phone: editphone.value,
+      };
+
+      fetch(
+        `https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskid}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatetask),
         }
-        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskid}`,{
-            method:"PUT",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(updatetask)
+      )
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          tasks = tasks.map((task) => {
+            return task.id === data.id ? data : task;
+          });
+          rendertasks();
+          updateform.style.display = "none";
+          alert("Task updated successfully");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
 
-        })
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            tasks=tasks.map((task)=>{
-                return task.id===data.id?data:task
-            })
-            rendertasks()
-            updateform.style.display="none"
-            alert("Task updated successfully")
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
-    })
-      
-      // fetch tasks on page load 
-      fetchtask()
-</script>
+    // fetch tasks on page load
+    fetchtask();
+  </script>
 </html>
