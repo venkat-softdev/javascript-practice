@@ -156,13 +156,13 @@
     function editTask(id) {
       const task = tasks.find((t) => {
         return t.id === id;
-        })
-        if (!task) return;
-        currentTaskid = id;
-        updateform.style.display = "block";
-        editname.value = task.name;
-        editemail.value = task.email;
-        editphone.value = task.phone;
+      });
+      if (!task) return;
+      currentTaskid = id;
+      updateform.style.display = "block";
+      editname.value = task.name;
+      editemail.value = task.email;
+      editphone.value = task.phone;
     }
 
     // handle form submission
