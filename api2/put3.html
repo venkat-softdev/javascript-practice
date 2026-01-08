@@ -93,5 +93,26 @@
         })
     }
 
+    // rendertask in put javascript 
+
+    function rendertasks() {
+      cardbox.innerHTML=""
+      let output=""
+
+      tasks.forEach((task)=>{
+        const card=`
+        <div class="card">
+         <img src="${task.avatar}" alt="${task.name}"/>
+         <h3>${"Name : " +task.name}</h3>
+         <p>${"Email : " + task.email}</p>
+         <p>${"Phone : " + task.phone}</p>
+         <button onclick="editTask('${task.id}')">Update</button>   
+        </div>`
+
+        output+=card;
+      })
+      cardbox.innerHTML=output;
+    }
+
 </script>
 </html>
