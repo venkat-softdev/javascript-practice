@@ -93,7 +93,7 @@
              <h2>${"Name : " +task.name}</h2>
              <p>${"Email : " + task.email}</p>
              <p>${"Phone : " + task.phone}</p>
-             <button onclick="deletTask('${task.id}')">Delete</button>   
+             <button onclick="deleteTask('${task.id}')">Delete</button>   
             </div>`
             output+=card;
         })
@@ -101,7 +101,7 @@
     }
 
     // delete a task
-    function deletTask() {
+    function deleteTask(id) {
         fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
             method:"DELETE",
         })
