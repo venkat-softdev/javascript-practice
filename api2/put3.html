@@ -25,6 +25,7 @@
         padding: 10px;
         margin: 30px;
         border-radius: 5px;
+        display: none;
     }
     form{
         display: flex;
@@ -112,6 +113,20 @@
         output+=card;
       })
       cardbox.innerHTML=output;
+    }
+
+    // upadate button in put javascript 
+
+    function editTask(id) {
+      const task=tasks.find((t)=>{
+            return t.id===id
+           if(!task)return
+           currentTaskid=id;
+           updateform.style.display="block"
+           editname.value=task.name;
+           editemail.value=task.email;
+           editphone.value=task.phone 
+        })
     }
 
 </script>
