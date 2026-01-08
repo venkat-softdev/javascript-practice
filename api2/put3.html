@@ -128,6 +128,41 @@
            editphone.value=task.phone 
         })
     }
+    
+    // handle form submission 
+  
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault()
 
+        let updatetask={
+            name:editname,
+            email:editemail,
+            phone:editphone,
+        }
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskid}`,{
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(updatetask)
+
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=tasks.map((task)=>{
+                return task.id===data.id?data:task
+            })
+            rendertasks()
+            updateform.style.display="none"
+            alert("Task updated successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    })
+      
+      // fetch tasks on page load 
+      fetchtask()
 </script>
 </html>
