@@ -93,7 +93,8 @@
             <img src="${task.avatar}" alt="${task.name}"/>
             <h2>${"Name : " +task.name}</h2>
             <p>${"Email : " + task.email}</p>
-            <p>${"Phone : " + task.phone}</p>    
+            <p>${"Phone : " + task.phone}</p>
+            <button onclick="editTask('${task.id}')">Update</button>    
             </div>`;
 
             output=card;
@@ -101,6 +102,21 @@
         cardbox.innerHTML+=output;
     }
 
+    // handle "UPDATE" function Starting
+
+    function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id;
+        })
+        if(!task)return
+        currentTaskId=id;
+        updateform.style.display="block";
+        editname.value=task.name;
+        editemail.value=task.email;
+        editphone.value=task.phone;
+    }
+
     
+
 </script>
 </html>
