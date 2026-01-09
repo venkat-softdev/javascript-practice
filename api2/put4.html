@@ -85,102 +85,95 @@
     </div>
 </body>
 <script>
-    let tasks=[]
-    const editname=document.querySelector("#editname")
-    const editemail=document.querySelector("#editemail")
-    const editphone=document.querySelector("#editphone")
-    const cardbox=document.querySelector("#cardbox")
-    const updateform=document.querySelector("#updateform")
-    const form=document.querySelector("#form")
-    let currentTaskId=null;
+    let tasks = [];
 
-    // fetch function start
+const editname = document.querySelector("#editname");
+const editemail = document.querySelector("#editemail");
+const editphone = document.querySelector("#editphone");
 
-    function fetchtask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            tasks=data;
-            renderfun()
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        });
-    }
+const cardbox = document.querySelector("#cardbox");
+const updateform = document.querySelector("#updateform");
+const form = document.querySelector("#form");
 
-    // renderfunction starting 
+let currentTaskId = null;
 
-    function renderfun() {
-          
-        cardbox.innerHTML=""
+/* FETCH TASKS */
+function fetchtask() {
+  fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+    .then(res => res.json())
+    .then(data => {
+      tasks = data;
+      renderfun();
+    })
+    .catch(error => console.log(error));
+}
 
-        let output=""
-        tasks.forEach((task)=>{
-            const card=`
-            <div class="card">
-            <img src="${task.avatar}" alt="${task.name}"/>
-            <h2>${"Name : " +task.name}</h2>
-            <p>${"Email : " + task.email}</p>
-            <p>${"Phone : " + task.phone}</p>
-            <button onclick="editTask('${task.id}')">Update</button>    
-            </div>`;
+/* RENDER TASKS */
+function renderfun() {
+  cardbox.innerHTML = "";
 
-            output+=card;
-        })
-        cardbox.innerHTML+=output;
-    }
+  let output = "";
+  tasks.forEach(task => {
+    output += `
+      <div class="card">
+        <img src="${task.avatar}" alt="${task.name}" />
+        <h2>Name : ${task.name}</h2>
+        <p>Email : ${task.email}</p>
+        <p>Phone : ${task.phone}</p>
+        <button onclick="editTask('${task.id}')">Update</button>
+      </div>
+    `;
+  });
 
-    // handle "UPDATE" function Starting
+  cardbox.innerHTML = output;
+}
 
-    function editTask(id) {
-        const task=tasks.find((t)=>{
-            return t.id===id;
-        })
-        if(!task)return
-        currentTaskId=id;
-        updateform.style.display="block";
-        editname.value=task.name;
-        editemail.value=task.email;
-        editphone.value=task.phone;
-    };
+/* EDIT BUTTON */
+function editTask(id) {
+  const task = tasks.find(t => t.id === id);
+  if (!task) return;
 
+  currentTaskId = id;
+  updateform.style.display = "block";
 
-    // handle form submission Form 
-      form.addEventListener("submit",(event)=>{
+  editname.value = task.name;
+  editemail.value = task.email;
+  editphone.value = task.phone;
+}
 
-        event.preventDefault();
-        if(!currentTaskId) return;
+/* UPDATE FORM SUBMIT */
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (!currentTaskId) return;
 
-        const updatedata={
-            name:editname.value,
-            email:editemail.value,
-            phone:editphone.value,
-        }
-        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
-            method:"PUT",
-            headers:{"Conetnt-Type":"appliaction/json"},
-            body:JSON.stringify(updatedata)
-        })
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            tasks=tasks.map((task)=>{
-                return task.id===data.id
-            })
-            renderfun()
-            updateform.style.display="none"
-            alert("Task Updated successfully")
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
-      })
-      
-      fetchtask()
+  const updatedData = {
+    name: editname.value,
+    email: editemail.value,
+    phone: editphone.value,
+  };
+
+  fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(updatedData)
+  })
+    .then(res => res.json())
+    .then(data => {
+      tasks = tasks.map(task =>
+        task.id === data.id ? data : task
+      );
+
+      renderfun();
+      updateform.style.display = "none";
+      alert("Task Updated Successfully");
+    })
+    .catch(error => console.log(error));
+});
+
+/* INITIAL CALL */
+fetchtask();
+
 </script>
 </html>
