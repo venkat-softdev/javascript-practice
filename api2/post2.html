@@ -96,7 +96,19 @@
             body:JSON.stringify(newTask)
         })
         .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("Failed to fetch");
             
+        })
+        .then((data)=>{
+            const response=document.querySelector("#resmsg");
+            response.style.display="block";
+            response.textContent="Task Created successfully"
+
+            const error=document.querySelector("#errormsg");
+            error.style.display="none"
         })
 
     })
