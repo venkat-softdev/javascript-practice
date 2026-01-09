@@ -65,8 +65,9 @@
                 <h3>${"Name : " +item.name}</h3>
                 <p>${"Email : " +item.email}</p>
                 </div>`
+                box.innerHTML+=image;
             });
-            box.innerHTML=image;
+            
         })
         .catch((error)=>{
             console.log(error);
