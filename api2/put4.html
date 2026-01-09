@@ -61,6 +61,7 @@
     const editphone=document.querySelector("#editphone").value;
     const cardbox=document.querySelector("#cardbox").value;
     const updateform=document.querySelector("#updateform").value;
+    const form=document.querySelector("#form").value;
     let currentTaskId=null;
 
     // fetch function start
@@ -114,9 +115,41 @@
         editname.value=task.name;
         editemail.value=task.email;
         editphone.value=task.phone;
-    }
+    };
 
-    
+
+    // handle form submission Form 
+      form.addEventListener("submit",(event)=>{
+
+        event.preventDefault();
+        if(!currentTaskId) return;
+
+        const updateform={
+            name:editname,
+            email:editemail,
+            phone:editphone,
+        }
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
+            method:"PUT",
+            headers:{"Conetnt-Type":"appliaction/json"},
+            body:JSON.stringify(updateform)
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=tasks.map((task)=>{
+                return task.id===data.id
+            })
+            renderfun()
+            updateform.style.display="none"
+            alert("Task Updated successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+      })
 
 </script>
 </html>
