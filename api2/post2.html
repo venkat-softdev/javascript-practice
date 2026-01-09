@@ -51,6 +51,7 @@
         background-color: lightseagreen;
         color: #fff;
         border-radius: 5px;
+        display: none;
     }
     .error{
           margin-top: 10px;
@@ -58,6 +59,7 @@
         background-color: orangered;
         color: #fff;
         border-radius: 5px;
+        display: none;
     }
 </style>
 <body>
@@ -109,6 +111,14 @@
 
             const error=document.querySelector("#errormsg");
             error.style.display="none"
+        })
+        .catch((error)=>{
+            const errormsg=document.querySelector("#errormsg");
+            errormsg.style.display="block"
+            errormsg.textContent=error.message;
+
+            const resmsg=document.querySelector("#resmsg");
+            resmsg.style.display="none"
         })
 
     })
