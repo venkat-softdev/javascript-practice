@@ -14,11 +14,12 @@
         margin: 100px auto;
        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         border-radius: 8px;
-        display: none;
+        
     }
     form{
         display: flex;
         flex-direction: column;
+       
     }
     input{
         padding: 10px;
@@ -40,6 +41,24 @@
     .box h2{
         text-align: center;
     }
+    .formbox{
+         display: none;
+    }
+    .card{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+    }
+    .card img{
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .card h2{
+        margin: 10px;
+    }
+
 </style>
 <body>
     <div class="box">
