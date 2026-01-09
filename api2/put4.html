@@ -10,15 +10,17 @@
         font-family: 'poppins';
     }
     .box{
+        max-width: 800px;
         padding: 20px;
         margin: 100px auto;
-       box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+       
         border-radius: 8px;
         
     }
     form{
         display: flex;
         flex-direction: column;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
        
     }
     input{
@@ -44,11 +46,19 @@
     .formbox{
          display: none;
     }
-    .card{
+    .cards{
         text-align: center;
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 20px;
 
+    }
+    .card{
+        border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #fff;
     }
     .card img{
         width: 100%;
@@ -76,12 +86,12 @@
 </body>
 <script>
     let tasks=[]
-    const editname=document.querySelector("#editname").value;
-    const editemail=document.querySelector("#editemail").value;
-    const editphone=document.querySelector("#editphone").value;
-    const cardbox=document.querySelector("#cardbox").value;
-    const updateform=document.querySelector("#updateform").value;
-    const form=document.querySelector("#form").value;
+    const editname=document.querySelector("#editname")
+    const editemail=document.querySelector("#editemail")
+    const editphone=document.querySelector("#editphone")
+    const cardbox=document.querySelector("#cardbox")
+    const updateform=document.querySelector("#updateform")
+    const form=document.querySelector("#form")
     let currentTaskId=null;
 
     // fetch function start
@@ -105,7 +115,7 @@
 
     function renderfun() {
           
-        cardbox.innerHTML+=""
+        cardbox.innerHTML=""
 
         let output=""
         tasks.forEach((task)=>{
@@ -118,7 +128,7 @@
             <button onclick="editTask('${task.id}')">Update</button>    
             </div>`;
 
-            output=card;
+            output+=card;
         })
         cardbox.innerHTML+=output;
     }
@@ -144,15 +154,15 @@
         event.preventDefault();
         if(!currentTaskId) return;
 
-        const updateform={
-            name:editname,
-            email:editemail,
-            phone:editphone,
+        const updatedata={
+            name:editname.value,
+            email:editemail.value,
+            phone:editphone.value,
         }
         fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
             method:"PUT",
             headers:{"Conetnt-Type":"appliaction/json"},
-            body:JSON.stringify(updateform)
+            body:JSON.stringify(updatedata)
         })
         .then((res)=>{
             return res.json()
