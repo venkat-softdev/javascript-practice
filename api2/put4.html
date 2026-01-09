@@ -33,7 +33,7 @@
         margin:  10px auto;
         background-color: grey;
         color: #fff;
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 600;
     }
     .box h2{
@@ -54,4 +54,30 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[]
+    const editname=document.querySelector("#editname").value;
+    const editemail=document.querySelector("#editemail").value;
+    const editphone=document.querySelector("#editphone").value;
+    const cardbox=document.querySelector("#cardbox").value;
+    const updateform=document.querySelector("#updateform").value;
+    let currentTaskId=null;
+
+    // fetch function start
+
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+</script>
 </html>
