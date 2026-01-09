@@ -77,7 +77,30 @@
         .catch((error)=>{
             console.log(error);
             
-        })
+        });
     }
+
+    // renderfunction starting 
+
+    function renderfun() {
+          
+        cardbox.innerHTML+=""
+
+        let output=""
+        tasks.forEach((task)=>{
+            const card=`
+            <div class="card">
+            <img src="${task.avatar}" alt="${task.name}"/>
+            <h2>${"Name : " +task.name}</h2>
+            <p>${"Email : " + task.email}</p>
+            <p>${"Phone : " + task.phone}</p>    
+            </div>`;
+
+            output=card;
+        })
+        cardbox.innerHTML+=output;
+    }
+
+    
 </script>
 </html>
