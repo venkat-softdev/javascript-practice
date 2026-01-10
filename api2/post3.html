@@ -112,6 +112,9 @@
             response.textContent="Task Created successfully";
             const error=document.querySelector("#errormsg");
             error.style.display="none"
+
+            console.log(data);
+            
         })
         .catch((error)=>{
             const errormsg=document.querySelector("#errormsg");
