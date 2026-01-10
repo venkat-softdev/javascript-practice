@@ -5,6 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD in javascript</title>
 </head>
+<style>
+    body{
+        font-family: 'poppins';
+        margin: 20px;
+    }
+    .box{
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    form{
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #ddd;
+    }
+    form input{
+        margin: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    form button{
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .tablebox{
+        overflow-x: auto;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    table th td{
+        border: 1px solid #ccc;
+    }
+    th,td{
+        padding: 20px;
+        text-align: center;
+    }
+    th{
+        background-color: #f4f4f4;
+    }
+    .action-btn {
+        display: flex;
+        gap: 10px;
+    }
+    .action-btn button{
+        width: 70px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .delete-btn{
+        background-color: #dc3545;
+    }
+    .no-tasks{
+        text-align: center;
+        font-size: 16px;
+        color: #888;
+        margin-top: 20px;
+    }
+</style>
 <body>
     <div class="box">
         <h2>Full CRUD in javascript</h2>
@@ -34,7 +106,7 @@
                 </tbody>
             </table>
             <div class="no-tasks" id="notaskmessage">
-                No tasks found.Add some tasks!.
+                No tasks found.Add some tasks!
             </div>
          </div>
     </div>
