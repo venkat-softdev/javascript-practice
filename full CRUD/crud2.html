@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD in javascript</title>
+</head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+    body{
+        margin: 20px;
+    }
+    .box{
+        width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    form{
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #ddd;
+    }
+    form input{
+        padding: 10px;
+        width: 150px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+    }
+    form button {
+        padding: 10px;
+        margin-left: 50px;
+        width: 100px;
+        border: 2px solid #ccc;
+        background-color: blue;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+    .tablebox{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    table, th, td{
+        border: 2px solid #ccc;
+    }
+    th,td{
+        padding: 20px;
+        text-align: center;
+    }
+    th{
+        background-color: #f4f4f4;
+    }
+    .no-tasks{
+        text-align: center;
+        font-size: 16px;
+        color: #888;
+        margin-top: 30px;
+    }
+</style>
+<body>
+    <div class="box">
+        <h2>Full CRUD in javascript</h2>
+        <!-- form -->
+         <form action="" id="form">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+            <button type="submit">Add Task</button>
+         </form>
+         <!-- form ends -->
+
+         <!-- table start -->
+           <div class="tablebox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody id="tbody">
+                       
+                    </tbody>
+                </thead>
+            </table>
+            <div id="notaskmessage" class="no-tasks">
+                No tasks found.Add some Tasks!
+            </div>
+           </div>
+    </div>
+</body>
+ <script>
+    let tasks=[];
+    const tbody=document.querySelector("#tbody");
+    const form=document.querySelector("#form");
+    const notaskmessage=document.querySelector("#notaskmessage");
+    const submitbtn=document.querySelector("button")
+    let currentTaskId=null;
+    let isEditing=false;
+
+
+    // fetch tasks starting 
+
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            rendertask();
+            alert("Task fetch successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+
+    // render function start 
+
+    function rendertask() {
+        if (tasks.length==0) {
+            
+            notaskmessage.style.display="block";
+            tbody.innerHTML=""
+        } else {
+            notaskmessage.style.display="none"
+
+            let rows=""
+
+            tasks.forEach((task)=>{
+                rows+=`
+                <tr>
+                <td> ${task.id}</td> 
+                <td>${task.name} </td> 
+                 <td>${task.email} </td> 
+                <td>${task.phone} </td>
+                 <td> 
+                   <div class="action=btn">
+                    <button onclick="editTask('${task.id}')">Edit<?button>
+                     <button class="delete-btn" onclick="deleteTask('${task.id}')">Delete</button>
+                      </div>
+
+                    </td>
+                    </tr>  
+
+                `;
+            })
+            tbody.innerHTML=rows
+
+        }
+    }
+
+    // Add or Update a Task 
+
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+
+        const name=document.querySelector("#name").value;
+        const email=document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        if (isEditing) {
+            
+            fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
+                method:"PUT",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({name,email,phone})
+            })
+            .then((res)=>{
+                return res.json()
+            })
+            .then((updatedTask)=>{
+               tasks=tasks.map((task)=>{
+                return task.id===updatedTask.id?updatedTask:task
+               })
+               rendertask()
+               resetform()
+               alert("Task updated successfully")
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+        else{
+            
+        }
+    });
+
+
+ </script>
+</html>
