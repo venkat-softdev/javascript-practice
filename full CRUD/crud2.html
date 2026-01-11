@@ -193,9 +193,72 @@
         }
         else{
             
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({name,email,phone}),
+            })
+            .then((res)=>{
+                return res.json()
+            })
+            .then((newtask)=>{
+                tasks.push(newtask);
+                rendertask()
+                resetform()
+                alert("Task Added Successfully")
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
         }
     });
 
+    // Edit a Task 
+    function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        })
+        if(!task)return
+        isEditing=true;
+        currentTaskId=id;
+        submitbtn.textContent="Edit Task";
+        document.querySelector("#name").value=task.name;
+        document.querySelector("#email").value=task.email;
+        document.querySelector("#phone").value=task.phone;
+    }
+
+    // Delete  a Task 
+       
+    function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
+            method:"DELETE",
+        })
+        .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+                rendertask()
+                alert("Task deleted successfully")
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+    
+    // Reset Form 
+
+    function resetform() {
+        isEditing=false;
+        currentTaskId=null;
+        form.reset();
+        submitbtn.textContent="Add Task"
+    }
+ 
+    fetchtask()
 
  </script>
 </html>
