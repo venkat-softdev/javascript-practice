@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD in javascript</title>
 </head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+</style>
 <body>
     <div class="box">
         <h2>CRUD in javascript</h2>
@@ -151,5 +156,53 @@
             })
         }
     })
+
+    // edit Task Starting 
+
+    function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        })
+       if(!task)return
+       currentTaskId=id
+       submitbtn.textContent="Edit Task"
+       document.querySelector("#name").value=task.name;
+       document.querySelector("#email").value=task.email;
+       document.querySelector("#phone").value=task.phone;
+    }
+
+
+    // Delete a Task 
+
+    function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
+            method:"DELETE",
+        })
+        .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+                renderfun()
+                alert("Task deleted successfully")
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+
+    }
+
+    // reset form 
+    function resetform() {
+        isEditing=false;
+        currentTaskId=null
+        form.reset();
+        submitbtn.textContent="Add Task"
+    }
+
+    // fetch on page load 
+    fetchtask()
 </script>
 </html>
