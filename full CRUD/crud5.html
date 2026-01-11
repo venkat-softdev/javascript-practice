@@ -119,7 +119,7 @@
             })
             .then((updateTask)=>{
                 tasks=tasks.map((task)=>{
-                    task.id===updateTask.id?updateTask:task
+                 return   task.id===updateTask.id?updateTask:task
                 })
                 renderfun()
                 resetform()
@@ -170,7 +170,7 @@
 
     function deleteTask(id) {
         fetchtask(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${task.id}`,{
-            method:"DELETE",
+            method:"DELETE"
         })
         .then((res)=>{
            if (res.ok) {
