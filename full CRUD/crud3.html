@@ -168,7 +168,7 @@
                   </tr>     
                 `;
             })
-            tbody.innerHtML=rows
+            tbody.innerHTML=rows
         }
     }
 
@@ -195,7 +195,7 @@
         })
         .then((updateTask)=>{
             tasks=tasks.map((task)=>{
-                task.id===updateTask.id?updateTask:task
+              return  task.id===updateTask.id?updateTask:task
             });
             renderfun()
             resetform()
