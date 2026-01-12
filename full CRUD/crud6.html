@@ -162,5 +162,30 @@
 
 
     // Delete task starting 
+
+    function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
+            method:"DELETE",
+        })
+        .then((data)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+               
+                renderfun()
+                alert("Task deleted successfully")
+            } else {
+                throw new Error("Failed to Delete Task");
+                
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+
+    // reset form start 
 </script>
 </html>
