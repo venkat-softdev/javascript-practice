@@ -48,5 +48,20 @@
 
 
     // fetch function start
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+            alert("Fetch Added successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
 </script>
 </html>
