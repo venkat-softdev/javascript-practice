@@ -144,5 +144,23 @@
          })
        }
     })
+
+    // edit Task starting 
+
+    function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        })
+        currentTaskId=id;
+        submitbtn.textContent="Edit Task";
+        isEditing=true;
+        document.querySelector("#name").value=task.name;
+        document.querySelector("#email").value=task.email;
+        document.querySelector("#phone").value=task.phone;
+
+    };
+
+
+    // Delete task starting 
 </script>
 </html>
