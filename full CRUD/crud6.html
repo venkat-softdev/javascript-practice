@@ -39,7 +39,7 @@
 </body>
 <script>
     let tasks=[];
-    const form=document.querySelector("#name");
+    const form=document.querySelector("#form");
     const tbody=document.querySelector("#tbody");
     const notaskmessage=document.querySelector("#notaskmessage");
     const submitbtn=document.querySelector("button");
@@ -99,7 +99,7 @@
 
        const name=document.querySelector("#name").value;
        const email=document.querySelector("#email").value;
-       const phone=document.querySelector("phone").value;
+       const phone=document.querySelector("#phone").value;
 
        if (isEditing) {
          fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
