@@ -63,5 +63,37 @@
             
         })
     }
+    function renderfun() {
+        if (tasks.length===0) {
+            notaskmessage.style.display="block";
+            tbody.innerHTML=""
+        } else {
+            notaskmessage.style.display="none"
+
+            let rows=""
+            tasks.forEach((task)=>{
+                rows+=`
+                <tr>
+                 <td>${task.id}</td>
+                 <td>${task.name}</td>
+                 <td>${task.email}</td>
+                 <td>${task.phone}</td>
+                 <td>
+                 <div class="action-btn">
+                 <button onclick="editTask('${task.id}')">Edit</button>
+                 <button class="delete-btn" onclick="deleteTask('${task.id}')">Delete</button>    
+                </div>    
+                </td>    
+                </tr>
+
+                `;
+            })
+            tbody.innerHTML=rows
+        }
+    };
+
+    // Add or Update Task is Start 
+
+    form.addEventListener("su")
 </script>
 </html>
