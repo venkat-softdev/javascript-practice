@@ -94,6 +94,45 @@
 
     // Add or Update Task is Start 
 
-    form.addEventListener("su")
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+
+       const name=document.querySelector("#name").value;
+       const email=document.querySelector("#email").value;
+       const phone=document.querySelector("phone").value;
+
+       if (isEditing) {
+         fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({name,email,phone})
+         }) 
+         .then((res)=>{
+            return res.json()
+         })
+         .then((updatetask)=>{
+            tasks=tasks.map((task)=>{
+                return task.id===updatetask.id?updatetask:task
+            })
+            renderfun()
+            resetform()
+            alert("Task updated successfully")
+         })
+         .catch((error)=>{
+            console.log(error);
+            
+         })
+
+       } else {
+         fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({name,email,phone})
+         })
+         .then((res)=>{
+            
+         })
+       }
+    })
 </script>
 </html>
