@@ -130,6 +130,16 @@
             body:JSON.stringify({name,email,phone})
          })
          .then((res)=>{
+            return res.json()
+         })
+         .then((newtask)=>{
+            tasks.push(newtask);
+            renderfun()
+            resetform()
+            alert("Task Added successfully")
+         })
+         .catch((error)=>{
+            console.log(error);
             
          })
        }
