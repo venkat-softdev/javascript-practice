@@ -167,7 +167,7 @@
         fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
             method:"DELETE",
         })
-        .then((data)=>{
+        .then((res)=>{
             if (res.ok) {
                 tasks=tasks.filter((task)=>{
                     return task.id!==id
@@ -187,5 +187,14 @@
     }
 
     // reset form start 
+    function resetform() {
+        isEditing=false;
+    currentTaskId=null;
+    submitbtn.textContent="Add Task";
+    form.reset()
+    }
+
+    fetchtask()
+  
 </script>
 </html>
