@@ -9,6 +9,76 @@
     *{
         font-family: 'poppins';
     }
+    .box{
+         max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+     form {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    form input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+    .tablebox{
+         overflow-x: auto; 
+    }
+     table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .action-btn{
+         display: flex;
+      gap: 10px;
+    }
+    .actions-btn button{
+          width: 70px; /* Consistent width for buttons */
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .delete-btn{
+        background-color: #dc3545;
+    }
+     .no-tasks {
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+      margin-top: 20px;
+    }
 </style>
 <body>
     <div class="box">
@@ -87,7 +157,7 @@
                 <td>${task.phone}</td>
                 <td>
                  <div class="actions-btn">
-                 <button onclcik="editTask('${task.id}')"/>Edit</button>
+                 <button onclick="editTask('${task.id}')">Edit</button>
                  <button class="delete-btn" onclick="deleteTask('${task.id}')">Delete</button>    
                 </div>    
                 </td>    
@@ -119,7 +189,7 @@
             })
             .then((updatedTask)=>{
                 tasks=tasks.map((t)=>{
-                    return t.id===updatedTask.id?updatedTask:task
+                    return t.id===updatedTask.id ? updatedTask:t
                 });
                 renderfun()
                 resetform()
@@ -159,6 +229,7 @@
         const task=tasks.find((task)=>{
             return task.id===id
         });
+        if(!task) return
         isEditing=true;
         currentTaskId=id;
         submitbtn.textContent="Edit Task";
