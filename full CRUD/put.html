@@ -56,6 +56,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       background-color: #fff;
+      text-align: center;
     }
     .card img {
       width: 100%;
@@ -123,7 +124,7 @@
         let output=""
         tasks.forEach((task)=>{
             output+=`
-            <div calss="card">
+            <div class="card">
              <img src="${task.avatar}" alt="${task.name}"/>
              <h2>${task.name}</h2>
              <h2>${task.email}</h2>
