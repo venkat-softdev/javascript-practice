@@ -51,7 +51,11 @@ body{
             headers:{"Content-Type":"application/json"}
         })
         .then((res)=>{
+          if (res.ok) {
             return res.json()
+          }
+          throw new Error("Failed To fetch ");
+          
         })
         .then((data)=>{
             const fetchdiv=document.querySelector(".fetchdiv");
