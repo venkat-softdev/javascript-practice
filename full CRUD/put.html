@@ -171,7 +171,7 @@
        })
        .then((data)=>{
         tasks=tasks.map((task)=>{
-            return tasks.id===data.id?data:task
+            return task.id===data.id?data:task
         })
         renderfun()
         updateform.style.display="none";
