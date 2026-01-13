@@ -85,6 +85,70 @@
             
         })
     }
-    
+    // render function start 
+     function renderfun() {
+        cardbox.innerHTML=""
+        let output=""
+        tasks.forEach((task)=>{
+            output+=`
+            <div calss="cards">
+             <img src="${task.avatar}" alt="${task.name}"/>
+             <h2>${task.name}</h2>
+             <h2>${task.email}</h2>
+             <p>${task.phone}</p>
+             <button onclick="editTask('${task.id}')">Edit </button>
+             </div>   
+            `;
+            cardbox.innerHTML=output;
+        })
+     }
+
+     // edit function start 
+
+     function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        })
+        if(!task)return
+        currentTaskId=id;
+       updateform.style.display="block";
+       editname.value=task.name;
+       editemail.value=task.email;
+       editphone.value=task.phone
+          
+      
+     }
+
+     // handle form submission'
+      form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+        
+         let updatetask={
+        name:editname.value,
+        email:editemail.value,
+        phone:editphone.value,
+       }
+       fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${currentTaskId}`,{
+        method:"PUT",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(updatetask)
+       })
+       .then((res)=>{
+        return res.json()
+       })
+       .then((data)=>{
+        tasks=tasks.map((task)=>{
+            return tasks.id===data.id?data:task
+        })
+        renderfun()
+        updateform.style.display="none";
+        alert("Task Updated successfully")
+       })
+       .catch((error)=>{
+        console.log(error);
+        
+       })
+      })
+
 </script>
 </html>
