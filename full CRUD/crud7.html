@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD in javascript</title>
+</head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+</style>
+<body>
+    <div class="box">
+        <h2>CRUD in javascript</h2>
+
+        <form action="" id="form">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="tablebox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+            <div class="no-tasks" id="notaskmessage">
+                No Tasks found.Add some Task!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
