@@ -19,6 +19,24 @@
     </div>
 </body>
 <script>
+ let tasks=[];
+ const cardbox=document.querySelector("#cardbox");
 
+ // fetch function start 
+ function fetchtask() {
+    fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+        tasks=data;
+        renderfun()
+    })
+    .catch((error)=>{
+        console.log(error);
+        
+    })
+ }
+ 
 </script>
 </html>
