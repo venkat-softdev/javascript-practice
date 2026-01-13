@@ -51,6 +51,27 @@
         text-align: center;
         text-transform: capitalize;
     }
+    .response{
+        display: none;
+        padding: 15px ;
+        border: 2px solid #ccc;
+        margin-top: 10px;
+        background-color: lightgreen;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+    .error{
+        display: none;
+        padding: 15px ;
+        border: 2px solid #ccc;
+        margin-top: 10px;
+        background-color: orangered;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
 </style>
 <body>
     <div class="box">
@@ -69,4 +90,46 @@
     </div>
     
 </body>
+<script>
+    const form=document.querySelector("#form");
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+
+        const name=document.querySelector("#name").value;
+        const email =document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        let newtask={
+            name:name,
+            email:email,
+            phone:phone,
+        }
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(newtask)
+        })
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            }
+            throw new Error("failed to fetch");
+            
+        })
+        .then((data)=>{
+            const response=document.querySelector("#resmsg");
+            response.style.display="block";
+            response.textContent="Task created successfully";
+            const error=document.querySelector("#errormsg");
+            error.style.display="none"
+        })
+        .catch((error)=>{
+            const errormsg=document.querySelector("#errormsg");
+            errormsg.style.display="block";
+            errormsg.textContent=error.message;
+            const resmsg=document.querySelector("#resmsg");
+            resmsg.style.display="none"
+        })
+    })
+</script>
 </html>
