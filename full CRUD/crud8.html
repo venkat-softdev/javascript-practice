@@ -9,7 +9,7 @@
     *{
         font-family: 'poppins';
     }
-    
+
 </style>
 <body>
     <div class="box">
@@ -43,5 +43,65 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const tablebox=document.querySelector("#tablebox");
+    const tbody=document.querySelector("#tbody");
+    const form=document.querySelector("#form");
+    const submitbtn=document.querySelector("button");
+    const notaskmessage=document.querySelector("#notaskmessage")
+    let isEditing=false;
+    let currentTaskId=null;
 
+    // fetch function start 
+    function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data
+            renderfun()
+            alert("Task fetched successfully")
+        })
+        .catch((error)=>{
+            console.log("Error in fetch task : ",error);
+            
+        })
+    }
+
+    // render task starting 
+
+    function renderfun() {
+        if (tasks.length===0) {
+            notaskmessage.style.display="block";
+            tbody.innerHTML=""
+        }
+        else{
+            notaskmessage.style.display="none"
+
+            let rows=""
+            tasks.forEach((task)=>{
+                rows+=`
+                <tr>
+                  <td>${task.id}</td>
+                  <td>${task.name}</td>
+                  <td>${task.email}</td>
+                  <td>${task.phone}</td>
+                  <td>
+                   <div class="actions-btn">
+                   <button onclick="editTask('${task.id}')"/>Edit </button>
+                   <button class="delete-btn" onclick="deletetask('${task.id}')">Delete</button>    
+                </div>   
+                 </td>    
+                </tr>
+                    
+                `;
+                tbody.innerHTML=rows;
+            })
+        }
+    }
+
+    
+</script>
 </html>
