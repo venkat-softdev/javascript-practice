@@ -90,15 +90,16 @@
                   <td>${task.phone}</td>
                   <td>
                    <div class="actions-btn">
-                   <button onclick="editTask('${task.id}')"/>Edit </button>
-                   <button class="delete-btn" onclick="deletetask('${task.id}')">Delete</button>    
+                   <button onclick="editTask('${task.id}')">Edit </button>
+                   <button class="delete-btn" onclick="deleteTask('${task.id}')">Delete</button>    
                 </div>   
                  </td>    
                 </tr>
                     
                 `;
-                tbody.innerHTML=rows;
+              
             })
+              tbody.innerHTML=rows;
         }
     }
 
