@@ -162,6 +162,7 @@
         })
         if(!task)return
         currentTaskId=id;
+        submitbtn.textContent="Edit Task"
         isEditing=true;
         document.querySelector("#name").value=task.name;
         document.querySelector("#email").value=task.email;
@@ -169,5 +170,37 @@
     }
 
     // deleteTask starting 
+
+    function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user/${id}`,{
+            method:"DELETE",
+        })
+        .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+                renderfun()
+                alert("Task deleted successfully")
+            } else {
+                throw new Error("Failed to deleteTask ");
+                
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+
+
+    // resetfun start
+
+    function resetform() {
+        isEditing=false;
+        currentTaskId=null;
+        form.reset()
+        submitbtn.textContent="Add Task"
+    }
 </script>
 </html>
