@@ -9,8 +9,30 @@
     <div class="box">
         <h2>CRUD in javascript</h2>
         <form action="" id="form">
-            
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
         </form>
+        <div class="tablebox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions-btn</th>
+                    </tr>
+
+                </thead>
+                <tbody id="tbody">
+                       
+                </tbody>
+            </table>
+            <div class="no-tasks" id="notaskmessage">
+                No Task found .Add some Task!
+            </div>
+        </div>
     </div>
 </body>
 </html>
