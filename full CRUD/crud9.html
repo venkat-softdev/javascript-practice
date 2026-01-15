@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD in javascript</title>
 </head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+</style>
 <body>
     <div class="box">
         <h2>CRUD in javascript</h2>
@@ -12,6 +17,7 @@
             <input type="text" id="name" name="name" placeholder="Name" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+            <button type="submit" id="submitbtn">Add Task</button>
         </form>
         <div class="tablebox">
             <table>
@@ -35,4 +41,32 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const tablebox=document.querySelector("#tablebox");
+    const tbody=document.querySelector("#tbody");
+    const notaskmessage=document.querySelector("#notaskmessage")
+    const submitbtn=document.querySelector("#submitbtn")
+    const form=document.querySelector("#form");
+    let isEditing=false;
+    let currentTaskId=null;
+    
+    // fetch task 
+     function fetchtask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/user")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data
+            renderTask()
+            alert("Task fetched successfully")
+        })
+        .catch((error)=>{
+            console.log("Error in fetch task :",error);
+            
+        })
+     }
+     
+</script>
 </html>
