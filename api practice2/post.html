@@ -83,7 +83,7 @@
 </body>
  <script>
     const form=document.querySelector("#form");
-    form.addEventListener("Submit",(event)=>{
+    form.addEventListener("submit",(event)=>{
         event.preventDefault()
 
         const name=document.querySelector("#name").value;
@@ -101,7 +101,11 @@
             body:JSON.stringify(updatetask)
         })
         .then((res)=>{
+           if (res.ok) {
             return res.json()
+           }
+           throw new Error("failed to fetch data");
+           
         })
         .then((data)=>{
             const response=document.querySelector("#resmsg");
@@ -110,6 +114,8 @@
 
             const error=document.querySelector("#errormsg");
             error.style.displsy="none"
+            console.log(data);
+            
         })
         .catch((error)=>{
             const errormsg=document.querySelector("#errormsg");
