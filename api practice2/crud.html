@@ -129,8 +129,20 @@
         .then((res)=>{
             return res.json()
         })
+        .then((newTask)=>{
+            tasks.push(newTask)
+            renderfun()
+            resetform()
+            alert("Task added sucessfully")
+        })
+        .catch((error)=>{
+            console.log("error in add task :",error);
+            
+        })
     }
  })
+
+ 
      
 </script>
 </html>
