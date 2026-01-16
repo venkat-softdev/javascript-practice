@@ -81,5 +81,44 @@
       <div class="error" id="errormsg"></div>
     </div>
 </body>
+ <script>
+    const form=document.querySelector("#form");
+    form.addEventListener("Submit",(event)=>{
+        event.preventDefault()
 
+        const name=document.querySelector("#name").value;
+        const email=document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        let updatetask={
+            name:name,
+            email:email,
+            phone:phone,
+        }
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(updatetask)
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            const response=document.querySelector("#resmsg");
+            response.style.displsy="block";
+            response.textContent="Task created sucessfully"
+
+            const error=document.querySelector("#errormsg");
+            error.style.displsy="none"
+        })
+        .catch((error)=>{
+            const errormsg=document.querySelector("#errormsg");
+            errormsg.style.displsy="block";
+            errormsg.textContent=error.message;
+
+            const resmsg=document.querySelector("#resmsg");
+            resmsg.style.displsy="none"
+        })
+    })
+ </script>
 </html>
