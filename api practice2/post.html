@@ -44,16 +44,17 @@
          border-radius: 5px;
     }
     .response{
-        display: none;
+      
         margin-top: 20px;
         padding: 10px;
         border: 1px solid green;
         border-radius: 5px;
         background-color: palegreen;
         color: #fff;
+        text-align: center;
     }
     .error{
-        display: none;
+        text-align: center;
         margin-top: 20px;
         border-radius: 5px;
         border: 1px solid orangered;
@@ -77,8 +78,8 @@
             <input type="tel" id="phone" name="phone" required>
             <button type="submit"> Submit</button>
       </form>
-      <div class="response" id="resmsg"></div>
-      <div class="error" id="errormsg"></div>
+      <div class="response" id="resmsg" style="display: none;"></div>
+      <div class="error" id="errormsg" style="display: none;"></div>
     </div>
 </body>
  <script>
@@ -107,19 +108,20 @@
            throw new Error("failed to fetch data");
            
         })
-        .then((data)=>{
-            const response=document.querySelector("#resmsg");
-            response.style.displsy="block";
-            response.textContent="Task created sucessfully"
+       .then((data)=>{
+    const response = document.querySelector("#resmsg");
+    response.style.display = "block";
+    response.textContent = "Task created successfully";
 
-            const error=document.querySelector("#errormsg");
-            error.style.displsy="none"
-            console.log(data);
-            
-        })
+    const error = document.querySelector("#errormsg");
+    error.style.display = "none";
+
+    console.log(data);
+})
+
         .catch((error)=>{
             const errormsg=document.querySelector("#errormsg");
-            errormsg.style.displsy="block";
+            errormsg.style.display="block";
             errormsg.textContent=error.message;
 
             const resmsg=document.querySelector("#resmsg");
