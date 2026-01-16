@@ -5,11 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>post in javascript</title>
 </head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+    .box{
+         max-width: 400px;
+        margin: 200px auto;
+        padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    form{
+      
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        margin-bottom: 10px;
+        font-weight: 800;
+    }
+    input{
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button{
+        background-color: dodgerblue;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+         font-weight: 600;
+         color: #fff;
+         cursor: pointer;
+         border-radius: 5px;
+    }
+    .response{
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid green;
+        border-radius: 5px;
+        background-color: palegreen;
+        color: #fff;
+    }
+    .error{
+        display: none;
+        margin-top: 20px;
+        border-radius: 5px;
+        border: 1px solid orangered;
+        background-color: orange;
+        color: #fff;
+    }
+    .box h2{
+        text-align: center;
+        text-transform: capitalize;
+    }
+</style>
 <body>
     <div class="box">
         <h2>POST in javascript</h2>
        <form action="" id="form">
-           <label for="name">Name :</labe>
+           <label for="name">Name :</label>
             <input type="text" name="name" id="name" required>
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
