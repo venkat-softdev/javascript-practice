@@ -30,6 +30,7 @@
         color: #fff;
         border-radius: 4px;
     }
+    
 </style>
 <body>
     <div class="box">
@@ -67,8 +68,9 @@
                 <p>${item.phone}</p>
               
                 </div>`
+                fetchdiv.innerHTML+=card;
             });
-            fetchdiv.innerHTML+=card;
+            
         })
         .catch((error)=>{
             console.log(error);
