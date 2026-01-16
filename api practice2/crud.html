@@ -37,4 +37,78 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const form=document.querySelector("#form");
+    const tbody=document.querySelector("tbody");
+     const notaskmesssage=document.querySelector("#notaskmessage");
+     const submitbtn=document.querySelector("#submitbtn");
+     let isEditing=false;
+     let currentTaskId=null;
+
+     // fetch function start 
+
+     function fetchTask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+            resetform()
+            alert("Task fetched successfully")
+        })
+        .catch((error)=>{
+            console.log("Error in fetch :",error);
+            
+        })
+     }
+
+     // renderfunction start 
+
+     function renderfun() {
+        if (tasks.length===0) {
+            notaskmesssage.style.display="block";
+            tbody.innerHTML=""
+        } else {
+            notaskmesssage.style.display="none"
+
+            let rows=""
+            tasks.forEach((task)=>{
+                rows+=`
+                <tr>
+                 <td>${task.id}</td>
+                 <td>${task.name}</td>
+                 <td>${task.email}</td>
+                 <td>${task.phone}</td>
+                 <td>
+                 <div class="action-btn">
+                   <button onclick="editTask('${task.id}')">Edit</button>
+                   <button class="deletebtn" onclick="deleteTask('${task.id}')">Delete</button>    
+                </div>
+                </td>    
+                </tr>
+                `;
+                tbody.innerHTML=rows
+            })
+        }
+     }
+
+     // add or update task start
+ form.addEventListener("submit",(event)=>{
+    event.preventDefault()
+
+    if (isEditing) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify
+        })
+    } else {
+        
+    }
+ })
+     
+</script>
 </html>
