@@ -40,4 +40,40 @@
         </div>
     </div>
 </body>
+<script>
+    const btn=document.querySelector("#btn");
+    btn.addEventListener("click",getfun);
+
+    function getfun() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res)=>{
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("failed to fetch");
+                
+            }
+        })
+        .then((data)=>{
+            const fetchdiv=document.querySelector("#fetchdiv");
+            fetchdiv.innerHTML=""
+            data.forEach((item) => {
+                
+                const card=`
+                <div class="card">
+                <img src="${item.avatar}" alt="${item.name}"/>
+                <h2>${item.name}</h2>
+                <p>${item.email}</p>
+                <p>${item.phone}</p>
+              
+                </div>`
+            });
+            fetchdiv.innerHTML+=card;
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+</script>
 </html>
