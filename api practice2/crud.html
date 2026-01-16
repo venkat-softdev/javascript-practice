@@ -103,10 +103,32 @@
         fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
-            body:JSON.stringify
+            body:JSON.stringify({name,email,phone})
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((updateTask)=>{
+            tasks=tasks.map((task)=>{
+                task.id===updateTask.id?updateTask:task
+            })
+            renderfun()
+            resetform()
+            alert("task update successfully")
+        })
+        .catch((error)=>{
+            console.log("error in update task : ",error);
+            
         })
     } else {
-        
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({name,email,phone})
+        })
+        .then((res)=>{
+            return res.json()
+        })
     }
  })
      
