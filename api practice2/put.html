@@ -25,6 +25,7 @@
       border: 1px solid #ccc;
       padding: 20px;
       border-radius: 8px;
+      display: none;
       
       
     }
@@ -102,7 +103,7 @@
         cardbox.innerHTML=output
     }
 
-    // handle form submisson 
+    // editask start
 
     function editTask(id) {
         const task=tasks.find((t)=>{
@@ -118,7 +119,37 @@
 
 
     }
-    
+
+    // Handle form submission 
+     form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+
+        let updateTask={
+            name:editname.value,
+            email:editemail.value,
+            phone:editphone.value,
+        }
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(updateTask)
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=tasks.map((task)=>{
+                task.id===data.id?data:task
+            })
+            renderfun()
+            updateform.style.display="none"
+            alert("Task edited successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+     })
 
 </script>
 </html>
