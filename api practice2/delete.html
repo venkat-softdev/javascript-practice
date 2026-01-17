@@ -33,6 +33,27 @@
             
         })
     }
-    
+
+    // renderfun start 
+
+    function renderfun() {
+        cardbox.innerHTML=""
+
+        let rows=""
+
+        tasks.forEach((task)=>{
+            rows+=`
+              <div class="card">
+              <img src="${task.avatar}" alt="${task.name}"/>
+              <h2>${task.name}</h2>
+              <p>${task.email}</p>
+              <p>${task.phone}</p>
+              <button onclick="deleteTask('${task.id}')">Delete</button>    
+            </div>
+            `
+            cardbox.innerHTML=rows
+        })
+
+    }
 </script>
 </html>
