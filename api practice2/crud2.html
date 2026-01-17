@@ -83,14 +83,15 @@
                  <td>${task.phone}</td>
                  <td>
                  <div class="action-btn">
-                     <button onclick="editTask('${task.id}')">Edit</button>
-                     <button class="deletebtn" onclick="deleteTask('${task.id}')">Delete</button>
+                     <button  type="button" onclick="editTask('${task.id}')">Edit</button>
+                     <button  type="button" class="deletebtn" onclick="deleteTask('${task.id}')">Delete</button>
                 </div>    
                 </td>    
                 </tr>
                 `;
-                tbody.innerHTML=rows
+              
             })
+              tbody.innerHTML=rows
         }
     }
 
@@ -113,7 +114,7 @@
             })
             .then((updateTask)=>{
                 tasks=tasks.map((task)=>{
-                    return task.id===updateTask?updateTask:task
+                    return task.id===updateTask.id?updateTask:task
                 })
                 renderfun()
                 resetform()
@@ -130,7 +131,7 @@
                 body:JSON.stringify({name,email,phone})
             })
             .then((res)=>{
-                return res.JSON()
+                return res.json()
             })
             .then((newtask)=>{
                 tasks.push(newtask)
@@ -147,13 +148,14 @@
 
     // editTask start
     function editTask(id) {
-        const task=tasks.find((task)=>{
-            return task.id===id
-        })
-        if(!task)return
+        const task=tasks.find((t)=>{
+            return t.id===id
+        });
+        if(!task)return;
         isEditing=true;
-        submitbtn.textContent="Edit Task"
-        currentTaskId=id
+        currentTaskId=id;
+        submitbtn.textContent="Edit Task";
+        
         document.querySelector("#name").value=task.name;
         document.querySelector("#email").value=task.email;
         document.querySelector("#phone").value=task.phone;
@@ -161,24 +163,21 @@
 
     // delete Task start 
 
-    function deleteTask(id) {
-        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`)
-        .then((res)=>{
-            if (res.ok) {
-                tasks=tasks.filter((task)=>{
-                    return task.id!==id
-                })
-                renderfun()
-                alert("Task Deleted successfully")
-            }
-            throw new Error("Failed to delete successfully");
-            
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+   function deleteTask(id) {
+    fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`, {
+        method: "DELETE"
+    })
+    .then((res)=>{
+    if (!res.ok) {
+        throw new Error("Failed to delete successfully");
     }
+
+    tasks = tasks.filter(task => task.id !== id);
+    renderfun();
+    alert("Task Deleted successfully");
+})
+
+}
 
     // resetform start 
     function resetform() {
@@ -188,5 +187,6 @@
         submitbtn.textContent="Add Task"
     }
     // fetch on page load 
+    fetchTask()
 </script>
 </html>
