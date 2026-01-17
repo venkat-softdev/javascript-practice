@@ -19,7 +19,7 @@
 
     // fetch task start
     function fetchTask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/:endpoint")
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
         .then((res)=>{
             return res.json()
         })
@@ -51,9 +51,39 @@
               <button onclick="deleteTask('${task.id}')">Delete</button>    
             </div>
             `
-            cardbox.innerHTML=rows
+            cardbox.innerHTML=rows;
         })
 
     }
+    // deleteTask starting 
+
+    function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${task.id}`,{
+            method:"DELETE",
+
+        })
+        .then((res)=>{
+            if (res.ok) {
+            tasks=tasks.filter((task)=>{
+                return task.id!==id
+            })
+            renderfun()
+            alert("Task alerted successfully")
+            } else {
+                throw new Error("Failed to delete Task");
+                
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+
+
+    // fetch on page load 
+
+    fetchTask()
+
 </script>
 </html>
