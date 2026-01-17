@@ -101,6 +101,24 @@
         })
         cardbox.innerHTML=output
     }
+
+    // handle form submisson 
+
+    function editTask(id) {
+        const task=tasks.find((t)=>{
+            return t.id===id
+        })
+        if(!task)return
+        currentTaskId=id;
+        updateform.style.display="block";
+        
+       editname.value=task.name;
+       editemail.value=task.email;
+       editphone.value=task.phone;
+
+
+    }
     
+
 </script>
 </html>
