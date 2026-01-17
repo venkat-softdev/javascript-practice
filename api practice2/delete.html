@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delet in javascript</title>
+    <title>Delete in javascript</title>
 </head>
 <body>
     <div class="box">
-        <h2>Delet in javascript</h2>
+        <h2>Delete in javascript</h2>
         <div class="cards" id="cardbox">
             <!-- inside a image -->
         </div>
     </div>
 </body>
 <script>
+    let tasks=[]
+    const cardbox=document.querySelector("#cardbox");
+
+    // fetch task start
+    function fetchTask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/:endpoint")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+            alert("Task fetched successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
     
 </script>
 </html>
