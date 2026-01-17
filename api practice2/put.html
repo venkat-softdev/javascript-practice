@@ -37,6 +37,36 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #fff;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+     .card h2 {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    .card p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .card button {
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 </style>
 <body>
     <div class="box">
@@ -70,7 +100,7 @@
     function fetchTask() {
         fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
         .then((res)=>{
-            res.json()
+          return  res.json()
         })
         .then((data)=>{
             tasks=data;
@@ -139,7 +169,7 @@
         })
         .then((data)=>{
             tasks=tasks.map((task)=>{
-                task.id===data.id?data:task
+              return  task.id===data.id?data:task
             })
             renderfun()
             updateform.style.display="none"
@@ -150,6 +180,8 @@
             
         })
      })
-
+       
+       // fetchTask on page load 
+       fetchTask()
 </script>
 </html>
