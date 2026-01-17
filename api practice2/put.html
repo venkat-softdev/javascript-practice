@@ -54,4 +54,33 @@
         </div>
     </div>
 </body>
+<script>
+    let tasks=[];
+    const cardbox=document.querySelector("#cardbox");
+    const updateform=document.querySelector("#updateform");
+    const form=document.querySelector("#form");
+    const editname=document.querySelector("#editname");
+    const editemail=document.querySelector("#editemail");
+    const editphone=document.querySelector("#editphone");
+    let currentTaskId=null;
+
+    // fetch Task starting 
+
+    function fetchTask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res)=>{
+            res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+            
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+    }
+    
+</script>
 </html>
