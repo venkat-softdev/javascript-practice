@@ -128,7 +128,7 @@
             fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({name,email,phone})
+                body:JSON.stringify({name,email,phone}),
             })
             .then((res)=>{
                 return res.json()
@@ -136,6 +136,7 @@
             .then((newtask)=>{
                 tasks.push(newtask)
                 renderfun()
+                resetform()
             alert("Task Added successfully")
             })
             .catch((error)=>{
