@@ -168,6 +168,28 @@
            document.querySelector("#phone").value=task.phone;
         }
       
+        // delete task start 
+
+        function deleteTask(id) {
+            fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`,{
+                method:"DELETE",
+
+            })
+            .then((res)=>{
+               if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id !==id
+                })
+                renderfun()
+                alert("Task deleted successfully")
+               }                
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+
         
     </script>
 </body>
