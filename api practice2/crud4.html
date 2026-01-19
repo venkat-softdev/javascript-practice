@@ -138,6 +138,17 @@
                 .then((res)=>{
                     return res.json()
                 })
+                .then((newtask)=>{
+                    tasks.push(newtask)
+                    renderfun()
+                    resetform()
+                    alert("Task add successfully")
+                })
+                .catch((error)=>{
+                    console.log(error);
+                    
+                })
+
             }
         })
     </script>
