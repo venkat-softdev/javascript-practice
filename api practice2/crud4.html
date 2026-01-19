@@ -52,6 +52,23 @@
         let currentTaskId=null;
 
         // fetch Task starting 
+
+        function fetchTask() {
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+            .then((res)=>{
+                return res.json()
+            })
+            .then((data)=>{
+                tasks=data
+                renderfun()
+                alert("Task fetched successfully")
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+        
     </script>
 </body>
 </html>
