@@ -71,7 +71,7 @@
         // rendertask starting 
 
         function renderfun() {
-            if (tasks.length) {
+            if (tasks.length===0) {
                 noTaskmessage.style.display="block"
                 tbody.innerHTML=""
             } else {
@@ -112,7 +112,7 @@
             if (isEditing) {
                 fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
                     method:"PUT",
-                    headers:{"content-Type":"application/json"},
+                    headers:{"Content-Type":"application/json"},
                     body:JSON.stringify({name,email,phone})
                 })
                 .then((res)=>{
@@ -120,7 +120,7 @@
                 })
                 .then((updateTask)=>{
                     tasks=tasks.map((task)=>{
-                        task.id===updateTask.id?updateTask:task
+                     return    task.id===updateTask.id?updateTask:task
                     })
                     renderfun()
                     resetform()
@@ -163,7 +163,7 @@
             currentTaskId=id;
             submitbtn.textContent="Edit task"
             document.querySelector("#name").value=task.name;
-            document.querySelector("#email").value=task.phone;
+            document.querySelector("#email").value=task.email;
             document.querySelector("#phone").value=task.phone;
         }
 
