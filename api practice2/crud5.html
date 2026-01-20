@@ -169,9 +169,24 @@
         // deleteTask starting 
 
         function deleteTask(id) {
-             tasks=tasks.filter((task)=>{
-                return task.
-             })
+           fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`,{
+            method:"DELETE",
+           })
+           .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+                renderfun()
+                alert("Task Deleted  successfully")
+            }
+            throw new Error("failed to deleted task");
+            
+           })
+           .catch((error)=>{
+            console.log(error);
+            
+           })
         }
 
     </script>
