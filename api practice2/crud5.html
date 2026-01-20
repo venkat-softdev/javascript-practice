@@ -131,9 +131,29 @@
                     
                 })
             } else {
-                
+                fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({name,email,phone})
+                })
+                .then((res)=>{
+                    return res.json()
+                })
+                .then((newTask)=>{
+                    tasks.push(newTask)
+                    renderfun()
+                    resetform()
+                    alert("Task Added successfully")
+                })
+                .catch((error)=>{
+                    console.log(error);
+                    
+                })
+
             }
         })
+
+        
     </script>
 </body>
 </html>
