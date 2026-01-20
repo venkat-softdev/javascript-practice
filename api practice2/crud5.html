@@ -161,6 +161,7 @@
             })
             isEditing=true;
             currentTaskId=id;
+            submitbtn.textContent="Edit task"
             document.querySelector("#name").value=task.name;
             document.querySelector("#email").value=task.phone;
             document.querySelector("#phone").value=task.phone;
@@ -189,6 +190,17 @@
            })
         }
 
+
+        // reset form 
+
+        function resetform() {
+            isEditing=false;
+            currentTaskId=null;
+            form.reset()
+            submitbtn.textContent="Add Task"
+        }
+// 
+fetchTask()
     </script>
 </body>
 </html>
