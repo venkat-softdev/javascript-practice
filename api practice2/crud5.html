@@ -152,8 +152,28 @@
 
             }
         })
+         
+        // EditTask in start 
 
-        
+        function editTask(id) {
+            const task=tasks.find((t)=>{
+                return t.id===id
+            })
+            isEditing=true;
+            currentTaskId=id;
+            document.querySelector("#name").value=task.name;
+            document.querySelector("#email").value=task.phone;
+            document.querySelector("#phone").value=task.phone;
+        }
+
+        // deleteTask starting 
+
+        function deleteTask(id) {
+             tasks=tasks.filter((task)=>{
+                return task.
+             })
+        }
+
     </script>
 </body>
 </html>
