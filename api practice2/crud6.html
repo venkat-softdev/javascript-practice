@@ -154,7 +154,17 @@
         }
        })
 
-       
+       // EdiTask starting 
+       function editTask(id) {
+        const task=tasks.find((task)=>{
+            return task.id===id
+        })
+        isEditing=true
+        currentTaskId=null
+        submitbtn.textContent="edit Task"
+        document.querySelector("#name").value=task.name;
+        
+       }
     </script>
 </body>
 </html>
