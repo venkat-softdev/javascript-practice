@@ -49,6 +49,28 @@
        const submitbtn=document.querySelector("#btn");
        let isEditing=false;
        let currentTaskId=null;
+
+       // fetch tasks stareting 
+
+       function fetchTask(id) {
+        
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            tasks=data;
+            renderfun()
+            resetform()
+            alert("Task fetched successfully")
+        })
+        .catch((error)=>{
+            console.log(error);
+            
+        })
+       }
+
+       // render function starting 
     </script>
 </body>
 </html>
