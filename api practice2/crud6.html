@@ -103,6 +103,58 @@
        }
 
        // add or update Task starting 
+
+       form.addEventListener("submit",(event)=>{
+        event.preventDefault()
+
+        const name=document.querySelector("#name").value;
+        const email=document.querySelector("#email").value;
+        const phone=document.querySelector("#phone").value;
+
+        if (isEditing) {
+           fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
+            method:"PUT",
+            method:{"Content-Type":"application/json"},
+            tbody:JSON.stringify({name,email,phone})
+           })
+           .then((res)=>{
+            return res.json()
+           })
+           .then((updateTask)=>{
+           tasks=tasks.map((task)=>{
+            return task.id===updateTask.id?updateTask:task
+           })
+           renderfun()
+           resetform()
+           alert("task Updated successfully")
+           })
+           .catch((error)=>{
+            console.log(error);
+            
+           })
+        } else {
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+                method:"POST",
+                headers:{"content-Type":"application/json"},
+                body:JSON.stringify({name,email,phone})
+            })
+            .then((res)=>{
+                return res.json()
+            })
+            .then((newtask)=>{
+                tasks.push(newtask)
+                renderfun()
+                resetform()
+                alert("task Added sucessfully")
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+       })
+
+       
     </script>
 </body>
 </html>
