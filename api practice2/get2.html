@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>get IN JAVASCRIPT</title>
 </head>
+<style>
+    *{
+        font-family: 'poppins';
+    }
+</style>
 <body>
     <div class="BOX">
         <H2>Get In javascript</H2>
@@ -13,5 +18,43 @@
             <!-- inside a put Image -->
         </div>
     </div>
+
+    <script>
+        const btn=document.querySelector("#btn");
+        btn.addEventListener("click",getfun);
+
+        function getfun() {
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+                method:"GET",
+                headers:{"Content-Type":"application/json"}
+            })
+            .then((res)=>{
+                if (res.ok) {
+                    return res.json()
+                }
+                throw("failed to fetch ")
+            })
+            .then((data)=>{
+                const cards=document.querySelector(".cards");
+                cards.innerHTML=""
+
+                data.forEach((item) => {
+                    
+                    let card=`
+                    <div class="img">
+                    <img src="${item.avatar}" alt="${item.name}">
+                    <h2>${"Name : "+item.name}</h2>
+                    <p>${"Email : " + item.email}</p>    
+                    </div>
+                    `
+                });
+                cards.innerHTML+=card;
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+    </script>
 </body>
 </html>
