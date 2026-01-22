@@ -114,7 +114,7 @@
         if (isEditing) {
            fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
             method:"PUT",
-            method:{"Content-Type":"application/json"},
+            headers:{"Content-Type":"application/json"},
             tbody:JSON.stringify({name,email,phone})
            })
            .then((res)=>{
@@ -135,7 +135,7 @@
         } else {
             fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
                 method:"POST",
-                headers:{"content-Type":"application/json"},
+                headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({name,email,phone})
             })
             .then((res)=>{
@@ -160,7 +160,7 @@
             return task.id===id
         })
         isEditing=true
-        currentTaskId=null
+        currentTaskId=id
         submitbtn.textContent="edit Task"
         document.querySelector("#name").value=task.name;
         document.querySelector("#email").value=task.email;
@@ -202,7 +202,8 @@
         form.reset()
        }
 
-       
+       // fetch on page load 
+       fetchTask()
        
     </script>
 </body>
