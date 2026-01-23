@@ -119,7 +119,7 @@
                 })
                 .then((updateTask)=>{
                     tasks=tasks.map((t)=>{
-                        return t.id===updateTask.id?updateTask:task
+                        return t.id===updateTask.id?updateTask:t
                     })
                     renderfun()
                     resetform()
