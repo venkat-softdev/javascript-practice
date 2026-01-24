@@ -99,7 +99,7 @@
             event.preventDefault()
 
             const name=document.querySelector("#name").value;
-            const email=document.querySelector("#phone").value;
+            const email=document.querySelector("#email").value;
             const phone=document.querySelector("#phone").value;
 
             if (isEditing) {
@@ -113,7 +113,7 @@
                 })
                 .then((updateTask)=>{
                     tasks=tasks.map((t)=>{
-                        return t.id===updateTask.id?updateTask:task
+                        return t.id===updateTask.id?updateTask:t
                     })
                     renderfun()
                     resetform()
@@ -126,7 +126,7 @@
             } else {
                 fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
                     method:"POST",
-                    headers:{"Content-Type":"appliaction/json"},
+                    headers:{"Content-Type":"application/json"},
                     body:JSON.stringify({name,email,phone})
                 })
                 .then((res)=>{
@@ -152,7 +152,7 @@
                 return task.id===id
             })
             isEditing=true
-            currentTaskId=null;
+            currentTaskId=id;
             submitbtn.textContent="Edit task"
             document.querySelector("#name").value=task.name;
             document.querySelector("#email").value=task.email;
@@ -186,7 +186,7 @@
 
         function resetform() {
             isEditing=false;
-            currentTaskId=id;
+            currentTaskId=null;
             form.reset()
             submitbtn.textContent="Add Task"
         }
