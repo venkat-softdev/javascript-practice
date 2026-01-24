@@ -94,7 +94,39 @@
             }
         }
 
-        
+        // Add or UpdateTask start 
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault()
+
+            const name=document.querySelector("#name").value;
+            const email=document.querySelector("#phone").value;
+            const phone=document.querySelector("#phone").value;
+
+            if (isEditing) {
+                fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
+                    method:"PUT",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({name,email,phone})
+                })
+                .then((res)=>{
+                    return res.json()
+                })
+                .then((updateTask)=>{
+                    tasks=tasks.map((t)=>{
+                        return t.id===updateTask.id?updateTask:task
+                    })
+                    renderfun()
+                    resetform()
+                    alert("task updated successfully")
+                })
+                .catch((error)=>{
+                    console.log(error);
+                    
+                })
+            } else {
+                
+            }
+        })
     </script>
 </body>
 </html>
