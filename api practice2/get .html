@@ -1,100 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GET in javascript</title>
-</head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "poppins";
     }
-    body{
-        height: 100Vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .box h2{
-        margin-bottom: 30px;
-        font-size: 30px;
-        text-transform: capitalize;
+    .box h2 {
+      margin-bottom: 30px;
+      font-size: 30px;
+      text-transform: capitalize;
     }
-    button{
-        width: 150px;
-        padding: 10px;
-        border: none;
-        background-color: blue;
-        color: #fff;
-        border-radius: 4px;
+    button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      background-color: blue;
+      color: #fff;
+      border-radius: 4px;
     }
-    .card{
-      
-        max-width: 500px;
-        text-align: center;
-        padding: 10px;
-        margin: 10px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
+    .card {
+      max-width: 500px;
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+      box-shadow:
+        rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
     }
-    .card img{
-        width: 100%;
-        height: 500px;
-        border-radius: 8px;
-        
+    .card img {
+      width: 100%;
+      height: 500px;
+      border-radius: 8px;
     }
-    .card p{
-        font-size: 17px;
-        font-weight: 600;
-        margin-bottom: 10px;
+    .card p {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>GET in javascript</h2>
-        <button id="btn">Click me</button>
-        <div id="fetchdiv">
-            <!-- inside a image  -->
-        </div>
+      <h2>GET in javascript</h2>
+      <button id="btn">Click me</button>
+      <div id="fetchdiv">
+        <!-- inside a image  -->
+      </div>
     </div>
-</body>
-<script>
-    const btn=document.querySelector("#btn");
-    btn.addEventListener("click",getfun);
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+    btn.addEventListener("click", getfun);
 
     function getfun() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
-        .then((res)=>{
-            if (res.ok) {
-                return res.json()
-            } else {
-                throw new Error("failed to fetch");
-                
-            }
+      fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("failed to fetch");
+          }
         })
-        .then((data)=>{
-            const fetchdiv=document.querySelector("#fetchdiv");
-            fetchdiv.innerHTML=""
-            data.forEach((item) => {
-                
-                const card=`
+        .then((data) => {
+          const fetchdiv = document.querySelector("#fetchdiv");
+          fetchdiv.innerHTML = "";
+          data.forEach((item) => {
+            const card = `
                 <div class="card">
                 <img src="${item.avatar}" alt="${item.name}"/>
-                <h2>${"Name : " +item.name}</h2>
-                <p>${"Email :" +item.email}</p>
-                <p>${"Phone :" +item.phone}</p>
+                <h2>${"Name : " + item.name}</h2>
+                <p>${"Email :" + item.email}</p>
+                <p>${"Phone :" + item.phone}</p>
               
-                </div>`
-                fetchdiv.innerHTML+=card;
-            });
-            
+                </div>`;
+            fetchdiv.innerHTML += card;
+          });
         })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-</script>
+  </script>
 </html>
