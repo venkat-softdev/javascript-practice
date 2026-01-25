@@ -1,132 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>post in javascript</title>
-</head>
-<style>
-    *{
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      font-family: "poppins";
     }
-    .box{
-         max-width: 400px;
-        margin: 200px auto;
-        padding: 20px;
-     border: 1px solid #ccc;
-     border-radius: 8px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .box {
+      max-width: 400px;
+      margin: 200px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    form{
-      
-        display: flex;
-        flex-direction: column;
+    form {
+      display: flex;
+      flex-direction: column;
     }
-    label{
-        margin-bottom: 10px;
-        font-weight: 800;
+    label {
+      margin-bottom: 10px;
+      font-weight: 800;
     }
-    input{
-        margin-bottom: 20px;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+    input {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    button{
-        background-color: dodgerblue;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-         font-weight: 600;
-         color: #fff;
-         cursor: pointer;
-         border-radius: 5px;
+    button {
+      background-color: dodgerblue;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
     }
-    .response{
-      
-        margin-top: 20px;
-        padding: 10px;
-        border: 1px solid green;
-        border-radius: 5px;
-        background-color: palegreen;
-        color: #fff;
-        text-align: center;
+    .response {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid green;
+      border-radius: 5px;
+      background-color: palegreen;
+      color: #fff;
+      text-align: center;
     }
-    .error{
-        text-align: center;
-        margin-top: 20px;
-        border-radius: 5px;
-        border: 1px solid orangered;
-        background-color: orange;
-        color: #fff;
+    .error {
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: 1px solid orangered;
+      background-color: orange;
+      color: #fff;
     }
-    .box h2{
-        text-align: center;
-        text-transform: capitalize;
+    .box h2 {
+      text-align: center;
+      text-transform: capitalize;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>POST in javascript</h2>
-       <form action="" id="form">
-           <label for="name">Name :</label>
-            <input type="text" name="name" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required>
-            <button type="submit"> Submit</button>
+      <h2>POST in javascript</h2>
+      <form action="" id="form">
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="name" required />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required />
+        <button type="submit">Submit</button>
       </form>
-      <div class="response" id="resmsg" style="display: none;"></div>
-      <div class="error" id="errormsg" style="display: none;"></div>
+      <div class="response" id="resmsg" style="display: none"></div>
+      <div class="error" id="errormsg" style="display: none"></div>
     </div>
-</body>
- <script>
-    const form=document.querySelector("#form");
-    form.addEventListener("submit",(event)=>{
-        event.preventDefault()
+  </body>
+  <script>
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-        const name=document.querySelector("#name").value;
-        const email=document.querySelector("#email").value;
-        const phone=document.querySelector("#phone").value;
+      const name = document.querySelector("#name").value;
+      const email = document.querySelector("#email").value;
+      const phone = document.querySelector("#phone").value;
 
-        let updatetask={
-            name:name,
-            email:email,
-            phone:phone,
-        }
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(updatetask)
+      let updatetask = {
+        name: name,
+        email: email,
+        phone: phone,
+      };
+      fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatetask),
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          }
+          throw new Error("failed to fetch data");
         })
-        .then((res)=>{
-           if (res.ok) {
-            return res.json()
-           }
-           throw new Error("failed to fetch data");
-           
+        .then((data) => {
+          const response = document.querySelector("#resmsg");
+          response.style.display = "block";
+          response.textContent = "Task created successfully";
+
+          const error = document.querySelector("#errormsg");
+          error.style.display = "none";
+
+          console.log(data);
         })
-       .then((data)=>{
-    const response = document.querySelector("#resmsg");
-    response.style.display = "block";
-    response.textContent = "Task created successfully";
 
-    const error = document.querySelector("#errormsg");
-    error.style.display = "none";
+        .catch((error) => {
+          const errormsg = document.querySelector("#errormsg");
+          errormsg.style.display = "block";
+          errormsg.textContent = error.message;
 
-    console.log(data);
-})
-
-        .catch((error)=>{
-            const errormsg=document.querySelector("#errormsg");
-            errormsg.style.display="block";
-            errormsg.textContent=error.message;
-
-            const resmsg=document.querySelector("#resmsg");
-            resmsg.style.displsy="none"
-        })
-    })
- </script>
+          const resmsg = document.querySelector("#resmsg");
+          resmsg.style.displsy = "none";
+        });
+    });
+  </script>
 </html>
