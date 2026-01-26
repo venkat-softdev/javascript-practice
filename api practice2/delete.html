@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delete in javascript</title>
-</head>
-<style>
-    *{
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      font-family: "poppins";
     }
-    .box{
-         max-width: 1200px;
+    .box {
+      max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
@@ -49,46 +49,44 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>Delete in javascript</h2>
-        <div class="cards" id="cardbox">
-            <!-- inside a image -->
-        </div>
+      <h2>Delete in javascript</h2>
+      <div class="cards" id="cardbox">
+        <!-- inside a image -->
+      </div>
     </div>
-</body>
-<script>
-    let tasks=[]
-    const cardbox=document.querySelector("#cardbox");
+  </body>
+  <script>
+    let tasks = [];
+    const cardbox = document.querySelector("#cardbox");
 
     // fetch task start
     function fetchTask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
-        .then((res)=>{
-            return res.json()
+      fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res) => {
+          return res.json();
         })
-        .then((data)=>{
-            tasks=data;
-            renderfun()
-            alert("Task fetched successfully")
+        .then((data) => {
+          tasks = data;
+          renderfun();
+          alert("Task fetched successfully");
         })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
-    // renderfun start 
+    // renderfun start
 
     function renderfun() {
-        cardbox.innerHTML=""
+      cardbox.innerHTML = "";
 
-        let rows=""
+      let rows = "";
 
-        tasks.forEach((task)=>{
-            rows+=`
+      tasks.forEach((task) => {
+        rows += `
               <div class="card">
               <img src="${task.avatar}" alt="${task.name}"/>
               <h2>${task.name}</h2>
@@ -96,40 +94,34 @@
               <p>${task.phone}</p>
               <button onclick="deleteTask('${task.id}')">Delete</button>    
             </div>
-            `
-            cardbox.innerHTML=rows;
-        })
-
+            `;
+        cardbox.innerHTML = rows;
+      });
     }
-    // deleteTask starting 
+    // deleteTask starting
 
     function deleteTask(id) {
-        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`,{
-            method:"DELETE",
-
+      fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => {
+          if (res.ok) {
+            tasks = tasks.filter((task) => {
+              return task.id !== id;
+            });
+            renderfun();
+            alert("Task alerted successfully");
+          } else {
+            throw new Error("Failed to delete Task");
+          }
         })
-        .then((res)=>{
-            if (res.ok) {
-            tasks=tasks.filter((task)=>{
-                return task.id!==id
-            })
-            renderfun()
-            alert("Task alerted successfully")
-            } else {
-                throw new Error("Failed to delete Task");
-                
-            }
-        })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
+    // fetch on page load
 
-    // fetch on page load 
-
-    fetchTask()
-
-</script>
+    fetchTask();
+  </script>
 </html>
