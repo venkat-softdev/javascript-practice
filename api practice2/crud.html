@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD in javascript</title>
-</head>
-<style>
-    *{
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      font-family: "poppins";
     }
-    .box{
-          max-width: 1200px;
+    .box {
+      max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
@@ -39,30 +39,33 @@
     form button:hover {
       background-color: #0056b3;
     }
-    .tablebox{
-        overflow-x: auto;
+    .tablebox {
+      overflow-x: auto;
     }
-     table {
+    table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-    table, th, td {
+    table,
+    th,
+    td {
       border: 1px solid #ccc;
     }
-    th, td {
+    th,
+    td {
       padding: 10px;
       text-align: left;
     }
     th {
       background-color: #f4f4f4;
     }
-    .action-btn{
-        display: flex;
-      gap: 10px
+    .action-btn {
+      display: flex;
+      gap: 10px;
     }
-    .action-btn button{
-          width: 70px; /* Consistent width for buttons */
+    .action-btn button {
+      width: 70px; /* Consistent width for buttons */
       background-color: #007bff;
       color: white;
       border: none;
@@ -70,8 +73,8 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .delete-btn{
-         background-color: #dc3545;
+    .delete-btn {
+      background-color: #dc3545;
     }
     .no-tasks {
       text-align: center;
@@ -79,43 +82,47 @@
       color: #888;
       margin-top: 20px;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>CRUD in javascript</h2>
-        <form action="" id="form">
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
-            <button type="submit" id="submitbtn">Add Task</button>
-
-        </form>
-        <div class="tablebox">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Actions</th>
-                    </tr>
-
-                </thead>
-                <tbody id="tbody">
-                    
-                </tbody>
-            </table>
-            <div class="no-tasks" id="notaskmesssage">
-                No Task Found Add Some Task!.
-            </div>
+      <h2>CRUD in javascript</h2>
+      <form action="" id="form">
+        <input type="text" id="name" name="name" placeholder="Name" required />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone"
+          required
+        />
+        <button type="submit" id="submitbtn">Add Task</button>
+      </form>
+      <div class="tablebox">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="no-tasks" id="notaskmesssage">
+          No Task Found Add Some Task!.
         </div>
+      </div>
     </div>
 
-
-
-
     <script src="crud.js"></script>
-</body>
-
+  </body>
 </html>
