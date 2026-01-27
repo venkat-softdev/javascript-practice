@@ -147,6 +147,21 @@
                 })
             }
         })
+
+        // edittask starting 
+
+        function editTask() {
+            const task=tasks.find((task)=>{
+                return task.id===id
+            })
+           currentTaskId=id;
+           isEditing=true;
+           submitbtn.textContent="Edit Task";
+           document.querySelector("#name").value=task.name;
+           document.querySelector("#email").value=task.email;
+           document.querySelector("#phone").value=task.phone;
+        }
+        
     </script>
 </body>
 </html>
