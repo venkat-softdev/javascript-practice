@@ -49,6 +49,23 @@
         let isEditing=false;
 
         // fetch Task starting 
+        function fetchTask() {
+            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+            .then((res)=>{
+                return res.json()
+            })
+            .then((data)=>{
+                tasks=data;
+                renderfun()
+                resetform()
+                alert("successfully Task fetched ")
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        }
+        
     </script>
 </body>
 </html>
