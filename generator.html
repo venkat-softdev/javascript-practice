@@ -1,92 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>image generator</title>
-</head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "poppins";
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    #sample {
+      margin-top: 20px;
+    }
+    button {
+      padding: 15px;
+      width: 150px;
+      border: none;
+      outline: none;
+      background-color: #192a56;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .box {
+      max-width: 700px;
+      text-align: center;
 
+      padding: 10px;
+      margin: 10px;
     }
-    body{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow:
+        rgba(0, 0, 0, 0.16) 0px 1px 4px,
+        rgb(51, 51, 51) 0px 0px 0px 3px;
     }
-    h2{
-        margin-bottom: 30px;
+    .box p {
+      margin-top: 10px;
     }
-    #sample{
-        margin-top: 20px;
-    }
-    button{
-        padding: 15px;
-        width: 150px;
-        border: none;
-        outline: none;
-        background-color:#192a56 ;
-        color: #fff;
-        border-radius: 5px;
-        font-size: 17px;
-        font-weight: 600;
-
-    }
-    .box{
-        max-width: 700px;
-        text-align: center;
-      
-        padding: 10px;
-         margin: 10px;
-       
-    }
-    img{
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-       
-     
-    }
-    .box p{
-        margin-top: 10px;
-    }
-</style>
-<body>
-    
-    <h2>Image generator javascript </h2>
+  </style>
+  <body>
+    <h2>Image generator javascript</h2>
     <button id="button">Click Me</button>
     <div class="box">
-          <img src="" alt="random image " id="sample">
+      <img src="" alt="random image " id="sample" />
     </div>
 
-
-
     <script>
-       const btn = document.querySelector("#button");
-const div = document.querySelector(".box");
+      const btn = document.querySelector("#button");
+      const div = document.querySelector(".box");
 
-btn.addEventListener("click", getimage);
+      btn.addEventListener("click", getimage);
 
-async function getimage() {
-    const fetchdata = await fetch(
-        "https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member"
-    );
+      async function getimage() {
+        const fetchdata = await fetch(
+          "https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member",
+        );
 
-    const fetchvalue = await fetchdata.json();
+        const fetchvalue = await fetchdata.json();
 
-    let output = "";
+        let output = "";
 
-    fetchvalue.forEach((imgvalue) => {
-        output += `
+        fetchvalue.forEach((imgvalue) => {
+          output += `
             <div class="image">
                 <h3>Name : ${imgvalue.name}</h3>
                 <img src="${imgvalue.avatar}" alt="${imgvalue.name}" />
@@ -94,11 +88,10 @@ async function getimage() {
                 <p>Phone : ${imgvalue.phone}</p>
             </div>
         `;
-    });
+        });
 
-    div.innerHTML = output;
-}
-
+        div.innerHTML = output;
+      }
     </script>
-</body>
+  </body>
 </html>
