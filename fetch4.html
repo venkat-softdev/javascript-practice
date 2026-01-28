@@ -1,84 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch in js </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inder&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-</head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: 'poppins';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch in js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "poppins";
     }
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
     }
-    h2{
-        margin-bottom: 30px;
-        font-size: 30px;
-        text-transform: capitalize;
+    h2 {
+      margin-bottom: 30px;
+      font-size: 30px;
+      text-transform: capitalize;
     }
-    button{
-        width: 200px;
-        padding: 10px;
-        border: none;
-        outline: none;
-        color: #fff;
-        background-color: blue;
-        border-radius: 5px;
+    button {
+      width: 200px;
+      padding: 10px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background-color: blue;
+      border-radius: 5px;
     }
-    .member{
-        padding: 10px;
-        background-color: palegreen;
-        
-        margin: 10px;
-        border-radius: 5px;
+    .member {
+      padding: 10px;
+      background-color: palegreen;
+
+      margin: 10px;
+      border-radius: 5px;
     }
-    p{
-        font-weight: 500;
-        font-size:20px ;
+    p {
+      font-weight: 500;
+      font-size: 20px;
     }
-</style>
-<body>
-    
-  <h2>Fetch in javascript</h2>
-  <button id="btn">Click me</button>
-   <div class="fetchdiv"></div>
+  </style>
+  <body>
+    <h2>Fetch in javascript</h2>
+    <button id="btn">Click me</button>
+    <div class="fetchdiv"></div>
 
     <script>
-    const btn = document.querySelector("#btn");
-const div = document.querySelector(".fetchdiv");
+      const btn = document.querySelector("#btn");
+      const div = document.querySelector(".fetchdiv");
 
-btn.addEventListener("click", getdata);
+      btn.addEventListener("click", getdata);
 
-async function getdata() {
-    const data = await fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member");
-    const final = await data.json();
+      async function getdata() {
+        const data = await fetch(
+          "https://694ce310da5ddabf0037bc1a.mockapi.io/animals/member",
+        );
+        const final = await data.json();
 
-    let outputfetch = "";
+        let outputfetch = "";
 
-    final.forEach((item) => {
-        outputfetch += `
+        final.forEach((item) => {
+          outputfetch += `
         <div class="member">
-            <h2>${"name : " +item.name}</h2>
-            <p>${"Email : " +item.email}</p>
-            <p>${ "Phone : " + item.phone}</p>
+            <h2>${"name : " + item.name}</h2>
+            <p>${"Email : " + item.email}</p>
+            <p>${"Phone : " + item.phone}</p>
         </div>`;
-    });
+        });
 
-    div.innerHTML = outputfetch; 
-}
-
-
+        div.innerHTML = outputfetch;
+      }
     </script>
-</body>
+  </body>
 </html>
