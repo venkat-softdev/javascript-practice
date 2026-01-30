@@ -126,9 +126,29 @@
                     resetform()
                     alert("Task updated successfully")
                 })
-                
+                .catch((error)=>{
+                    console.log(error);
+                    
+                })
             } else {
-                
+                fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
+                    method:"POST",
+                    headers:{"content-Type":"application/json"},
+                    body:JSON.stringify({name,email,phone})
+                })
+                .then((res)=>{
+                    return res.json()
+                })
+                .then((newtask)=>{
+                    newtask.push(tasks)
+                    renderfun()
+                    resetform()
+                    alert("Task Added successfully")
+                })
+                .catch((error)=>{
+                    console.log(error);
+                    
+                })
             }
         })
     </script>
