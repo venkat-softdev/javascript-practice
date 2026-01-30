@@ -167,7 +167,30 @@
             document.querySelector("#phone").value=task.phone;
         }
 
-        // 
+        // DeleteTask starting
+
+        function deleteTask(id) {
+           fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem`,{
+            method:"DELETE"
+           })
+           .then((res)=>{
+            if (res.ok) {
+                tasks=tasks.filter((task)=>{
+                    return task.id!==id
+                })
+                renderfun()
+                alert("Task deleted succesffullly")
+            }
+            throw new Error("Failed to Delete ");
+            
+           })
+           .catch((error)=>{
+            console.log(error);
+            
+           })
+        }
+
+        
     </script>
 </body>
 </html>
