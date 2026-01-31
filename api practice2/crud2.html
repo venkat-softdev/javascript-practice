@@ -1,81 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD in javascript</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="box">
-        <h2>Crud in javascript</h2>
-        
-        <form action="" id="form">
-            <input type="text" id="name" placeholder="Name" name="name" required>
-            <input type="email" id="email" placeholder="Email" name="email" required>
-            <input type="tel" id="phone" placeholder="phone" name="phone" required>
-            <button id="submit">Sumbit Task</button>
-        </form>
-        <div class="tablebox">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                   
-                </tbody>
-            </table>
-            <div class="no-tasks" id="noTaskmessage">
-                No Task found . Add some Task!
-            </div>
+      <h2>Crud in javascript</h2>
+
+      <form action="" id="form">
+        <input type="text" id="name" placeholder="Name" name="name" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
+        <input
+          type="tel"
+          id="phone"
+          placeholder="phone"
+          name="phone"
+          required
+        />
+        <button id="submit">Sumbit Task</button>
+      </form>
+      <div class="tablebox">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="no-tasks" id="noTaskmessage">
+          No Task found . Add some Task!
         </div>
+      </div>
     </div>
-</body>
-<script>
-    let tasks=[];
-    const tbody=document.querySelector("#tbody");
-    const form=document.querySelector("#form");
-    const noTaskmessage=document.querySelector("#noTaskmessage");
-    const submitbtn=document.querySelector("#submitbtn");
-    let isEditing=false;
-    let currentTaskId=null
+  </body>
+  <script>
+    let tasks = [];
+    const tbody = document.querySelector("#tbody");
+    const form = document.querySelector("#form");
+    const noTaskmessage = document.querySelector("#noTaskmessage");
+    const submitbtn = document.querySelector("#submitbtn");
+    let isEditing = false;
+    let currentTaskId = null;
 
-
-    // fetch task starting 
+    // fetch task starting
 
     function fetchTask() {
-        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
-        .then((res)=>{
-            return res.json()
+      fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+        .then((res) => {
+          return res.json();
         })
-        .then((data)=>{
-            tasks=data
-            renderfun()
-            alert("Task fetched successfully")
+        .then((data) => {
+          tasks = data;
+          renderfun();
+          alert("Task fetched successfully");
         })
-        .catch((error)=>{
-            console.log(error);
-            
-        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
-    // renderfun start 
+    // renderfun start
 
     function renderfun() {
-        if (tasks.length===0) {
-            noTaskmessage.style.display="block";
-            tbody.innerHTML=""
-        } else {
-            noTaskmessage.style.display="none"
+      if (tasks.length === 0) {
+        noTaskmessage.style.display = "block";
+        tbody.innerHTML = "";
+      } else {
+        noTaskmessage.style.display = "none";
 
-            let rows=""
-            tasks.forEach((task)=>{
-                rows+=`
+        let rows = "";
+        tasks.forEach((task) => {
+          rows += `
                 <tr>
                  <td>${task.id}</td>
                  <td>${task.name}</td>
@@ -89,105 +97,102 @@
                 </td>    
                 </tr>
                 `;
-              
-            })
-              tbody.innerHTML=rows
-        }
+        });
+        tbody.innerHTML = rows;
+      }
     }
 
-    // add or Update Task start 
-    form.addEventListener("submit",(event)=>{
-        event.preventDefault()
+    // add or Update Task start
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-        const name=document.querySelector("#name").value;
-        const email=document.querySelector("#email").value;
-        const phone=document.querySelector("#phone").value;
+      const name = document.querySelector("#name").value;
+      const email = document.querySelector("#email").value;
+      const phone = document.querySelector("#phone").value;
 
-        if (isEditing) {
-            fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
-                method:"PUT",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({name,email,phone})
-            })
-            .then((res)=>{
-                return res.json()
-            })
-            .then((updateTask)=>{
-                tasks=tasks.map((task)=>{
-                    return task.id===updateTask.id?updateTask:task
-                })
-                renderfun()
-                resetform()
-                alert("Task Update successfully")
-            })
-            .catch((error)=>{
-                console.log(error);
-                
-            })
-        } else {
-            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({name,email,phone}),
-            })
-            .then((res)=>{
-                return res.json()
-            })
-            .then((newtask)=>{
-                tasks.push(newtask)
-                renderfun()
-                resetform()
-            alert("Task Added successfully")
-            })
-            .catch((error)=>{
-                console.log(error);
-                
-            })
-            
-        }
-    })
+      if (isEditing) {
+        fetch(
+          `https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone }),
+          },
+        )
+          .then((res) => {
+            return res.json();
+          })
+          .then((updateTask) => {
+            tasks = tasks.map((task) => {
+              return task.id === updateTask.id ? updateTask : task;
+            });
+            renderfun();
+            resetform();
+            alert("Task Update successfully");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, phone }),
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((newtask) => {
+            tasks.push(newtask);
+            renderfun();
+            resetform();
+            alert("Task Added successfully");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    });
 
     // editTask start
     function editTask(id) {
-        const task=tasks.find((t)=>{
-            return t.id===id
-        });
-        if(!task)return;
-        isEditing=true;
-        currentTaskId=id;
-        submitbtn.textContent="Edit Task";
-        
-        document.querySelector("#name").value=task.name;
-        document.querySelector("#email").value=task.email;
-        document.querySelector("#phone").value=task.phone;
+      const task = tasks.find((t) => {
+        return t.id === id;
+      });
+      if (!task) return;
+      isEditing = true;
+      currentTaskId = id;
+      submitbtn.textContent = "Edit Task";
+
+      document.querySelector("#name").value = task.name;
+      document.querySelector("#email").value = task.email;
+      document.querySelector("#phone").value = task.phone;
     }
 
-    // delete Task start 
+    // delete Task start
 
-   function deleteTask(id) {
-    fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`, {
-        method: "DELETE"
-    })
-    .then((res)=>{
-    if (!res.ok) {
-        throw new Error("Failed to delete successfully");
+    function deleteTask(id) {
+      fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`, {
+        method: "DELETE",
+      }).then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to delete successfully");
+        }
+
+        tasks = tasks.filter((task) => task.id !== id);
+        renderfun();
+        alert("Task Deleted successfully");
+      });
     }
 
-    tasks = tasks.filter(task => task.id !== id);
-    renderfun();
-    alert("Task Deleted successfully");
-})
-
-}
-
-    // resetform start 
+    // resetform start
     function resetform() {
-        isEditing=false;
-        currentTaskId=null;
-        form.reset()
-        submitbtn.textContent="Add Task"
+      isEditing = false;
+      currentTaskId = null;
+      form.reset();
+      submitbtn.textContent = "Add Task";
     }
-    // fetch on page load 
-    fetchTask()
-</script>
+    // fetch on page load
+    fetchTask();
+  </script>
 </html>
