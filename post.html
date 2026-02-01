@@ -9,8 +9,15 @@
     <div class="box">
         <h2>POST in javascript</h2>
         <form action="" id="form">
-            
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone :</label>
+            <input type="tel" id="phone" name="phone" required>
         </form>
+        <div id="resmsg" class="response"></div>
+        <div id="errormsg" class="error"></div>
     </div>
 </body>
 </html>
