@@ -74,6 +74,7 @@
             <input type="email" id="email" name="email" required>
             <label for="phone">Phone :</label>
             <input type="tel" id="phone" name="phone" required>
+            <button type="submit">Submit Task</button>
         </form>
         <div id="resmsg" class="response"></div>
         <div id="errormsg" class="error"></div>
@@ -113,9 +114,9 @@
              errormsg.style.display="none"
             })
             .catch((error)=>{
-                const error=document.querySelector("#errormsg");
-                error.style.display="block";
-                error.textContent="No Task created";
+                const errorg=document.querySelector("#errormsg");
+                errorg.style.display="block";
+                errorg.textContent="No Task created";
                 const response=document.querySelector("#resmsg");
                 response.style.display="none"
             })
