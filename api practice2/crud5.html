@@ -1,86 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    *{
-        font-family: 'poppins';
+  </head>
+  <style>
+    * {
+      font-family: "poppins";
     }
-</style>
-<body>
+  </style>
+  <body>
     <div class="box">
-        <h2>CRUD in javascript</h2>
-        <form action="" id="form">
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
-            <button id="btn">Submit Task</button>
-        </form>
+      <h2>CRUD in javascript</h2>
+      <form action="" id="form">
+        <input type="text" id="name" name="name" placeholder="Name" required />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone"
+          required
+        />
+        <button id="btn">Submit Task</button>
+      </form>
 
-        <div class="tablebox">
-            <table>
-              <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="tbody">
-
-              </tbody>
-            </table>
-            <div class="no-tasks" id="noTaskmessage">
-                No Task Found Add some task!
-            </div>
+      <div class="tablebox">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="no-tasks" id="noTaskmessage">
+          No Task Found Add some task!
         </div>
+      </div>
     </div>
     <script>
-        let tasks=[];
-        let form=document.querySelector("#form");
-        let noTaskmessage=document.querySelector("#noTaskmessage");
-        const tbody=document.querySelector("#tbody");
-        const submitbtn=document.querySelector("#btn");
-        let isEditing=false;
-        let currentTaskId=null;
+      let tasks = [];
+      let form = document.querySelector("#form");
+      let noTaskmessage = document.querySelector("#noTaskmessage");
+      const tbody = document.querySelector("#tbody");
+      const submitbtn = document.querySelector("#btn");
+      let isEditing = false;
+      let currentTaskId = null;
 
-        // fetch task starting 
+      // fetch task starting
 
-        function fetchTask() {
-            fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
-            .then((res)=>{
-                return res.json()
-            })
-            .then((data)=>{
-                tasks=data;
-                renderfun()
-                resetform()
-                alert("Task fetched successfully")
-            })
-            .catch((error)=>{
-                console.log(error);
-                
-            })
-        }
+      function fetchTask() {
+        fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            tasks = data;
+            renderfun();
+            resetform();
+            alert("Task fetched successfully");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
 
-        // rendertask starting 
+      // rendertask starting
 
-        function renderfun() {
-            if (tasks.length===0) {
-                noTaskmessage.style.display="block"
-                tbody.innerHTML=""
-            } else {
-                noTaskmessage.style.display="none";
+      function renderfun() {
+        if (tasks.length === 0) {
+          noTaskmessage.style.display = "block";
+          tbody.innerHTML = "";
+        } else {
+          noTaskmessage.style.display = "none";
 
-                let rows=""
+          let rows = "";
 
-                tasks.forEach((task) => {
-                    rows+=`
+          tasks.forEach((task) => {
+            rows += `
                     <tr>
                      <td>${task.id}</td>
                      <td>${task.name}</td>
@@ -93,114 +102,110 @@
                     </div>    
                     </td>    
                     </tr>
-                    `
-                });
-                tbody.innerHTML=rows;
-            }
+                    `;
+          });
+          tbody.innerHTML = rows;
         }
+      }
 
+      // Add or Update Task Starting
 
-        // Add or Update Task Starting 
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        form.addEventListener("submit",(event)=>{
-            event.preventDefault()
+        const name = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const phone = document.querySelector("#phone").value;
 
-            const name=document.querySelector("#name").value;
-            const email=document.querySelector("#email").value;
-            const phone=document.querySelector("#phone").value;
-
-            if (isEditing) {
-                fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,{
-                    method:"PUT",
-                    headers:{"Content-Type":"application/json"},
-                    body:JSON.stringify({name,email,phone})
-                })
-                .then((res)=>{
-                    return res.json()
-                })
-                .then((updateTask)=>{
-                    tasks=tasks.map((task)=>{
-                     return    task.id===updateTask.id?updateTask:task
-                    })
-                    renderfun()
-                    resetform()
-                    alert("Task updated successfully")
-                })
-                .catch((error)=>{
-                    console.log(error);
-                    
-                })
-            } else {
-                fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem",{
-                    method:"POST",
-                    headers:{"Content-Type":"application/json"},
-                    body:JSON.stringify({name,email,phone})
-                })
-                .then((res)=>{
-                    return res.json()
-                })
-                .then((newTask)=>{
-                    tasks.push(newTask)
-                    renderfun()
-                    resetform()
-                    alert("Task Added successfully")
-                })
-                .catch((error)=>{
-                    console.log(error);
-                    
-                })
-
-            }
-        })
-         
-        // EditTask in start 
-
-        function editTask(id) {
-            const task=tasks.find((t)=>{
-                return t.id===id
+        if (isEditing) {
+          fetch(
+            `https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${currentTaskId}`,
+            {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, phone }),
+            },
+          )
+            .then((res) => {
+              return res.json();
             })
-            isEditing=true;
-            currentTaskId=id;
-            submitbtn.textContent="Edit task"
-            document.querySelector("#name").value=task.name;
-            document.querySelector("#email").value=task.email;
-            document.querySelector("#phone").value=task.phone;
+            .then((updateTask) => {
+              tasks = tasks.map((task) => {
+                return task.id === updateTask.id ? updateTask : task;
+              });
+              renderfun();
+              resetform();
+              alert("Task updated successfully");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          fetch("https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone }),
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((newTask) => {
+              tasks.push(newTask);
+              renderfun();
+              resetform();
+              alert("Task Added successfully");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         }
+      });
 
-        // deleteTask starting 
+      // EditTask in start
 
-        function deleteTask(id) {
-           fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`,{
-            method:"DELETE",
-           })
-           .then((res)=>{
+      function editTask(id) {
+        const task = tasks.find((t) => {
+          return t.id === id;
+        });
+        isEditing = true;
+        currentTaskId = id;
+        submitbtn.textContent = "Edit task";
+        document.querySelector("#name").value = task.name;
+        document.querySelector("#email").value = task.email;
+        document.querySelector("#phone").value = task.phone;
+      }
+
+      // deleteTask starting
+
+      function deleteTask(id) {
+        fetch(`https://694ce310da5ddabf0037bc1a.mockapi.io/animals/mem/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => {
             if (res.ok) {
-                tasks=tasks.filter((task)=>{
-                    return task.id!==id
-                })
-                renderfun()
-                alert("Task Deleted  successfully")
+              tasks = tasks.filter((task) => {
+                return task.id !== id;
+              });
+              renderfun();
+              alert("Task Deleted  successfully");
             }
             throw new Error("failed to deleted task");
-            
-           })
-           .catch((error)=>{
+          })
+          .catch((error) => {
             console.log(error);
-            
-           })
-        }
+          });
+      }
 
+      // reset form
 
-        // reset form 
-
-        function resetform() {
-            isEditing=false;
-            currentTaskId=null;
-            form.reset()
-            submitbtn.textContent="Add Task"
-        }
-// 
-fetchTask()
+      function resetform() {
+        isEditing = false;
+        currentTaskId = null;
+        form.reset();
+        submitbtn.textContent = "Add Task";
+      }
+      //
+      fetchTask();
     </script>
-</body>
+  </body>
 </html>
