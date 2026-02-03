@@ -1,5 +1,5 @@
 function renderfun() {
-  let rows = "";   // ✅ declare outside
+  let rows = ""; // ✅ declare outside
 
   if (tasks.length === 0) {
     notaskmesssage.style.display = "block";
