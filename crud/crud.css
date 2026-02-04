@@ -1,105 +1,100 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'poppins';
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "poppins";
 }
- body{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
-h3{
-    text-align: center;
-    margin: 40px 0px;
-    color: tomato;
+body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  text-align: center;
+  margin: 40px 0px;
+  color: tomato;
 }
 
 /*  form stylling start */
-form{
-    width: 600px;
+form {
+  width: 600px;
 }
-form .form-group{
- 
-    display: flex;
-    flex-direction: column;
-
+form .form-group {
+  display: flex;
+  flex-direction: column;
 }
- form .form-group input{
-   font-size: 16px;
-   padding: 5px 10px;
-   border: none;
-   outline: none;
-   background-color: #f1f1f1;
-   border-radius: 2px;
-   margin: 10px 0px;
-   max-width: 300px;
+form .form-group input {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  border-radius: 2px;
+  margin: 10px 0px;
+  max-width: 300px;
 }
-.form-group label{
-    font-weight: 800;
-  
+.form-group label {
+  font-weight: 800;
 }
 
-form .btn{
-    padding: 5px 20px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 3px;
-    color: #fff;
-    border: none;
-    background-color: tomato;
-    letter-spacing: 1px;
-
+form .btn {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+  background-color: tomato;
+  letter-spacing: 1px;
 }
 
 /*  form stylling end */
 
-
 /*  table stylling start  */
 
-table{
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    margin: 30px;
-    
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin: 30px;
 }
 
-table thead tr{
-    background-color: tomato;
-    color: #fff;
-    font-weight: 500;
-    border-color: tomato ;
+table thead tr {
+  background-color: tomato;
+  color: #fff;
+  font-weight: 500;
+  border-color: tomato;
 }
 
 table td,
 table th {
-
-    border: 1px solid #ccc;
-    padding: 5px 10px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
 }
 table thead tr th {
-    border-color:#ccc ;
-    font-weight: 400;
+  border-color: #ccc;
+  font-weight: 400;
 }
 
-table td button{
-    border: none;
-    outline: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin: 0 auto;
-    display: block;
-    background-color: teal;
-    border-radius: 3px;
-    cursor: pointer;
+table td button {
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 auto;
+  display: block;
+  background-color: teal;
+  border-radius: 3px;
+  cursor: pointer;
 }
-.btn-delete{
-    background-color: red;
+.btn-delete {
+  background-color: red;
 }
 /*  tavle stylling end  */
