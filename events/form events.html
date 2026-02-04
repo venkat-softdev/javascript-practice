@@ -1,137 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form events in js </title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inspiration&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Margarine&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-</head>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-        font-family: 'poppins';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form events in js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Inspiration&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Margarine&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: "poppins";
     }
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
     }
-   h3{
-    font-size: 15px;
-    font-weight: 500;
-    color: blue;
-   }
-    form{
-        width: 500px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-        padding: 10px;
+    h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: blue;
     }
-    .form-grp{
-       
-        margin-bottom: 10px;
+    form {
+      width: 500px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 10px;
+    }
+    .form-grp {
+      margin-bottom: 10px;
     }
 
-    .form-grp >label{
-            display: block;
-            padding: 5px 0;
-        }
-       input[type="text"],
-       input[type="email"],
-       select{
-        width: 100%;
-        font-size: 15px;
-        outline: none;
-        padding-left: 2px;
-       }
-       button{
-       width: 100px;
-        margin: 10px 10px;
-        padding: 5px;
-        border-radius: 3px;
-        border: none;
-        background-color: rgb(35, 35, 189);
-        color: #fff;
-       }
-       input:focus{
-        border:2px solid rgb(35, 35, 189);
-        
-       }
-</style>
-<body>
-   
-
+    .form-grp > label {
+      display: block;
+      padding: 5px 0;
+    }
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      font-size: 15px;
+      outline: none;
+      padding-left: 2px;
+    }
+    button {
+      width: 100px;
+      margin: 10px 10px;
+      padding: 5px;
+      border-radius: 3px;
+      border: none;
+      background-color: rgb(35, 35, 189);
+      color: #fff;
+    }
+    input:focus {
+      border: 2px solid rgb(35, 35, 189);
+    }
+  </style>
+  <body>
     <form action="#" autocomplete="off">
-       <h3>Form events in js </h3>
-        <!-- username start  -->
-       <div class="form-grp">
+      <h3>Form events in js</h3>
+      <!-- username start  -->
+      <div class="form-grp">
         <label for="username"> User Name</label>
-        <input type="text" id="username">
-       </div>
-          
-       <!-- username end -->
-           
+        <input type="text" id="username" />
+      </div>
 
-       <!-- email start -->
-       <div class="form-grp">
+      <!-- username end -->
+
+      <!-- email start -->
+      <div class="form-grp">
         <label for="email">Email</label>
-        <input type="email" id="email">
-       </div>
-         
-       <!-- email end -->
+        <input type="email" id="email" />
+      </div>
 
+      <!-- email end -->
 
-       <!-- course start -->
-       <div class="form-grp">
-       <label for="course"> Course Name</label>
-        <select  id="course">
-            <option value="">select course</option>
-            <option value="C"> C</option>
-            <option value="C++"> C++</option>
-            <option value="java">Java</option>
-            <option value="javascript">javascript</option>
-            <option value="python">Python</option>
+      <!-- course start -->
+      <div class="form-grp">
+        <label for="course"> Course Name</label>
+        <select id="course">
+          <option value="">select course</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="java">Java</option>
+          <option value="javascript">javascript</option>
+          <option value="python">Python</option>
         </select>
-       </div>
-          
-       <!-- course end -->
+      </div>
 
-       <!-- gender start -->
+      <!-- course end -->
 
-       <div class="form-grp">
-         <fieldset>
-            <legend>gender</legend>
-             <label><input type="radio" name="gender" value="male"> Male</label>
-             <label><input type="radio" name="gender" value="female">Female</label>
-         </fieldset>
-       </div>
+      <!-- gender start -->
 
-       <!-- gender end  -->
+      <div class="form-grp">
+        <fieldset>
+          <legend>gender</legend>
+          <label><input type="radio" name="gender" value="male" /> Male</label>
+          <label
+            ><input type="radio" name="gender" value="female" />Female</label
+          >
+        </fieldset>
+      </div>
 
-       <!--  checkbox start -->
-           <input type="checkbox" id="agree">
-           <label for="agree"> I Agree all Condition</label>
-          
+      <!-- gender end  -->
 
-           <!-- checkbox end -->
+      <!--  checkbox start -->
+      <input type="checkbox" id="agree" />
+      <label for="agree"> I Agree all Condition</label>
 
+      <!-- checkbox end -->
 
-           <!-- buttons start  -->
+      <!-- buttons start  -->
 
-          <div class="form-grp">
-             <button type="submit">Submit</button>
-           <button type="reset">reset</button>
-          </div>
+      <div class="form-grp">
+        <button type="submit">Submit</button>
+        <button type="reset">reset</button>
+      </div>
 
-          <!--  buttons end  -->
+      <!--  buttons end  -->
     </form>
 
-
-
     <script src="./form events.js"></script>
-</body>
+  </body>
 </html>
