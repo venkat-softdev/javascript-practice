@@ -1,45 +1,40 @@
-// call apply and bind methods in javascript 
+// call apply and bind methods in javascript
 
 function venkat(params) {
-    console.log(this);
-    
+  console.log(this);
 }
-venkat()
+venkat();
 console.log(venkat.name);
 console.log(venkat.toString);
 venkat.call();
 
-// example 2 
+// example 2
 
-var user_name="Venkat"
+var user_name = "Venkat";
 function welcome() {
-    console.log("welcome :" + this.user_name);
-    
+  console.log("welcome :" + this.user_name);
 }
-welcome()
+welcome();
 
-// example 3 
+// example 3
 
 function Hello() {
-    console.log("Hello :"+this. name);
-    
+  console.log("Hello :" + this.name);
 }
 
-const member={
-    name:"venkat"
+const member = {
+  name: "venkat",
+};
+Hello.call(member);
+
+function total(eng, math) {
+  console.log(this.name + " got " + (eng + math) + " Marks");
 }
-Hello.call(member)
+total(25, 25);
+total.call(member, 25, 25);
 
-function total(eng,math) {
-    console.log(this.name + " got " + (eng+math) + " Marks");
-    
-}
-total(25,25);
-total.call(member,25,25)
+// example 4
 
-
-// example 4 
-
-let fun=total.bind(member,85,95);
+let fun = total.bind(member, 85, 95);
 console.log(fun);
-fun()
+fun();
